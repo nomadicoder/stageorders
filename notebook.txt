@@ -142,3 +142,212 @@ end
 Add stage status page
 script/generate controller status index update
 
+GIT updates:
+
+Jetlabpro:SitRepStage skng$ git status
+# On branch master
+# Changed but not updated:
+#   (use "git add <file>..." to update what will be committed)
+#   (use "git checkout -- <file>..." to discard changes in working directory)
+#
+#       modified:   config/routes.rb
+#
+# Untracked files:
+#   (use "git add <file>..." to include in what will be committed)
+#
+#       app/controllers/results_controller.rb
+#       app/controllers/runners_controller.rb
+#       app/controllers/stages_controller.rb
+#       app/controllers/status_controller.rb
+#       app/controllers/teams_controller.rb
+#       app/helpers/results_helper.rb
+#       app/helpers/runners_helper.rb
+#       app/helpers/stages_helper.rb
+#       app/helpers/status_helper.rb
+#       app/helpers/teams_helper.rb
+#       app/models/
+#       app/views/
+#       db/migrate/
+#       db/schema.rb
+#       generate
+#       notebook.txt
+#       public/stylesheets/
+#       test/fixtures/
+#       test/functional/
+#       test/unit/
+no changes added to commit (use "git add" and/or "git commit -a")
+Jetlabpro:SitRepStage skng$ git commit -a -m "Added runners, teams, results and status"
+[master 511d2f8] Added runners, teams, results and status
+ 1 files changed, 4 insertions(+), 0 deletions(-)
+Jetlabpro:SitRepStage skng$ git push
+Counting objects: 7, done.
+Delta compression using up to 2 threads.
+Compressing objects: 100% (4/4), done.
+Writing objects: 100% (4/4), 389 bytes, done.
+Total 4 (delta 3), reused 0 (delta 0)
+To git@github.com:nomadicoder/SitRepStage.git
+   ea8f5fb..511d2f8  master -> master
+Jetlabpro:SitRepStage skng$ git status
+# On branch master
+# Untracked files:
+#   (use "git add <file>..." to include in what will be committed)
+#
+#       app/controllers/results_controller.rb
+#       app/controllers/runners_controller.rb
+#       app/controllers/stages_controller.rb
+#       app/controllers/status_controller.rb
+#       app/controllers/teams_controller.rb
+#       app/helpers/results_helper.rb
+#       app/helpers/runners_helper.rb
+#       app/helpers/stages_helper.rb
+#       app/helpers/status_helper.rb
+#       app/helpers/teams_helper.rb
+#       app/models/
+#       app/views/
+#       db/migrate/
+#       db/schema.rb
+#       generate
+#       notebook.txt
+#       public/stylesheets/
+#       test/fixtures/
+#       test/functional/
+#       test/unit/
+nothing added to commit but untracked files present (use "git add" to track)
+Jetlabpro:SitRepStage skng$ git add
+Nothing specified, nothing added.
+Maybe you wanted to say 'git add .'?
+Jetlabpro:SitRepStage skng$ git add *
+Jetlabpro:SitRepStage skng$ git status
+# On branch master
+# Changes to be committed:
+#   (use "git reset HEAD <file>..." to unstage)
+#
+#       new file:   app/controllers/results_controller.rb
+#       new file:   app/controllers/runners_controller.rb
+#       new file:   app/controllers/stages_controller.rb
+#       new file:   app/controllers/status_controller.rb
+#       new file:   app/controllers/teams_controller.rb
+#       new file:   app/helpers/results_helper.rb
+#       new file:   app/helpers/runners_helper.rb
+#       new file:   app/helpers/stages_helper.rb
+#       new file:   app/helpers/status_helper.rb
+#       new file:   app/helpers/teams_helper.rb
+#       new file:   app/models/runner.rb
+#       new file:   app/models/stage.rb
+#       new file:   app/models/team.rb
+#       new file:   app/views/layouts/runners.html.erb
+#       new file:   app/views/layouts/stages.html.erb
+#       new file:   app/views/layouts/teams.html.erb
+#       new file:   app/views/results/index.html.erb
+#       new file:   app/views/runners/edit.html.erb
+#       new file:   app/views/runners/index.html.erb
+#       new file:   app/views/runners/new.html.erb
+#       new file:   app/views/runners/show.html.erb
+#       new file:   app/views/stages/edit.html.erb
+#       new file:   app/views/stages/index.html.erb
+#       new file:   app/views/stages/new.html.erb
+#       new file:   app/views/stages/show.html.erb
+#       new file:   app/views/status/index.html.erb
+#       new file:   app/views/status/update.html.erb
+#       new file:   app/views/teams/edit.html.erb
+#       new file:   app/views/teams/index.html.erb
+#       new file:   app/views/teams/new.html.erb
+#       new file:   app/views/teams/show.html.erb
+#       new file:   db/migrate/20091021230549_create_stages.rb
+#       new file:   db/migrate/20091022140215_remove_times_from_stage.rb
+#       new file:   db/migrate/20091022144051_create_runners.rb
+#       new file:   db/migrate/20091022144525_create_teams.rb
+#       new file:   db/migrate/20091022184938_add_test_runner_data.rb
+#       new file:   db/migrate/20091022190306_add_stage_data.rb
+#       new file:   db/schema.rb
+#       new file:   generate
+#       new file:   notebook.txt
+#       new file:   public/stylesheets/scaffold.css
+#       new file:   test/fixtures/runners.yml
+#       new file:   test/fixtures/stages.yml
+#       new file:   test/fixtures/teams.yml
+#       new file:   test/functional/results_controller_test.rb
+#       new file:   test/functional/runners_controller_test.rb
+#       new file:   test/functional/stages_controller_test.rb
+#       new file:   test/functional/status_controller_test.rb
+#       new file:   test/functional/teams_controller_test.rb
+#       new file:   test/unit/helpers/results_helper_test.rb
+#       new file:   test/unit/helpers/runners_helper_test.rb
+#       new file:   test/unit/helpers/stages_helper_test.rb
+#       new file:   test/unit/helpers/status_helper_test.rb
+#       new file:   test/unit/helpers/teams_helper_test.rb
+#       new file:   test/unit/runner_test.rb
+#       new file:   test/unit/stage_test.rb
+#       new file:   test/unit/team_test.rb
+#
+Jetlabpro:SitRepStage skng$ git commit -a -m "Added runners, teams, results and status"
+[master a5125f7] Added runners, teams, results and status
+ 57 files changed, 1503 insertions(+), 0 deletions(-)
+ create mode 100644 app/controllers/results_controller.rb
+ create mode 100644 app/controllers/runners_controller.rb
+ create mode 100644 app/controllers/stages_controller.rb
+ create mode 100644 app/controllers/status_controller.rb
+ create mode 100644 app/controllers/teams_controller.rb
+ create mode 100644 app/helpers/results_helper.rb
+ create mode 100644 app/helpers/runners_helper.rb
+ create mode 100644 app/helpers/stages_helper.rb
+ create mode 100644 app/helpers/status_helper.rb
+ create mode 100644 app/helpers/teams_helper.rb
+ create mode 100644 app/models/runner.rb
+ create mode 100644 app/models/stage.rb
+ create mode 100644 app/models/team.rb
+ create mode 100644 app/views/layouts/runners.html.erb
+ create mode 100644 app/views/layouts/stages.html.erb
+ create mode 100644 app/views/layouts/teams.html.erb
+ create mode 100644 app/views/results/index.html.erb
+ create mode 100644 app/views/runners/edit.html.erb
+ create mode 100644 app/views/runners/index.html.erb
+ create mode 100644 app/views/runners/new.html.erb
+ create mode 100644 app/views/runners/show.html.erb
+ create mode 100644 app/views/stages/edit.html.erb
+ create mode 100644 app/views/stages/index.html.erb
+ create mode 100644 app/views/stages/new.html.erb
+ create mode 100644 app/views/stages/show.html.erb
+ create mode 100644 app/views/status/index.html.erb
+ create mode 100644 app/views/status/update.html.erb
+ create mode 100644 app/views/teams/edit.html.erb
+ create mode 100644 app/views/teams/index.html.erb
+ create mode 100644 app/views/teams/new.html.erb
+ create mode 100644 app/views/teams/show.html.erb
+ create mode 100644 db/migrate/20091021230549_create_stages.rb
+ create mode 100644 db/migrate/20091022140215_remove_times_from_stage.rb
+ create mode 100644 db/migrate/20091022144051_create_runners.rb
+ create mode 100644 db/migrate/20091022144525_create_teams.rb
+ create mode 100644 db/migrate/20091022184938_add_test_runner_data.rb
+ create mode 100644 db/migrate/20091022190306_add_stage_data.rb
+ create mode 100644 db/schema.rb
+ create mode 100644 generate
+ create mode 100644 notebook.txt
+ create mode 100644 public/stylesheets/scaffold.css
+ create mode 100644 test/fixtures/runners.yml
+ create mode 100644 test/fixtures/stages.yml
+ create mode 100644 test/fixtures/teams.yml
+ create mode 100644 test/functional/results_controller_test.rb
+ create mode 100644 test/functional/runners_controller_test.rb
+ create mode 100644 test/functional/stages_controller_test.rb
+ create mode 100644 test/functional/status_controller_test.rb
+ create mode 100644 test/functional/teams_controller_test.rb
+ create mode 100644 test/unit/helpers/results_helper_test.rb
+ create mode 100644 test/unit/helpers/runners_helper_test.rb
+ create mode 100644 test/unit/helpers/stages_helper_test.rb
+ create mode 100644 test/unit/helpers/status_helper_test.rb
+ create mode 100644 test/unit/helpers/teams_helper_test.rb
+ create mode 100644 test/unit/runner_test.rb
+ create mode 100644 test/unit/stage_test.rb
+ create mode 100644 test/unit/team_test.rb
+Jetlabpro:SitRepStage skng$ git push
+Counting objects: 86, done.
+Delta compression using up to 2 threads.
+Compressing objects: 100% (72/72), done.
+Writing objects: 100% (79/79), 13.12 KiB, done.
+Total 79 (delta 18), reused 0 (delta 0)
+To git@github.com:nomadicoder/SitRepStage.git
+   511d2f8..a5125f7  master -> master
+   
+
+NOTE: Had to do git add * to get all new files in.
