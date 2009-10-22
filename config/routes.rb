@@ -1,4 +1,8 @@
 ActionController::Routing::Routes.draw do |map|
+  map.resources :teams
+
+  map.resources :runners
+
   map.resources :stages
 
   map.resources :stages
