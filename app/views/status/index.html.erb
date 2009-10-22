@@ -1,0 +1,36 @@
+<h1>Stage Status</h1>
+
+<table border>
+  <tr>
+    <th>Stage</th>
+    <th>Landmark</th>
+    <th>Miles</th>
+    <th>Estimated Start</th>
+    <th>Runner</th>
+    <th>*Shuttle On Site</th>
+    <th>*Checked In</th>
+    <th>*One Mile Out</th>
+    <th>*In Chute</th>
+    <th>*Exchange</th>
+    <th>*Stage Cleared</th>
+  </tr>
+
+<% @stages.each do |stage| %>
+  <tr>
+    <td><%=h stage.number %></td>
+    <td><%=h stage.landmark %></td>
+    <td><%=h stage.miles %></td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+  </tr>
+<% end %>
+</table>
+
+<sup>* Times confirmed by CP</sup>
+<br />

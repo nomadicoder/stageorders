@@ -1,0 +1,23 @@
+<p>
+  <b>Number:</b>
+  <%=h @stage.number %>
+</p>
+
+<p>
+  <b>Landmark:</b>
+  <%=h @stage.landmark %>
+</p>
+
+<p>
+  <b>Miles:</b>
+  <%=h @stage.miles %>
+</p>
+
+<p>
+  <b>Difficulty:</b>
+  <%=h @stage.difficulty %>
+</p>
+
+
+<%= link_to 'Edit', edit_stage_path(@stage) %> |
+<%= link_to 'Back', stages_path %>

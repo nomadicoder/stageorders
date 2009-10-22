@@ -1,0 +1,27 @@
+<h1>Stage Results</h1>
+
+<table border>
+  <tr>
+    <th>Number</th>
+    <th>Landmark</th>
+    <th>Miles</th>
+    <th>Runner</th>
+    <th>Time</th>
+    <th>Total</th>
+    <th>Differential</th>
+  </tr>
+
+<% @stages.each do |stage| %>
+  <tr>
+    <td><%=h stage.number %></td>
+    <td><%=h stage.landmark %></td>
+    <td><%=h stage.miles %></td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
