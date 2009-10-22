@@ -1,0 +1,15 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  stage_id: 1
+  name: MyString
+  estimated_pace: 2009-10-22 07:40:51
+  completed: false
+  actual_time: 2009-10-22 07:40:51
+
+two:
+  stage_id: 1
+  name: MyString
+  estimated_pace: 2009-10-22 07:40:51
+  completed: false
+  actual_time: 2009-10-22 07:40:51

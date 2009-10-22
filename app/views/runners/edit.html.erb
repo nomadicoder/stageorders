@@ -1,0 +1,32 @@
+<h1>Editing runner</h1>
+
+<% form_for(@runner) do |f| %>
+  <%= f.error_messages %>
+
+  <p>
+    <%= f.label :stage_id %><br />
+    <%= f.text_field :stage_id %>
+  </p>
+  <p>
+    <%= f.label :name %><br />
+    <%= f.text_field :name %>
+  </p>
+  <p>
+    <%= f.label :estimated_pace %><br />
+    <%= f.datetime_select :estimated_pace %>
+  </p>
+  <p>
+    <%= f.label :completed %><br />
+    <%= f.check_box :completed %>
+  </p>
+  <p>
+    <%= f.label :actual_time %><br />
+    <%= f.datetime_select :actual_time %>
+  </p>
+  <p>
+    <%= f.submit 'Update' %>
+  </p>
+<% end %>
+
+<%= link_to 'Show', @runner %> |
+<%= link_to 'Back', runners_path %>

@@ -1,0 +1,144 @@
+
+Start up GIT repository for project
+
+git config --global user.name "Steven Ng"
+git config --global user.email steven@nomadicoder.com
+
+mkdir SitRepStage
+cd SitRepStage
+git init
+touch README
+git add README
+git commit -m 'initial commit'
+git remote add origin git@github.com:nomadicoder/SitRepStage.git
+git push origin master
+
+rails SitRepStage
+cd SitRepStage
+vi .gitignore
+ls -ralt
+vi .gitignore
+git status
+touch tmp/.gitignore log/.gitignore vendor/.gitignore
+git status
+git add .
+git commit -a -m "Initial rails import"
+
+
+rake db:create:all
+script/generate scaffold stage number:integer landmark:string miles:float difficulty:integer estimated_pace:time estimated_time:time
+
+
+Successful first shot:
+rake db:create:all
+script/generate scaffold stage number:integer landmark:string miles:float difficulty:integer estimated_pace:time estimated_time:time
+rake db:migrate
+script/server
+
+View http://0.0.0.0:3000/stages
+
+Change data types and see what happens
+
+rake db:migrate VERSION=0
+rm db/*.sqlite3
+script/generate scaffold stage number:integer landmark:string miles:decimal(5,1) difficulty:integer estimated_pace:time estimated_time:time
+rake db:migrate
+#edit db/migrate/*_create_stages.rb and add precision:  
+#   t.decimal :miles, :precision=> 1, :scale=> 3
+script/server
+
+What is the decimal type in sqlite? 
+
+
+Shouldn't have times for stage.  Those are calculated from runner.
+
+remove_column:
+
+script/generate migration remove_times_from_stage estimated_pace:time estimated_time:time
+rake db:migrate
+
+
+Add runner.  Basic information is estimated pace and actual time.
+
+script/generate scaffold runner stage_id:integer name:string estimated_pace:time completed:boolean actual_time:time
+
+Modify stage
+
+Stage -- has_many runners (since we'res supporting multiple teams)
+    class Stage < ActiveRecord::Base
+      has_many :runner
+    end
+    
+runner -- belongs_to stage. (since a runner will run is will either run one stage or is an alternate.  No stage indicates an alternate).
+
+    class Runner < ActiveRecord::Base
+      belongs_to :stage
+    end
+    
+We support multiple teams, so we will add a team with the name and number.
+
+script/generate scaffold team number:integer name:string
+
+Create a results page
+
+script/generate controller results index
+      exists  app/controllers/
+      exists  app/helpers/
+      create  app/views/results
+      exists  test/functional/
+      exists  test/unit/helpers/
+      create  app/controllers/results_controller.rb
+      create  test/functional/results_controller_test.rb
+      create  app/helpers/results_helper.rb
+      create  test/unit/helpers/results_helper_test.rb
+      create  app/views/results/index.html.erb
+      
+     
+     
+Goal is to link a runner to a stage and display the runner name on the stage
+
+Create test runner data
+
+ruby script/generate migration add_test_runner_data
+
+class AddTestRunnerData < ActiveRecord::Migration 
+    def self.up
+        Runner.delete_all 
+        Runner.create(
+            :stage => 1,
+            :name => %{Adam},
+            :pace => '08:42',
+            :completed => false
+        )
+        #...
+    end
+    
+    def self.down
+        Runner.delete_all
+    end
+end
+
+Add migration with B2V default stage data.  See page 91 in Agile Web Dev w Rails 3rd ed.
+
+ruby script/generate migration add_stage_data
+
+class AddStageData < ActiveRecord::Migration
+  def self.up
+    Stage.delete_all 
+    Stage.create(
+        :number => 1,
+        :landmark => %{Start},
+        :miles => 5.4,
+        :difficulty => 13
+    )
+    #...
+  end
+
+  def self.down
+    Stage.delete_all
+  end
+end
+
+Add stage status page
+script/generate controller status index update
+

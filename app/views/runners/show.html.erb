@@ -1,0 +1,28 @@
+<p>
+  <b>Stage:</b>
+  <%=h @runner.stage_id %>
+</p>
+
+<p>
+  <b>Name:</b>
+  <%=h @runner.name %>
+</p>
+
+<p>
+  <b>Estimated pace:</b>
+  <%=h @runner.estimated_pace %>
+</p>
+
+<p>
+  <b>Completed:</b>
+  <%=h @runner.completed %>
+</p>
+
+<p>
+  <b>Actual time:</b>
+  <%=h @runner.actual_time %>
+</p>
+
+
+<%= link_to 'Edit', edit_runner_path(@runner) %> |
+<%= link_to 'Back', runners_path %>

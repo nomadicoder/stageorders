@@ -1,0 +1,19 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  number: 1
+  landmark: MyString
+  miles: 9.99
+  difficulty: 1
+  estimated_pace: 2009-10-20 17:04:00
+  estimated_time: 2009-10-20 17:04:00
+  actual_time: 2009-10-20 17:04:00
+
+two:
+  number: 1
+  landmark: MyString
+  miles: 9.99
+  difficulty: 1
+  estimated_pace: 2009-10-20 17:04:00
+  estimated_time: 2009-10-20 17:04:00
+  actual_time: 2009-10-20 17:04:00
