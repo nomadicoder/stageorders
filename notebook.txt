@@ -354,3 +354,39 @@ NOTE: Had to do git add * to get all new files in.
 
 Friday, October 30, 2009
 Want to list a stage runner chart.  List runners in stage order.
+
+Here is how to get the derived values - an estimated time based on the runner's estimated pace and the stage distance
+Mod will be made in the runner's model
+
+    class Runner < ActiveRecord::Base
+      belongs_to :stage
+      belongs_to :team
+      def self.find_all_runners
+        find(:all, :order => "stage_id")
+      end
+    end
+
+In the results controller, get the runner information
+
+    class ResultsController < ApplicationController
+      def index
+        @runners = Runner.find_all_runners
+      end
+    end
+
+Here is how to display the results table for all the runners.
+
+    <% total_time = 0 %>
+    <% @runners.each do |runner| %>
+      <% stage_time = runner.stage.miles * (runner.estimated_pace.min + runner.estimated_pace.sec/60.0) %>
+      <% total_time = total_time + stage_time %>
+      <tr>
+        <td><%=h runner.stage.number %></td>
+        <td><%=h runner.stage.landmark %></td>
+        <td><%=h runner.stage.miles %></td>
+        <td><%=h runner.name %></td>
+        <td><%=h stage_time %></td>
+        <td><%=h total_time %></td>
+        <td></td>
+      </tr>
+    <% end %>
