@@ -351,3 +351,6 @@ To git@github.com:nomadicoder/SitRepStage.git
    
 
 NOTE: Had to do git add * to get all new files in.
+
+Friday, October 30, 2009
+Want to list a stage runner chart.  List runners in stage order.
