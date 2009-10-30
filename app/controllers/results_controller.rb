@@ -1,6 +1,6 @@
 class ResultsController < ApplicationController
   def index
-    @stages = Stage.find_all_stages
+    @runners = Runner.find_all_runners
   end
 
 end

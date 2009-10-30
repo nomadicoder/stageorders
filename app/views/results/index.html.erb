@@ -11,14 +11,17 @@
     <th>Differential</th>
   </tr>
 
-<% @stages.each do |stage| %>
+<% total_time = 0 %>
+<% @runners.each do |runner| %>
+  <% stage_time = runner.stage.miles * (runner.estimated_pace.min + runner.estimated_pace.sec/60.0) %>
+  <% total_time = total_time + stage_time %>
   <tr>
-    <td><%=h stage.number %></td>
-    <td><%=h stage.landmark %></td>
-    <td><%=h stage.miles %></td>
-    <td></td>
-    <td></td>
-    <td></td>
+    <td><%=h runner.stage.number %></td>
+    <td><%=h runner.stage.landmark %></td>
+    <td><%=h runner.stage.miles %></td>
+    <td><%=h runner.name %></td>
+    <td><%=h stage_time %></td>
+    <td><%=h total_time %></td>
     <td></td>
   </tr>
 <% end %>
