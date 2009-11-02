@@ -390,3 +390,13 @@ Here is how to display the results table for all the runners.
         <td></td>
       </tr>
     <% end %>
+
+
+Saturday, October 31, 2009
+
+Display by team
+
+Show other info.
+
+Need to convert minutes (float) to time.
+Create function?
