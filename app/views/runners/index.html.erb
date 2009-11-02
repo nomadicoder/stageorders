@@ -15,7 +15,11 @@
     <td><%=h runner.name %></td>
     <td><%=h runner.estimated_pace.strftime("%M:%S") %></td>
     <td><%=h runner.completed %></td>
-    <td><%=h runner.actual_time %></td>
+    <td>
+        <% if runner.actual_time != nil %>
+            <%=h runner.actual_time.strftime("%H:%M:%S") %>
+         <% end %>
+    </td>
     <td><%= link_to 'Show', runner %></td>
     <td><%= link_to 'Edit', edit_runner_path(runner) %></td>
     <td><%= link_to 'Destroy', runner, :confirm => 'Are you sure?', :method => :delete %></td>

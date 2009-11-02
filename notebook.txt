@@ -400,3 +400,13 @@ Show other info.
 
 Need to convert minutes (float) to time.
 Create function?
+
+Sunday, November 1, 2009
+
+Display calculated times in line code.
+
+Monday, November 2, 2009
+
+Create form to input runner stage times.
+
+Need to create a library to process time.
