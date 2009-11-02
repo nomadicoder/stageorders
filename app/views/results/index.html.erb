@@ -6,20 +6,28 @@
     <th>Landmark</th>
     <th>Miles</th>
     <th>Runner</th>
-    <th>Time</th>
+    <th>Pace</th>
+    <th>Estimated Time</th>
+    <th>Actual Time</th>
     <th>Total</th>
-    <th>Differential</th>
+    <th>Off Pace</th>
   </tr>
 
 <% total_time = 0 %>
+<% estimated_total_time = 0 %>
 <% @runners.each do |runner| %>
-  <% stage_time = runner.stage.miles * (runner.estimated_pace.min + runner.estimated_pace.sec/60.0) %>
+  <% estimated_stage_time = runner.stage.miles * (runner.estimated_pace.min + runner.estimated_pace.sec/60.0) %>
+  <% estimated_total_time = estimated_total_time + estimated_stage_time %>
+  <% stage_time = 0 %>
   <% total_time = total_time + stage_time %>
+  <% off_pace = total_time %>
   <tr>
     <td><%=h runner.stage.number %></td>
     <td><%=h runner.stage.landmark %></td>
     <td><%=h runner.stage.miles %></td>
     <td><%=h runner.name %></td>
+    <td><%=h '%02d' % runner.estimated_pace.min %>:<%=h '%02d' % runner.estimated_pace.sec %></td>
+    <td><%=h '%02d' % estimated_stage_time %>:<%=h '%02d' % (60*(estimated_stage_time - estimated_stage_time.truncate)).round %></td>
     <td><%=h stage_time %></td>
     <td><%=h total_time %></td>
     <td></td>
