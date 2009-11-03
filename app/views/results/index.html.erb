@@ -2,9 +2,10 @@
 
 <table border>
   <tr>
-    <th>Number</th>
+    <th>Stage</th>
     <th>Landmark</th>
-    <th>Miles</th>
+    <th>Distance</th>
+    <th>Difficulty</th>
     <th>Runner</th>
     <th>Est Pace</th>
     <th>Estimated</th>
@@ -12,36 +13,43 @@
     <th>Difference</th>
   </tr>
 
-<% total_time = 0 %>
-<% total_estimated_time = Time.parse("0:0:0") %>
-<% total_off_pace = 0 %>
+<% total_minutes = 0.0 %>
+<% total_estimated_minutes = 0.0 %>
+<% total_off_pace = 0.0 %>
 <% @runners.each do |runner| %>
-  <% estimated_stage_time = runner.stage.miles * (runner.estimated_pace.min + runner.estimated_pace.sec/60.0) %>
-  <% total_estimated_time = total_estimated_time + estimated_stage_time %>
-  <% stage_time = 0 %>
-  <% total_time = total_time + stage_time %>
-  <% off_pace = total_time %>
-  <% total_off_pace = total_off_pace + off_pace %>
+  <% estimated_minutes = stage_time(runner.stage.miles, runner.estimated_pace) %>
+  <% total_estimated_minutes = total_estimated_minutes + estimated_minutes %>
+  <% if runner.actual_time != nil %>
+    <% actual_minutes = time_to_minutes(runner.actual_time) %>
+    <% total_minutes = total_minutes + actual_minutes %>
+    <% off_pace = actual_minutes - estimated_minutes %>
+    <% total_off_pace = total_off_pace + off_pace %>
+  <% end %>
   <tr>
-    <td><%=h runner.stage.number %></td>
+    <td align='right'><%=h runner.stage.number %></td>
     <td><%=h runner.stage.landmark %></td>
-    <td><%=h runner.stage.miles %></td>
+    <td align='right'><%=h runner.stage.miles %></td>
+    <td align='right'><%=h runner.stage.difficulty %></td>
     <td><%=h runner.name %></td>
-    <td><%=h runner.estimated_pace.strftime("%M:%S") %></td>
-    <td><%=h '%02d' % estimated_stage_time %>:<%=h '%02d' % (60*(estimated_stage_time - estimated_stage_time.truncate)).round %></td>
-    <td>
+    <td align='right'><%= show_short_time runner.estimated_pace %></td>
+    <td align='right'><%= minutes_as_short_time estimated_minutes %> </td>
+    <td align='right'>
         <% if runner.actual_time != nil %>
-        <%=h runner.actual_time.strftime("%H:%M:%S") %>
+            <%=h show_short_time runner.actual_time %>
         <% end %>
     </td>
-    <td></td>
+    <td align='right'>
+        <% if runner.actual_time != nil %>
+            <%=h signed_minutes_to_time off_pace %>
+        <% end %>
+    </td>
   </tr>
 <% end %>
   <tr>
-  <td colspan='5'></td>
-  <td><%=h total_estimated_time.strftime("%H:%M:%S") %></td>
-  <td><%=h total_time %></td>
-  <td><%=h total_off_pace %></td>
+  <td colspan='6'></td>
+  <td align='right'><%=h minutes_as_short_time total_estimated_minutes %></td>
+  <td align='right'><%=h minutes_as_short_time total_minutes %></td>
+  <td align='right'><%=h minutes_as_short_time total_off_pace %></td>
   </tr>
 </table>
 
