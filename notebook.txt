@@ -410,3 +410,11 @@ Monday, November 2, 2009
 Create form to input runner stage times.
 
 Need to create a library to process time.
+
+Tuesday, November 3, 2009
+
+Working on helpers to display times in results page.
+
+Unable to get totals because I reduced everthing to time domain.  Maybe it should be in seconds only.
+
+Reduced all calculations to minute domain.  Tested.  Have cumulative times working as well as cumulative differentials.  All shown in results table
