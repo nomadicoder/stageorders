@@ -29,22 +29,13 @@
 		<type label="ENUM" length="1" sql="ENUM" quote=""/>
 		<type label="SET" length="1" sql="SET" quote=""/>
 	</group>
-</datatypes><table x="357" y="108" name="Stage">
+</datatypes><table x="471" y="299" name="Stages">
 <row name="id" null="1" autoincrement="1">
 <datatype>INTEGER</datatype>
 <default>NULL</default></row>
-<row name="team_id" null="1" autoincrement="0">
+<row name="stage_number" null="1" autoincrement="0">
 <datatype>INTEGER</datatype>
-<default>NULL</default><relation table="Team" row="id" />
-</row>
-<row name="assigned_runner_id" null="1" autoincrement="0">
-<datatype>INTEGER</datatype>
-<default>NULL</default><relation table="Runner" row="id" />
-</row>
-<row name="stage_status_id" null="1" autoincrement="0">
-<datatype>INTEGER</datatype>
-<default>NULL</default><relation table="Stage_Status" row="id" />
-</row>
+<default>NULL</default></row>
 <row name="landmark" null="1" autoincrement="0">
 <datatype>MEDIUMTEXT</datatype>
 <default>NULL</default></row>
@@ -58,24 +49,41 @@
 <part>id</part>
 </key>
 </table>
-<table x="119" y="47" name="Team">
+<table x="466" y="44" name="Teams">
 <row name="id" null="1" autoincrement="1">
 <datatype>INTEGER</datatype>
 <default>NULL</default></row>
-<row name="Name" null="1" autoincrement="0">
+<row name="number" null="1" autoincrement="0">
+<datatype>INTEGER</datatype>
+<default>NULL</default></row>
+<row name="short_name" null="1" autoincrement="0">
+<datatype>CHAR(10)</datatype>
+<default>NULL</default></row>
+<row name="name" null="1" autoincrement="0">
+<datatype>INTEGER</datatype>
+<default>NULL</default></row>
+<row name="category" null="1" autoincrement="0">
+<datatype>VARCHAR(16)</datatype>
+<default>NULL</default></row>
+<row name="overall_order" null="1" autoincrement="0">
 <datatype>INTEGER</datatype>
 <default>NULL</default></row>
 <key type="PRIMARY" name="">
 <part>id</part>
 </key>
 </table>
-<table x="119" y="235" name="Runner">
+<table x="669" y="109" name="Runner">
 <row name="id" null="1" autoincrement="1">
 <datatype>INTEGER</datatype>
 <default>NULL</default></row>
 <row name="team_id" null="1" autoincrement="0">
 <datatype>INTEGER</datatype>
-<default>NULL</default></row>
+<default>NULL</default><relation table="Teams" row="id" />
+</row>
+<row name="stage_id" null="1" autoincrement="0">
+<datatype>INTEGER</datatype>
+<default>NULL</default><relation table="Stages" row="id" />
+</row>
 <row name="name" null="1" autoincrement="0">
 <datatype>VARCHAR(40)</datatype>
 <default>NULL</default></row>
@@ -85,11 +93,21 @@
 <row name="actual_time" null="1" autoincrement="0">
 <datatype>TIME</datatype>
 <default>NULL</default></row>
+<row name="status_id" null="1" autoincrement="0">
+<datatype>INTEGER</datatype>
+<default>NULL</default><relation table="Runner_Status_Codes" row="id" />
+</row>
+<row name="location_lat" null="1" autoincrement="0">
+<datatype>DOUBLE</datatype>
+<default>NULL</default></row>
+<row name="location_lon" null="1" autoincrement="0">
+<datatype>INTEGER</datatype>
+<default>NULL</default></row>
 <key type="PRIMARY" name="">
 <part>id</part>
 </key>
 </table>
-<table x="779" y="371" name="Runner_Status">
+<table x="877" y="373" name="Runner_Status_Codes">
 <row name="id" null="1" autoincrement="1">
 <datatype>INTEGER</datatype>
 <default>NULL</default></row>
@@ -104,7 +122,7 @@
 </key>
 <comment>Each record is a possible runner status.  Provides items for an enumeration of runner status.</comment>
 </table>
-<table x="340" y="387" name="Catcher_Status">
+<table x="13" y="291" name="Unit_Status_Codes">
 <row name="id" null="1" autoincrement="1">
 <datatype>INTEGER</datatype>
 <default>NULL</default></row>
@@ -119,21 +137,21 @@
 </key>
 <comment>Each record is a possible catcher status.  Provides items for an enumeration of catcher status.</comment>
 </table>
-<table x="577" y="329" name="Stage_Status">
+<table x="426" y="478" name="Stage_Status_Codes">
 <row name="id" null="1" autoincrement="1">
 <datatype>INTEGER</datatype>
 <default>NULL</default></row>
 <row name="runner_status_id" null="1" autoincrement="0">
 <datatype>INTEGER</datatype>
-<default>NULL</default><relation table="Runner_Status" row="id" />
+<default>NULL</default><relation table="Runner_Status_Codes" row="id" />
 </row>
 <row name="catcher_status_id" null="1" autoincrement="0">
 <datatype>INTEGER</datatype>
-<default>NULL</default><relation table="Catcher_Status" row="id" />
+<default>NULL</default><relation table="Unit_Status_Codes" row="id" />
 </row>
 <row name="criticality_id" null="1" autoincrement="0">
 <datatype>INTEGER</datatype>
-<default>NULL</default><relation table="Criticality" row="id" />
+<default>NULL</default><relation table="Criticalities" row="id" />
 </row>
 <row name="code" null="1" autoincrement="0">
 <datatype>CHAR(3)</datatype>
@@ -141,27 +159,76 @@
 <row name="description" null="1" autoincrement="0">
 <datatype>MEDIUMTEXT</datatype>
 <default>NULL</default></row>
-<row name="color" null="1" autoincrement="0">
-<datatype>VARCHAR(20)</datatype>
-<default>NULL</default></row>
-<row name="style" null="1" autoincrement="0">
-<datatype>VARCHAR(40)</datatype>
-<default>NULL</default></row>
 <key type="PRIMARY" name="">
 <part>id</part>
 </key>
 <comment>Combination of Runner Status and Catcher Status to present all possible criticality status.</comment>
 </table>
-<table x="789" y="481" name="Criticality">
+<table x="793" y="516" name="Criticalities">
 <row name="id" null="1" autoincrement="1">
 <datatype>INTEGER</datatype>
 <default>NULL</default></row>
 <row name="description" null="1" autoincrement="0">
 <datatype>MEDIUMTEXT</datatype>
 <default>NULL</default></row>
+<row name="color" null="1" autoincrement="0">
+<datatype>VARCHAR(20)</datatype>
+<default>NULL</default></row>
+<row name="html_style" null="1" autoincrement="0">
+<datatype>VARCHAR(20)</datatype>
+<default>NULL</default></row>
 <key type="PRIMARY" name="">
 <part>id</part>
 </key>
 <comment>Each record is a possible criticalities.  Provides items for an enumeration of criticality.</comment>
+</table>
+<table x="249" y="104" name="Support_Unit">
+<row name="id" null="1" autoincrement="1">
+<datatype>INTEGER</datatype>
+<default>NULL</default></row>
+<row name="team_id" null="1" autoincrement="0">
+<datatype>INTEGER</datatype>
+<default>NULL</default><relation table="Teams" row="id" />
+</row>
+<row name="unit_type_id" null="1" autoincrement="0">
+<datatype>INTEGER</datatype>
+<default>NULL</default><relation table="Unit_Types" row="id" />
+<comment>Type of vehicle</comment>
+</row>
+<row name="unit_identifier" null="1" autoincrement="0">
+<datatype>VARCHAR(20)</datatype>
+<default>NULL</default><comment>Radio identifier</comment>
+</row>
+<row name="status_id" null="1" autoincrement="0">
+<datatype>INTEGER</datatype>
+<default>NULL</default><relation table="Unit_Status_Codes" row="id" />
+</row>
+<row name="current_stage_id" null="1" autoincrement="0">
+<datatype>INTEGER</datatype>
+<default>NULL</default><relation table="Stages" row="id" />
+</row>
+<row name="location_lat" null="1" autoincrement="0">
+<datatype>DOUBLE</datatype>
+<default>NULL</default></row>
+<row name="location_lon" null="1" autoincrement="0">
+<datatype>DOUBLE</datatype>
+<default>NULL</default></row>
+<key type="PRIMARY" name="">
+<part>id</part>
+</key>
+<comment>Tracks whereabouts and status of shuttles and rovers.</comment>
+</table>
+<table x="32" y="71" name="Unit_Types">
+<row name="id" null="1" autoincrement="1">
+<datatype>INTEGER</datatype>
+<default>NULL</default></row>
+<row name="description" null="1" autoincrement="0">
+<datatype>VARCHAR(20)</datatype>
+<default>NULL</default><comment>Description of vehicle</comment>
+</row>
+<key type="PRIMARY" name="">
+<part>id</part>
+</key>
+<comment>Transport vehicle types</comment>
 </table>
 </sql>
