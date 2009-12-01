@@ -82,4 +82,9 @@ class StagesController < ApplicationController
       format.xml  { head :ok }
     end
   end
+  
+protected
+  def authorize
+  end
+
 end

@@ -587,3 +587,25 @@ Stage Status
   Tracks runner and support assignments
 
 
+Wednesday, November 18, 2009
+
+Finish User tables
+
+Implement new data tables.
+
+Enumerated codes:
+Unit_Types
+Unit_Status_Codes
+Runner_Status_Codes
+Criticalities (Criticalities)
+
+Lookup Tables:
+Stage_Status_Codes
+
+Main Tables (New):
+Support_Units
+
+Main Tables (Update):
+Runners
+Teams
+ruby script/generate scaffold stage_status runner_status_id:integer support_status_id:integer short_description:string description:text
