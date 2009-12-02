@@ -609,3 +609,16 @@ Main Tables (Update):
 Runners
 Teams
 ruby script/generate scaffold stage_status runner_status_id:integer support_status_id:integer short_description:string description:text
+
+
+Tuesday, December 1, 2009
+
+In case we delete all users:
+
+$ ruby script/console
+Loading development environment. 
+>> User.create(:name => 'dave', :password => 'secret', :password_confirmation => 'secret') 
+=> #<User:0x2933060 @attributes={...} ... >
+>> User.count => 1
+
+
