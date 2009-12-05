@@ -1,0 +1,23 @@
+<h1>New runner_status_code</h1>
+
+<% form_for(@runner_status_code) do |f| %>
+  <%= f.error_messages %>
+
+  <p>
+    <%= f.label :sequence %><br />
+    <%= f.text_field :sequence %>
+  </p>
+  <p>
+    <%= f.label :short_code %><br />
+    <%= f.text_field :short_code %>
+  </p>
+  <p>
+    <%= f.label :description %><br />
+    <%= f.text_area :description %>
+  </p>
+  <p>
+    <%= f.submit 'Create' %>
+  </p>
+<% end %>
+
+<%= link_to 'Back', runner_status_codes_path %>

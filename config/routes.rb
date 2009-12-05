@@ -1,4 +1,6 @@
 ActionController::Routing::Routes.draw do |map|
+  map.resources :runner_status_codes
+
   map.resources :users
 
   map.resources :teams
