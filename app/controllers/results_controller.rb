@@ -3,4 +3,7 @@ class ResultsController < ApplicationController
     @runners = Runner.find_all_runners
   end
 
+  def authorize
+  end
+
 end
