@@ -625,3 +625,32 @@ Loading development environment.
 Friday, December 4, 2009
 
 Redirect login to status:index
+Check in updates
+
+Saturday, December 5, 2009
+
+Handle bootstrapping
+Need to check in a bootstrap version of database.yml.  Copy it form hold area and rename it database.sqlite.yml.  Add this to GIT
+
+Bootstrap process:
+clone the git, create the database, migrate the database, add the first user to the database.
+
+$ git clone git@github.com:nomadicoder/stageorders.git
+$ rake db:create
+$ rake db:migrate
+$ ruby script/console
+Loading development environment. 
+>> User.create(:name => 'admin', :password => 'secret', :password_confirmation => 'secret') 
+=> #<User:0x2933060 @attributes={...} ... >
+>> User.count => 1
+
+Ready to go.
+
+Make results page available to public.
+
+All committed and pushed.  Ready to move on.  Add runner id codes
+
+First, add the scaffold and create a default set of codes in the migrate
+
+$ script/generate scaffold runner_status_code sequence:integer short_code:string description:text
+$ script/generate migration add_runner_codes

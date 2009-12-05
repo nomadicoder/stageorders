@@ -9,7 +9,15 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20091109192005) do
+ActiveRecord::Schema.define(:version => 20091205202642) do
+
+  create_table "runner_status_codes", :force => true do |t|
+    t.float    "sequence"
+    t.string   "short_code"
+    t.text     "description"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "runners", :force => true do |t|
     t.integer  "stage_id"

@@ -1,0 +1,18 @@
+<p>
+  <b>Sequence:</b>
+  <%=h @runner_status_code.sequence %>
+</p>
+
+<p>
+  <b>Short code:</b>
+  <%=h @runner_status_code.short_code %>
+</p>
+
+<p>
+  <b>Description:</b>
+  <%=h @runner_status_code.description %>
+</p>
+
+
+<%= link_to 'Edit', edit_runner_status_code_path(@runner_status_code) %> |
+<%= link_to 'Back', runner_status_codes_path %>
