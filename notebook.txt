@@ -654,3 +654,13 @@ First, add the scaffold and create a default set of codes in the migrate
 
 $ script/generate scaffold runner_status_code sequence:integer short_code:string description:text
 $ script/generate migration add_runner_codes
+
+Select added for runner:
+<p>
+  <%= f.label :runner_status_code_id %><br />
+  <%= f.collection_select (:runner_status_code_id, RunnerStatusCode.find(:all), :id, :short_code, :prompt => "Status") %>
+</p>
+
+
+*** Need to add one mile out status for each stage
+Need

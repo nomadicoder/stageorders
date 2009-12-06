@@ -1,6 +1,6 @@
 <p>
   <b>Stage:</b>
-  <%=h @runner.stage_id %>
+  <%=h @runner.stage.landmark %>
 </p>
 
 <p>
@@ -21,6 +21,11 @@
 <p>
   <b>Actual time:</b>
   <%=h @runner.actual_time %>
+</p>
+
+<p>
+  <b>Runner status:</b>
+  <%= @runner.runner_status_code.description %>
 </p>
 
 
