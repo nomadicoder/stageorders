@@ -24,6 +24,10 @@
     <%= f.datetime_select :actual_time %>
   </p>
   <p>
+    <%= f.label :runner_status_code_id %><br />
+    <%= f.collection_select (:runner_status_code_id, RunnerStatusCode.find(:all), :id, :short_code, :prompt => "Status") %>
+  </p>
+  <p>
     <%= f.submit 'Create' %>
   </p>
 <% end %>

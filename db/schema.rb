@@ -27,6 +27,7 @@ ActiveRecord::Schema.define(:version => 20091205202642) do
     t.time     "actual_time"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "runner_status_code_id", :default => 1
   end
 
   create_table "stages", :force => true do |t|
