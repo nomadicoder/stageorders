@@ -2,6 +2,10 @@ class AddSupportType < ActiveRecord::Migration
   def self.up
     SupportType.delete_all
     SupportType.create(
+        :short_code => 'NONE',
+        :description => %{None}
+    )
+    SupportType.create(
         :short_code => 'FOLLOW',
         :description => %{Follow Van -- Follows runner on course}
     )
@@ -19,7 +23,7 @@ class AddSupportType < ActiveRecord::Migration
     )
     SupportType.create(
         :short_code => 'MOUNTAINTOP',
-        :description => %{Mountain Top -- High elevation radio relay}
+        :description => %{Mountain top radio relay}
     )
   end
 

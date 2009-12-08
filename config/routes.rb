@@ -1,4 +1,6 @@
 ActionController::Routing::Routes.draw do |map|
+  map.resources :support_units
+
   map.resources :support_status_codes
 
   map.resources :support_types
