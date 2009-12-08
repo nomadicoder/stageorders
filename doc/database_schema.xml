@@ -111,6 +111,9 @@
 <row name="id" null="1" autoincrement="1">
 <datatype>INTEGER</datatype>
 <default>NULL</default></row>
+<row name="sequence" null="1" autoincrement="0">
+<datatype>FLOAT</datatype>
+<default>NULL</default></row>
 <row name="code" null="1" autoincrement="0">
 <datatype>CHAR(3)</datatype>
 <default>NULL</default></row>
@@ -122,9 +125,12 @@
 </key>
 <comment>Each record is a possible runner status.  Provides items for an enumeration of runner status.</comment>
 </table>
-<table x="13" y="291" name="Unit_Status_Codes">
+<table x="15" y="339" name="Support_Status_Codes">
 <row name="id" null="1" autoincrement="1">
 <datatype>INTEGER</datatype>
+<default>NULL</default></row>
+<row name="sequence" null="1" autoincrement="0">
+<datatype>FLOAT</datatype>
 <default>NULL</default></row>
 <row name="code" null="1" autoincrement="0">
 <datatype>CHAR(3)</datatype>
@@ -147,7 +153,7 @@
 </row>
 <row name="catcher_status_id" null="1" autoincrement="0">
 <datatype>INTEGER</datatype>
-<default>NULL</default><relation table="Unit_Status_Codes" row="id" />
+<default>NULL</default><relation table="Support_Status_Codes" row="id" />
 </row>
 <row name="criticality_id" null="1" autoincrement="0">
 <datatype>INTEGER</datatype>
@@ -182,7 +188,7 @@
 </key>
 <comment>Each record is a possible criticalities.  Provides items for an enumeration of criticality.</comment>
 </table>
-<table x="249" y="104" name="Support_Unit">
+<table x="249" y="74" name="Support_Unit">
 <row name="id" null="1" autoincrement="1">
 <datatype>INTEGER</datatype>
 <default>NULL</default></row>
@@ -190,18 +196,21 @@
 <datatype>INTEGER</datatype>
 <default>NULL</default><relation table="Teams" row="id" />
 </row>
-<row name="unit_type_id" null="1" autoincrement="0">
+<row name="support_type_id" null="1" autoincrement="0">
 <datatype>INTEGER</datatype>
-<default>NULL</default><relation table="Unit_Types" row="id" />
+<default>NULL</default><relation table="Support_Types" row="id" />
 <comment>Type of vehicle</comment>
 </row>
-<row name="unit_identifier" null="1" autoincrement="0">
+<row name="tac_callsign" null="1" autoincrement="0">
 <datatype>VARCHAR(20)</datatype>
 <default>NULL</default><comment>Radio identifier</comment>
 </row>
-<row name="status_id" null="1" autoincrement="0">
+<row name="ham_callsign" null="1" autoincrement="0">
+<datatype>VARCHAR</datatype>
+<default>NULL</default></row>
+<row name="status_code_id" null="1" autoincrement="0">
 <datatype>INTEGER</datatype>
-<default>NULL</default><relation table="Unit_Status_Codes" row="id" />
+<default>NULL</default><relation table="Support_Status_Codes" row="id" />
 </row>
 <row name="current_stage_id" null="1" autoincrement="0">
 <datatype>INTEGER</datatype>
@@ -213,14 +222,20 @@
 <row name="location_lon" null="1" autoincrement="0">
 <datatype>DOUBLE</datatype>
 <default>NULL</default></row>
+<row name="location_id" null="1" autoincrement="0">
+<datatype>INTEGER</datatype>
+<default>NULL</default></row>
 <key type="PRIMARY" name="">
 <part>id</part>
 </key>
 <comment>Tracks whereabouts and status of shuttles and rovers.</comment>
 </table>
-<table x="32" y="71" name="Unit_Types">
+<table x="32" y="71" name="Support_Types">
 <row name="id" null="1" autoincrement="1">
 <datatype>INTEGER</datatype>
+<default>NULL</default></row>
+<row name="short_code" null="1" autoincrement="0">
+<datatype>VARCHAR</datatype>
 <default>NULL</default></row>
 <row name="description" null="1" autoincrement="0">
 <datatype>VARCHAR(20)</datatype>

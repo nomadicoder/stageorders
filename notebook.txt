@@ -655,7 +655,7 @@ First, add the scaffold and create a default set of codes in the migrate
 $ script/generate scaffold runner_status_code sequence:integer short_code:string description:text
 $ script/generate migration add_runner_codes
 
-Select added for runner:
+Select added for runner -- pulldown menu with runner status codes:
 <p>
   <%= f.label :runner_status_code_id %><br />
   <%= f.collection_select (:runner_status_code_id, RunnerStatusCode.find(:all), :id, :short_code, :prompt => "Status") %>
@@ -664,3 +664,101 @@ Select added for runner:
 
 *** Need to add one mile out status for each stage
 Need
+
+Monday, December 7, 2009
+
+Create support unit model.
+
+script/generate scaffold support_type short_code:string description:text
+script/generate migration add_support_type
+
+Codes:
+SHUTTLE - Shuttle van
+FOLLOW - Runner/Follow vehicle
+CP - Command PostSupportType
+ROVER - Rover operator
+
+class AddSupportType < ActiveRecord::Migration
+  def self.up
+    SupportType.delete_all
+    SupportType.create(
+        :short_code => 'FOLLOW',
+        :description => %{Follow Van -- Follows runner on course}
+    )
+    SupportType.create(
+        :short_code => 'SHUTTLE',
+        :description => %{Shuttle Van -- Transports runners and personnel between stages}
+    )
+    SupportType.create(
+        :short_code => 'ROVER',
+        :description => %{Rover vehicle -- Performs utility functions}
+    )
+    SupportType.create(
+        :short_code => 'CP',
+        :description => %{Command Post -- Center of support operations}
+    )
+    SupportType.create(
+        :short_code => 'MOUNTAINTOP',
+        :description => %{Mountain Top -- High elevation radio relay}
+    )
+  end
+
+  def self.down
+    SupportType.delete_all
+  end
+end
+
+
+script/generate scaffold support_status_code sequence:float short_code:string description:text
+script/generate migration add_support_status_codes
+
+Codes:
+UNK - Unknown status
+ENR - En Route
+ARR - On station/At stage
+MET - Contacted Runner
+BRK - On break
+STG - Staging
+
+class AddSupportStatusCode < ActiveRecord::Migration
+  def self.up
+    SupportStatusCode.delete_all
+    SupportStatusCode.create(
+        :sequence => 0.0,
+        :short_code => 'UNK',
+        :description => %{Runner status is unknown}
+    )
+    SupportStatusCode.create(
+        :sequence => 1.0,
+        :short_code => 'ENR',
+        :description => %{Shuttle is enroute to stage}
+    )
+    SupportStatusCode.create(
+        :sequence => 2.0,
+        :short_code => 'ARR',
+        :description => %{Shuttle has arrived at the stage}
+    )
+    SupportStatusCode.create(
+        :sequence => 4.0,
+        :short_code => 'MET',
+        :description => %{Catcher has made contact with the runner}
+    )
+    SupportStatusCode.create(
+        :sequence => 8.0,
+        :short_code => 'OUT',
+        :description => %{Shuttle is out of service (on break, refueling, etc)}
+    )
+    SupportStatusCode.create(
+        :sequence => 9.0,
+        :short_code => 'STG',
+        :description => %{Shuttle is at staging}
+    )
+  end
+
+  def self.down
+    SupportStatusCode.delete_all
+  end
+end
+
+
+script/generate scaffold support_unit team_id:integer unit_type_id:integer tac_callsign:string ham_callsign:string status_code_id:integer current_stage_id:integer location_lat:float location_lon:float

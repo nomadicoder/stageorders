@@ -9,7 +9,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20091205202642) do
+ActiveRecord::Schema.define(:version => 20091208005528) do
 
   create_table "runner_status_codes", :force => true do |t|
     t.float    "sequence"
@@ -35,6 +35,21 @@ ActiveRecord::Schema.define(:version => 20091205202642) do
     t.string   "landmark"
     t.decimal  "miles"
     t.integer  "difficulty"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "support_status_codes", :force => true do |t|
+    t.float    "sequence"
+    t.string   "short_code"
+    t.text     "description"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "support_types", :force => true do |t|
+    t.string   "short_code"
+    t.text     "description"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

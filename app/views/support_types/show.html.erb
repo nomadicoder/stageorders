@@ -1,0 +1,13 @@
+<p>
+  <b>Short code:</b>
+  <%=h @support_type.short_code %>
+</p>
+
+<p>
+  <b>Description:</b>
+  <%=h @support_type.description %>
+</p>
+
+
+<%= link_to 'Edit', edit_support_type_path(@support_type) %> |
+<%= link_to 'Back', support_types_path %>
