@@ -5,6 +5,7 @@
     <th>Stage</th>
     <th>Name</th>
     <th>Estimated pace</th>
+    <th>Status</th>
     <th>Completed</th>
     <th>Actual time</th>
   </tr>
@@ -14,6 +15,7 @@
     <td><%=h runner.stage_id %></td>
     <td><%=h runner.name %></td>
     <td><%=h runner.estimated_pace.strftime("%M:%S") %></td>
+    <td><%=h runner.runner_status_code.short_code %></td>
     <td><%=h runner.completed %></td>
     <td>
         <% if runner.actual_time != nil %>

@@ -1,3 +1,4 @@
+# From Agile Web Deelopment with Ruby on Rails, 3rd Edition, p. 159ff
 class UsersController < ApplicationController
   # GET /users
   # GET /users.xml

@@ -731,7 +731,7 @@ class AddSupportStatusCode < ActiveRecord::Migration
     SupportStatusCode.create(
         :sequence => 1.0,
         :short_code => 'ENR',
-        :description => %{Shuttle is enroute to stage}
+        :description => %{Shuttle is en route to stage}
     )
     SupportStatusCode.create(
         :sequence => 2.0,
@@ -761,4 +761,4 @@ class AddSupportStatusCode < ActiveRecord::Migration
 end
 
 
-script/generate scaffold support_unit team_id:integer unit_type_id:integer tac_callsign:string ham_callsign:string status_code_id:integer current_stage_id:integer location_lat:float location_lon:float
+script/generate scaffold support_unit team_id:integer support_type_id:integer tac_callsign:string ham_callsign:string status_code_id:integer current_stage_id:integer location_lat:float location_lon:float

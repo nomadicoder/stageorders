@@ -1,3 +1,3 @@
 class Team < ActiveRecord::Base
-  has_many :runner
+  has_many :runners
 end

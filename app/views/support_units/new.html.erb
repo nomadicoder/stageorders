@@ -1,0 +1,43 @@
+<h1>New support_unit</h1>
+
+<% form_for(@support_unit) do |f| %>
+  <%= f.error_messages %>
+
+  <p>
+    <%= f.label :team_id %><br />
+    <%= f.text_field :team_id %>
+  </p>
+  <p>
+    <%= f.label :support_type_id %><br />
+    <%= f.collection_select (:support_type_id, SupportType.find(:all), :id, :short_code, :prompt => "Status") %>
+  </p>
+  <p>
+    <%= f.label :tac_callsign %><br />
+    <%= f.text_field :tac_callsign %>
+  </p>
+  <p>
+    <%= f.label :ham_callsign %><br />
+    <%= f.text_field :ham_callsign %>
+  </p>
+  <p>
+    <%= f.label :status_code_id %><br />
+    <%= f.text_field :status_code_id %>
+  </p>
+  <p>
+    <%= f.label :current_stage_id %><br />
+    <%= f.text_field :current_stage_id %>
+  </p>
+  <p>
+    <%= f.label :location_lat %><br />
+    <%= f.text_field :location_lat %>
+  </p>
+  <p>
+    <%= f.label :location_lon %><br />
+    <%= f.text_field :location_lon %>
+  </p>
+  <p>
+    <%= f.submit 'Create' %>
+  </p>
+<% end %>
+
+<%= link_to 'Back', support_units_path %>
