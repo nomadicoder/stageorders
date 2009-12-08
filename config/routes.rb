@@ -1,4 +1,8 @@
 ActionController::Routing::Routes.draw do |map|
+  map.resources :support_status_codes
+
+  map.resources :support_types
+
   map.resources :runner_status_codes
 
   map.resources :users
