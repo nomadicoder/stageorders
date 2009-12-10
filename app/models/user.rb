@@ -1,3 +1,4 @@
+# From Agile Web Deelopment with Ruby on Rails, 3rd Edition, p. 159ff
 require 'digest/sha1'
 
 class User < ActiveRecord::Base
