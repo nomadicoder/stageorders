@@ -5,32 +5,27 @@
     <th>Stage</th>
     <th>Landmark</th>
     <th>Miles</th>
-    <th>Estimated Start</th>
+    <th>Difficulty</th>
     <th>Runner</th>
-    <th>*Shuttle On Site</th>
-    <th>*Checked In</th>
-    <th>*One Mile Out</th>
-    <th>*In Chute</th>
-    <th>*Exchange</th>
-    <th>*Stage Cleared</th>
+    <th>Estimated Start</th>
+    <th>Support Unit</th>
+    <th>Runner Status</th>
+    <th>Support Status</th>
   </tr>
 
-<% @stages.each do |stage| %>
+<% @runners.each do |runner| %>
   <tr>
-    <td><%=h stage.number %></td>
-    <td><%=h stage.landmark %></td>
-    <td><%=h stage.miles %></td>
+    <td align='center'><%=h runner.stage.number %></td>
+    <td><%=h runner.stage.landmark %></td>
+    <td align='center'><%=h runner.stage.miles %></td>
+    <td align='center'><%=h runner.stage.difficulty %></td>
+    <td><%=h runner.name %></td>
+    <td align='center'>TBD</td>
     <td></td>
-    <td></td>
-    <td></td>
-    <td></td>
-    <td></td>
-    <td></td>
-    <td></td>
+    <td align='center'><%=h runner.runner_status_code.short_code %></td>
     <td></td>
   </tr>
 <% end %>
 </table>
 
-<sup>* Times confirmed by CP</sup>
 <br />

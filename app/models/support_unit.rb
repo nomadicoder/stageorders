@@ -4,5 +4,4 @@ class SupportUnit < ActiveRecord::Base
   belongs_to :support_type
   
   validates_presence_of :support_type
-  
 end
