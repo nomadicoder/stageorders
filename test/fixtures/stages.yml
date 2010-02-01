@@ -1,19 +1,121 @@
 # Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
 
 one:
-  number: 1
-  landmark: MyString
-  miles: 9.99
-  difficulty: 1
-  estimated_pace: 2009-10-20 17:04:00
-  estimated_time: 2009-10-20 17:04:00
-  actual_time: 2009-10-20 17:04:00
+  number:  1
+  landmark: "Start"
+  miles: 5.4
+  difficulty: 13
 
 two:
-  number: 1
-  landmark: MyString
-  miles: 9.99
+  number:  2
+  landmark: "Dumont"
+  miles:  8.2
   difficulty: 1
-  estimated_pace: 2009-10-20 17:04:00
-  estimated_time: 2009-10-20 17:04:00
-  actual_time: 2009-10-20 17:04:00
+
+three:
+  number:  3
+  landmark: "Ibex Up"
+  miles:  5.1
+  difficulty: 6
+
+four:
+  number:  4
+  landmark: "Ibex Down"
+  miles:  6.0
+  difficulty: 20
+
+five:
+  number:  5
+  landmark: "Tecopa"
+  miles:  6.1
+  difficulty: 12
+
+six:
+  number:  6
+  landmark: "Shoshone"
+  miles:  6.2
+  difficulty: 5
+
+seven:
+  number:  7
+  landmark: "Chicago Valley"
+  miles:  7.3
+  difficulty: 2
+
+eight:
+  number:  8
+  landmark: ""
+  miles:  6.8
+  difficulty: 9
+
+nine:
+  number:  9
+  landmark: "State Line"
+  miles:  5.8
+  difficulty: 16
+
+ten:
+  number:  10
+  landmark: "Pahrump"
+  miles:  5.3
+  difficulty: 14
+
+eleven:
+  number:  11
+  landmark: ""
+  miles:  4.7
+  difficulty: 19
+
+twelve:
+  number:  12
+  landmark: ""
+  miles:  7.0
+  difficulty: 3
+
+thirteen:
+  number:  13
+  landmark: "Old Spanish Trail"
+  miles: 5.4
+  difficulty: 7
+
+fourteen:
+  number:  14
+  landmark: ""
+  miles:  5.2
+  difficulty: 8
+
+fifteen:
+  number:  15
+  landmark: ""
+  miles:  5.5
+  difficulty: 4
+
+sixteen:
+  number:  16
+  landmark: "Mountain Springs"
+  miles:  6.8
+  difficulty: 11
+
+seventeen:
+  number:  17
+  landmark: ""
+  miles:  7.3
+  difficulty: 10
+
+eighteen:
+  number:  18
+  landmark: "Ft Apache"
+  miles:  5.7
+  difficulty: 15
+
+nineteen:
+  number:  19
+  landmark: "Desert Inn"
+  miles:  5.8
+  difficulty: 17
+
+twenty:
+  number:  20
+  landmark: "Finish"
+  miles:  4.4
+  difficulty: 18

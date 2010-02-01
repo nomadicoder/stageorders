@@ -762,3 +762,10 @@ end
 
 
 script/generate scaffold support_unit team_id:integer support_type_id:integer tac_callsign:string ham_callsign:string status_code_id:integer current_stage_id:integer location_lat:float location_lon:float
+
+
+Thursday, December 10, 2009
+
+We have a way to track runners and support, but all must be tied into a stage.
+There are many stages assigned to a support team.  How can this be reflected?  Multiple records for support, one for each stage a support
+unit is assigned.  Record called Stage assignment linked to runners, stage, and support unit.  Tracks runner and support unit status.

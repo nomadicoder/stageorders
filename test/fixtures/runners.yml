@@ -2,14 +2,140 @@
 
 one:
   stage_id: 1
-  name: MyString
-  estimated_pace: 2009-10-22 07:40:51
+  name: Adam
+  estimated_pace: 00:08:42
   completed: false
-  actual_time: 2009-10-22 07:40:51
+  actual_time: 00:00:00
 
 two:
-  stage_id: 1
-  name: MyString
-  estimated_pace: 2009-10-22 07:40:51
+  stage_id: 2
+  name: Boy
+  estimated_pace: 00:07:48
   completed: false
-  actual_time: 2009-10-22 07:40:51
+  actual_time: 00:00:00
+
+three:
+  stage_id: 3
+  name: Charles
+  estimated_pace: 00:08:49
+  completed: false
+  actual_time: 00:00:00
+
+four:
+  stage_id: 4
+  name: David
+  estimated_pace: 00:08:20
+  completed: false
+  actual_time: 00:00:00
+
+five:
+  stage_id: 5
+  name: Edward
+  estimated_pace: 00:08:22
+  completed: false
+  actual_time: 00:00:00
+
+six:
+  stage_id: 6
+  name: Frank
+  estimated_pace: 00:08:52
+  completed: false
+  actual_time: 00:00:00
+
+seven:
+  stage_id: 7
+  name: George
+  estimated_pace: 00:07:48
+  completed: false
+  actual_time: 00:00:00
+
+eight:
+  stage_id: 8
+  name: Henry
+  estimated_pace: 00:08:42
+  completed: false
+  actual_time: 00:00:00
+
+nine:
+  stage_id: 9
+  name: Ida
+  estimated_pace: 00:08:42
+  completed: false
+  actual_time: 00:00:00
+
+ten:
+  stage_id: 10
+  name: John
+  estimated_pace: 00:08:42
+  completed: false
+  actual_time: 00:00:00
+
+eleven:
+  stage_id: 11
+  name: King
+  estimated_pace: 00:08:42
+  completed: false
+  actual_time: 00:00:00
+
+twelve:
+  stage_id: 12
+  name: Lincoln
+  estimated_pace: 00:08:42
+  completed: false
+  actual_time: 00:00:00
+
+thirteen:
+  stage_id: 13
+  name: Mary
+  estimated_pace: 00:08:42
+  completed: false
+  actual_time: 00:00:00
+
+fourteen:
+  stage_id: 14
+  name: Nora
+  estimated_pace: 00:08:42
+  completed: false
+  actual_time: 00:00:00
+
+fifteen:
+  stage_id: 15
+  name: Ocean
+  estimated_pace: 00:08:42
+  completed: false
+  actual_time: 00:00:00
+
+sixteen:
+  stage_id: 16
+  name: Paul
+  estimated_pace: 00:08:42
+  completed: false
+  actual_time: 00:00:00
+
+seventeen:
+  stage_id: 17
+  name: Queen
+  estimated_pace: 00:08:42
+  completed: false
+  actual_time: 00:00:00
+
+eighteen:
+  stage_id: 18
+  name: Robert
+  estimated_pace: 00:08:42
+  completed: false
+  actual_time: 00:00:00
+
+nineteen:
+  stage_id: 19
+  name: Sam
+  estimated_pace: 00:08:42
+  completed: false
+  actual_time: 00:00:00
+
+twenty:
+  stage_id: 20
+  name: Tom
+  estimated_pace: 00:08:42
+  completed: false
+  actual_time: 00:00:00
