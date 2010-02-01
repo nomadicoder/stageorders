@@ -29,7 +29,7 @@
 		<type label="ENUM" length="1" sql="ENUM" quote=""/>
 		<type label="SET" length="1" sql="SET" quote=""/>
 	</group>
-</datatypes><table x="471" y="299" name="Stages">
+</datatypes><table x="502" y="367" name="Stages">
 <row name="id" null="1" autoincrement="1">
 <datatype>INTEGER</datatype>
 <default>NULL</default></row>
@@ -49,7 +49,7 @@
 <part>id</part>
 </key>
 </table>
-<table x="466" y="44" name="Teams">
+<table x="503" y="157" name="Teams">
 <row name="id" null="1" autoincrement="1">
 <datatype>INTEGER</datatype>
 <default>NULL</default></row>
@@ -72,7 +72,7 @@
 <part>id</part>
 </key>
 </table>
-<table x="669" y="109" name="Runner">
+<table x="701" y="137" name="Runner">
 <row name="id" null="1" autoincrement="1">
 <datatype>INTEGER</datatype>
 <default>NULL</default></row>
@@ -143,7 +143,7 @@
 </key>
 <comment>Each record is a possible catcher status.  Provides items for an enumeration of catcher status.</comment>
 </table>
-<table x="426" y="478" name="Stage_Status_Codes">
+<table x="434" y="566" name="Stage_Status_Codes">
 <row name="id" null="1" autoincrement="1">
 <datatype>INTEGER</datatype>
 <default>NULL</default></row>
@@ -170,7 +170,7 @@
 </key>
 <comment>Combination of Runner Status and Catcher Status to present all possible criticality status.</comment>
 </table>
-<table x="793" y="516" name="Criticalities">
+<table x="792" y="583" name="Criticalities">
 <row name="id" null="1" autoincrement="1">
 <datatype>INTEGER</datatype>
 <default>NULL</default></row>
@@ -188,7 +188,7 @@
 </key>
 <comment>Each record is a possible criticalities.  Provides items for an enumeration of criticality.</comment>
 </table>
-<table x="249" y="74" name="Support_Unit">
+<table x="269" y="95" name="Support_Unit">
 <row name="id" null="1" autoincrement="1">
 <datatype>INTEGER</datatype>
 <default>NULL</default></row>
@@ -242,5 +242,22 @@
 <part>id</part>
 </key>
 <comment>Transport vehicle types</comment>
+</table>
+<table x="477" y="4" name="Stage_Status">
+<row name="id" null="1" autoincrement="1">
+<datatype>INTEGER</datatype>
+<default>NULL</default></row>
+<row name="runner_id" null="1" autoincrement="0">
+<datatype>INTEGER</datatype>
+<default>NULL</default><relation table="Runner" row="id" />
+</row>
+<row name="support_unit_id" null="1" autoincrement="0">
+<datatype>INTEGER</datatype>
+<default>NULL</default><relation table="Support_Unit" row="id" />
+</row>
+<key type="PRIMARY" name="">
+<part>id</part>
+</key>
+<comment>Composite status from Support Unit and Runner Status</comment>
 </table>
 </sql>
