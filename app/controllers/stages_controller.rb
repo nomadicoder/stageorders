@@ -2,7 +2,7 @@ class StagesController < ApplicationController
   # GET /stages
   # GET /stages.xml
   def index
-    @stages = Stage.all
+    @stages = Stage.all(:order => "number")
 
     respond_to do |format|
       format.html # index.html.erb
