@@ -12,14 +12,11 @@
 
 <% @runners.each do |runner| %>
   <tr>
-    <td><%=h runner.stage_id %></td>
+    <td><%=h runner.stage.number %></td>
     <td><%=h runner.name %></td>
     <td><%=h runner.estimated_pace.strftime("%M:%S") %></td>
     <td>
-      <!-- % if runner.runner_status_code.short_code != nil % -->
-        <!-- %=h runner.runner_status_code.short_code % -->
-      <!-- % end % -->
-      TBD
+      <%=h runner.runner_status %>
     </td>
     <td><%=h runner.completed %></td>
     <td>
