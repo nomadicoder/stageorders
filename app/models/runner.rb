@@ -19,11 +19,35 @@ class Runner < ActiveRecord::Base
     self.stage = Stage.find_by_number(number) unless number.blank?
   end
   
+  def team_name
+    team.name if team
+  end
+  
+  def team_name=(name)
+    self.team = Team.find_by_name(name) unless name.blank?
+  end
+  
   def self.find_all_runners
     find(:all, :joins => :stage, :order => "stages.number")
   end
   
   def self.find_all_runners_for_team (team_id)
+  end
+  
+  def estimated_pace_formatted
+    self.estimated_pace.strftime("%M:%S")
+  end
+  
+  def estimated_pace_formatted=(estimated_pace)
+    self.estimated_pace = Time.parse("00"+estimated_pace)
+  end
+
+  def actual_time_formatted
+    self.actual_time.strftime("%H:%M:%S")
+  end
+  
+  def actual_time_formatted=(actual_time)
+    self.actual_time = Time.parse(actual_time)
   end
 
 end

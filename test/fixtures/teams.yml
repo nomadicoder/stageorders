@@ -1,9 +1,16 @@
 # Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
 
-one:
-  number: 1
-  name: MyString
+nwk:
+  number: 92
+  short_name: nwk
+  name: Norwalk Station
 
-two:
-  number: 1
-  name: MyString
+cst:
+  number: 110
+  short_name: cst
+  name: Transportation Bureau
+
+ccb:
+  number: 216
+  short_name: cst
+  name: Community College Bureau/Marina Del Rey Station

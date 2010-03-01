@@ -27,6 +27,7 @@ ActiveRecord::Schema.define(:version => 20091208011138) do
     t.time     "actual_time"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "team_id",               :default => 0
     t.integer  "runner_status_code_id", :default => 1
   end
 
@@ -70,6 +71,7 @@ ActiveRecord::Schema.define(:version => 20091208011138) do
   create_table "teams", :force => true do |t|
     t.integer  "number"
     t.string   "name"
+    t.string   "short_name"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
