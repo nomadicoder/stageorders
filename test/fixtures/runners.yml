@@ -2,160 +2,180 @@
 
 one:
   stage: one
-  name: Tom
-  estimated_pace: 00:08:42
-  completed: false
-  actual_time: 00:44:00
+  name: Hyman Rickover
+  team: nwk
+  estimated_pace: "00:08:42"
+  completed: true
+  actual_time: "00:44:00"
   runner_status_code: fin
 
 two:
   stage: two
-  name: Sam
-  estimated_pace: 00:07:48
-  completed: false
-  actual_time: 01:13:41
+  name: Adlai Stevenson
+  team: nwk
+  estimated_pace: "00:07:48"
+  completed: true
+  actual_time: "01:13:41"
   runner_status_code: fin
 
 three:
   stage: three
-  name: Robert
-  estimated_pace: 00:08:49
-  completed: false
-  actual_time: 00:47:31
+  name: Roger J. Traynor
+  team: nwk
+  estimated_pace: "00:08:49"
+  completed: true
+  actual_time: "00:47:31"
   runner_status_code: fin
 
 four:
   stage: four
-  name: Queen
-  estimated_pace: 00:08:20
+  name: Richard M. Hollingshead, Jr
+  team: nwk
+  estimated_pace: "00:08:20"
   completed: false
-  actual_time: 00:00:00
+  actual_time: "00:00:00"
   runner_status_code: run
 
 five:
   stage: five
-  name: Paul
-  estimated_pace: 00:08:22
+  name: Herbert Biberman
+  team: nwk
+  estimated_pace: "00:08:22"
   completed: false
-  actual_time: 00:00:00
+  actual_time: "00:00:00"
   runner_status_code: rdy
 
 six:
   stage: six
-  name: Ocean
-  estimated_pace: 00:08:52
+  name: Howard Aiken
+  team: nwk
+  estimated_pace: "00:08:52"
   completed: false
-  actual_time: 00:00:00
+  actual_time: "00:00:00"
   runner_status_code: met
 
 seven:
   stage: seven
-  name: Nora
-  estimated_pace: 00:07:48
+  name: Albert Ingham
+  team: nwk
+  estimated_pace: "00:07:48"
   completed: false
-  actual_time: 00:00:00
+  actual_time: "00:00:00"
   runner_status_code: enr
 
 eight:
   stage: eight
-  name: Mary
-  estimated_pace: 00:08:14
+  name: Spencer Tracy
+  team: nwk
+  estimated_pace: "00:08:14"
   completed: false
-  actual_time: 00:00:00
+  actual_time: "00:00:00"
   runner_status_code: enr
 
 nine:
   stage: nine
-  name: Lincoln
-  estimated_pace: 00:09:29
+  name: Charles Richter
+  team: nwk
+  estimated_pace: "00:09:29"
   completed: false
-  actual_time: 00:00:00
+  actual_time: "00:00:00"
   runner_status_code: unk
 
 ten:
   stage: ten
-  name: King
-  estimated_pace: 00:09:03
+  name: Tommy Ladnier
+  team: nwk
+  estimated_pace: "00:09:03"
   completed: false
-  actual_time: 00:00:00
+  actual_time: "00:00:00"
   runner_status_code: unk
 
 eleven:
   stage: eleven
-  name: John
-  estimated_pace: 00:08:43
+  name: Rolland Fisher
+  team: nwk
+  estimated_pace: "00:08:43"
   completed: false
-  actual_time: 00:00:00
+  actual_time: "00:00:00"
   runner_status_code: unk
 
 twelve:
   stage: twelve
-  name: Ida
-  estimated_pace: 00:08:00
+  name: George Watkins
+  team: nwk
+  estimated_pace: "00:08:00"
   completed: false
-  actual_time: 00:00:00
+  actual_time: "00:00:00"
   runner_status_code: unk
 
 thirteen:
   stage: thirteen
-  name: Henry
-  estimated_pace: 00:09:04
+  name: Glen Gray
+  team: nwk
+  estimated_pace: "00:09:04"
   completed: false
-  actual_time: 00:00:00
+  actual_time: "00:00:00"
   runner_status_code: unk
 
 fourteen:
   stage: fourteen
-  name: George
-  estimated_pace: 00:08:28
+  name: Paul Mares
+  team: nwk
+  estimated_pace: "00:08:28"
   completed: false
-  actual_time: 00:00:00
+  actual_time: "00:00:00"
   runner_status_code: unk
 
 fifteen:
   stage: fifteen
-  name: Frank
-  estimated_pace: 00:08:11
+  name: George Lewis
+  team: nwk
+  estimated_pace: "00:08:11"
   completed: false
-  actual_time: 00:00:00
+  actual_time: "00:00:00"
   runner_status_code: unk
 
 sixteen:
   stage: sixteen
-  name: Edward
-  estimated_pace: 00:07:21
+  name: John Babcock
+  team: nwk
+  estimated_pace: "00:07:21"
   completed: false
-  actual_time: 00:00:00
+  actual_time: "00:00:00"
   runner_status_code: unk
 
 seventeen:
   stage: seventeen
-  name: David
-  estimated_pace: 00:08:05
+  name: Ernie Pyle
+  team: nwk
+  estimated_pace: "00:08:05"
   completed: false
-  actual_time: 00:00:00
+  actual_time: "00:00:00"
   runner_status_code: unk
 
 eighteen:
   stage: eighteen
-  name: Charles
-  estimated_pace: 00:08:15
+  name: Cecil H. Green
+  team: nwk
+  estimated_pace: "00:08:15"
   completed: false
-  actual_time: 00:00:00
+  actual_time: "00:00:00"
   runner_status_code: unk
 
 nineteen:
   stage: nineteen
-  name: Boy
-  estimated_pace: 00:07:35
+  name: Arthur Espie Porritt
+  team: nwk
+  estimated_pace: "00:07:35"
   completed: false
-  actual_time: 00:00:00
+  actual_time: "00:00:00"
   runner_status_code: unk
 
 twenty:
   stage: twenty
-  name: Adam
-  estimated_pace: 00:08:38
+  name: Philip Phillips
+  team: nwk
+  estimated_pace: "00:08:38"
   completed: false
-  actual_time: 00:00:00
+  actual_time: "00:00:00"
   runner_status_code: unk
