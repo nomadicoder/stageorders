@@ -9,7 +9,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20091208011138) do
+ActiveRecord::Schema.define(:version => 20100303040840) do
 
   create_table "runner_status_codes", :force => true do |t|
     t.float    "sequence"
@@ -29,6 +29,28 @@ ActiveRecord::Schema.define(:version => 20091208011138) do
     t.datetime "updated_at"
     t.integer  "team_id",               :default => 0
     t.integer  "runner_status_code_id", :default => 1
+  end
+
+  create_table "stage_status_codes", :force => true do |t|
+    t.string   "short_code"
+    t.string   "description"
+    t.float    "sequence"
+    t.integer  "runner_status_code_id"
+    t.integer  "support_status_code_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "stage_statuses", :force => true do |t|
+    t.integer  "team_id"
+    t.integer  "stage_id"
+    t.integer  "runner_id"
+    t.integer  "support_unit_id"
+    t.integer  "runner_status_code_id"
+    t.integer  "support_status_code_id"
+    t.integer  "stage_status_code_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
   create_table "stages", :force => true do |t|
@@ -60,7 +82,7 @@ ActiveRecord::Schema.define(:version => 20091208011138) do
     t.integer  "support_type_id"
     t.string   "tac_callsign"
     t.string   "ham_callsign"
-    t.integer  "status_code_id"
+    t.integer  "support_status_code_id"
     t.integer  "current_stage_id"
     t.float    "location_lat"
     t.float    "location_lon"

@@ -3,31 +3,26 @@
 unk:
   sequence: 0.0
   short_code: 'UNK'
-  description: Runner status is unknown
+  description: Support status is unknown
 
 enr:
   sequence: 1.0
   short_code: 'ENR'
-  description: Shuttle is enroute to stage
+  description: Shuttle is enroute to assignment
 
-arr:
+ons:
   sequence: 2.0
-  short_code: 'ARR'
-  description: Unit has arrived at assignment (e.g. exchange point)
-
-met:
-  sequence: 3.0
-  short_code: 'MET'
-  description: Catcher has made contact with the runner
-
-stg:
-  sequence: 0.1
-  short_code: 'STG'
-  description: Shuttle is at staging
+  short_code: 'ONS'
+  description: Unit has arrived at assignment
 
 out:
   sequence: 0.2
   short_code: 'OUT'
-  description: Shuttle is out of service (on break, refueling, etc)
+  description: Shuttle is out of service (on break, refueling, disabled, etc)
 
+hld:
+  sequence: 0.1
+  short_code: 'HLD'
+  description: Unit is held at location (Waiting for next runner, traffic delay, etc)
 
+	

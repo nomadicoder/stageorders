@@ -1,0 +1,32 @@
+<h1>Editing stage_status_code</h1>
+
+<% form_for(@stage_status_code) do |f| %>
+  <%= f.error_messages %>
+
+  <p>
+    <%= f.label :sequence %><br />
+    <%= f.text_field :sequence %>
+  </p>
+  <p>
+    <%= f.label :short_code %><br />
+    <%= f.text_field :short_code %>
+  </p>
+  <p>
+    <%= f.label :description %><br />
+    <%= f.text_field :description %>
+  </p>
+  <p>
+    <%= f.label :runner_status_code_id %><br />
+    <%= f.collection_select (:runner_status_code_id, RunnerStatusCode.find(:all, :order => :sequence), :id, :description, :prompt => "Runner Status") %>
+  </p>
+  <p>
+    <%= f.label :support_status_code_id %><br />
+    <%= f.collection_select (:support_status_code_id, SupportStatusCode.find(:all, :order => :sequence), :id, :description, :prompt => "Support Status") %>
+  </p>
+  <p>
+    <%= f.submit 'Update' %>
+  </p>
+<% end %>
+
+<%= link_to 'Show', @stage_status_code %> |
+<%= link_to 'Back', stage_status_codes_path %>

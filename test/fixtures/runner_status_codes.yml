@@ -10,43 +10,17 @@ enr:
   short_code: 'ENR'
   description: Runner is enroute to stage
 
-arr:
-  sequence: 2.0
-  short_code: 'ARR'
-  description: Runner has arrived at the stage
-
 chk:
-  sequence: 3.0
+  sequence: 2.0
   short_code: 'CHK'
   description: Runner has checked in at the stage
 
-met:
-  sequence: 4.0
-  short_code: 'MET'
-  description: Runner has made contact with the catcher
-
-rdy:
-  sequence: 5.0
-  short_code: 'RDY'
-  description: Runner is in the chute awaiting the exchange
-
 run:
-  sequence: 6.0
+  sequence: 3.0
   short_code: 'RUN'
   description: Runner is on the course running the stage
 
-one:
-  sequence: 7.0
-  short_code: 'ONE'
-  description: Runner is on the course running the stage
-
 fin:
-  sequence: 8.0
+  sequence: 4.0
   short_code: 'FIN'
   description: Runner has completed the stage
-
-end:
-  sequence: 9.0
-  short_code: 'END'
-  description: Runner has cleared the stage
-

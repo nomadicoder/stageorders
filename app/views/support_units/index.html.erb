@@ -15,10 +15,10 @@
 <% @support_units.each do |support_unit| %>
   <tr>
     <td><%=h support_unit.team_id %></td>
-    <td><%=h support_unit.support_type.short_code %></td>
+    <td><%=h support_unit.short_code %></td>
     <td><%=h support_unit.tac_callsign %></td>
     <td><%=h support_unit.ham_callsign %></td>
-    <td><%=h support_unit.status_code_id %></td>
+    <td><%=h support_unit.support_status %></td>
     <td><%=h support_unit.current_stage_id %></td>
     <td><%=h support_unit.location_lat %></td>
     <td><%=h support_unit.location_lon %></td>

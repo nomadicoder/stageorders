@@ -2,6 +2,7 @@ class Runner < ActiveRecord::Base
   belongs_to :stage
   belongs_to :team
   belongs_to :runner_status_code
+  has_one :stage_status
   
   def runner_status
     runner_status_code.short_code if runner_status_code
