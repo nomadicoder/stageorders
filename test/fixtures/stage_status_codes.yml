@@ -1,0 +1,30 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+inac:
+  short_code: 'INAC'
+  sequence: 0.0
+  description: Stage is inactive
+  runner_status_code: *
+  support_status_code: *
+	
+nogo:
+  short_code: 'NOGO'
+  sequence: 1.0
+  description: Stage is not ready
+  runner_status_code: *
+  support_status_code: *
+
+go:
+  short_code: 'GO'
+  sequence: 2.0
+  description: Stage is ready
+  runner_status_code: chk
+  support_status_code: ons
+
+clear:
+  short_code: 'CLEAR'
+  sequence: 9.0
+  description: Stage complete
+  runner_status_code: fin
+  support_status_code: *
+

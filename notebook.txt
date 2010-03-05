@@ -769,3 +769,51 @@ Thursday, December 10, 2009
 We have a way to track runners and support, but all must be tied into a stage.
 There are many stages assigned to a support team.  How can this be reflected?  Multiple records for support, one for each stage a support
 unit is assigned.  Record called Stage assignment linked to runners, stage, and support unit.  Tracks runner and support unit status.
+
+Tuesday, March 2, 2010
+
+Since December 10, got estimated pace and stage time correctly displayed and linked fields cleaned up to display runner and support status.
+
+Next, need to show team based results and status pages.  The user should be able to pick a team for the page and the page should display a filtered result based on team.
+
+Also, each stage record needs an assigned team and unit.
+This may not have been covered in the schema design.
+There will be multiple stages assigned to a support unit.
+So there should be a stage status with a link to a stage, team, runner, and support_unit.  This will alter the status controller, or make it go away.
+
+Create a new schema.
+
+NOTE: legs should be assigned to runners, so should replace Stage with Leg and use have exchange points?
+
+The location is a stage?
+
+Stage and Leg are synonymous in the rule books.  Use exchange point instead?
+
+script/generate scaffold stage_status team_id:integer stage_id:integer runner_id:integer support_unit_id:integer runner_status_code_id:integer support_status_code_id:integer
+
+Support_unit table has current_stage_id, which will be updated in real time
+Added runner_status and support_id which has the latest status from the unit assigned to the stage.  This way we can retain stage status after the runner and support unit have departed the stage.
+Team_id is hear to make things easier, as the runner and support unit can change or be un-assigned. we can have the stage and see a hole in the assignments.
+
+Need Stage_status_code first
+script/generate scaffold stage_status_code short_code:string description:string runner_status_code_id:integer support_status_code_id:integer
+
+Completed Stage Status pages.  need to search stage_status_code for stage staus given runner_status_code and support_status_code.
+
+Wednesday, March 3, 2010
+
+Stage_status table should have it's own status code field because it is from a lookup based on runner and support status.  This can be handled in the controller or view.
+
+Thursday, March 4, 2010
+
+Working on the stage status -- own to get inner join to work
+
+Resultant query
+
+SELECT "stage_status_codes".* FROM "stage_status_codes" INNER JOIN "runner_status_codes" ON "runner_status_codes".id = "stage_status_codes".runner_status_code_id INNER JOIN "support_status_codes" ON "support_status_codes".id = "stage_status_codes".support_status_code_id WHERE (runner_status_codes.short_code = 'CHK' AND support_status_codes.short_code = 'ONS') LIMIT 1
+
+For successful joins with results:
+SELECT "runners".* FROM "runners" INNER JOIN "stages" ON "stages".id = "runners".stage_id ORDER BY stages.number
+
+
+find(:first, :joins => [:runner_status_code, :support_status_code], :conditions => "runner_status_codes.short_code = 'CHK' AND support_status_codes.short_code = 'ONS'")

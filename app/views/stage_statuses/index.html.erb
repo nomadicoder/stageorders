@@ -1,0 +1,37 @@
+<h1>Listing stage_statuses</h1>
+
+<table border=1>
+  <tr>
+    <th>Team</th>
+    <th>Stage</th>
+    <th>Runner</th>
+    <th>Support unit</th>
+    <th>Runner status</th>
+    <th>Support status</th>
+    <th>Ready</th>
+  </tr>
+
+<% @stage_statuses.each do |stage_status| %>
+  <tr align='center'>
+    <td><%=h stage_status.team_short_name %></td>
+    <td><%=h stage_status.stage_number %></td>
+    <td><%=h stage_status.runner_name %></td>
+    <td><%=h stage_status.tac_callsign %></td>
+    <td><%=h stage_status.runner_status %>*</td>
+    <td><%=h stage_status.support_status %></td>
+    <% if stage_status.stage_status == "GO" %>
+      <td BGCOLOR='GREEN'>
+    <% else %>
+      <td BGCOLOR='RED'>
+    <% end %>
+    <%=h stage_status.stage_status %></td>
+    <td><%= link_to 'Show', stage_status %></td>
+    <td><%= link_to 'Edit', edit_stage_status_path(stage_status) %></td>
+    <td><%= link_to 'Destroy', stage_status, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New stage_status', new_stage_status_path %>

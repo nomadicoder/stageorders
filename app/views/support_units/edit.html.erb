@@ -9,7 +9,7 @@
   </p>
   <p>
     <%= f.label :support_type_id %><br />
-    <%= f.collection_select (:support_type_id, SupportType.find(:all), :id, :short_code, :prompt => "Status") %>
+    <%= f.collection_select (:support_type_id, SupportType.find(:all), :id, :short_code, :prompt => "Type") %>
   </p>
   <p>
     <%= f.label :tac_callsign %><br />
@@ -21,7 +21,7 @@
   </p>
   <p>
     <%= f.label :status_code_id %><br />
-    <%= f.text_field :status_code_id %>
+    <%= f.collection_select (:support_status_code_id, SupportStatusCode.find(:all), :id, :short_code, :prompt => "Status") %>
   </p>
   <p>
     <%= f.label :current_stage_id %><br />

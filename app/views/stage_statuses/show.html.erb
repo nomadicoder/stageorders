@@ -1,0 +1,41 @@
+<p>
+  <b>Team:</b>
+  <%=h @stage_status.team.name %>
+</p>
+
+<p>
+  <b>Stage:</b>
+  <%=h @stage_status.stage_number %>
+</p>
+
+<p>
+  <b>Runner:</b>
+  <%=h @stage_status.runner_name %>
+</p>
+
+<p>
+  <b>Support unit:</b>
+  <%=h @stage_status.tac_callsign %>
+</p>
+
+<p>
+  <b>Runner status code:</b>
+  <%=h @stage_status.runner_status %>
+</p>
+
+<p>
+  <b>Support status code:</b>
+  <%=h @stage_status.support_status %>
+</p>
+
+<p>
+  <b>Stage Ready:</b>
+  <% if @stage_status.stage_status %>
+    GO
+  <% else %>
+    NOGO (Pending)
+  <% end %>
+</p>
+
+<%= link_to 'Edit', edit_stage_status_path(@stage_status) %> |
+<%= link_to 'Back', stage_statuses_path %>

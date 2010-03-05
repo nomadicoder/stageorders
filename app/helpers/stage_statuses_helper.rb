@@ -1,0 +1,2 @@
+module StageStatusesHelper
+end

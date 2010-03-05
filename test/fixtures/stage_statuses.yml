@@ -1,0 +1,161 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  team: nwk
+  stage: one
+  runner: one
+  support_unit: nwkshuttle1
+  runner_status_code: chk
+  support_status_code: ons
+
+two:
+  team: nwk
+  stage: two
+  runner: two
+  support_unit: nwkshuttle2
+  runner_status_code: enr
+  support_status_code: enr
+
+three:
+  team: nwk
+  stage: three
+  runner: three
+  support_unit: nwkshuttle1
+  runner_status_code: unk
+  support_status_code: unk
+
+four:
+  team: nwk
+  stage: four
+  runner: four
+  support_unit: nwkshuttle2
+  runner_status_code: unk
+  support_status_code: unk
+
+five:
+  team: nwk
+  stage: five
+  runner: five
+  support_unit: nwkshuttle1
+  runner_status_code: unk
+  support_status_code: unk
+
+six:
+  team: nwk
+  stage: six
+  runner: six
+  support_unit: nwkshuttle2
+  runner_status_code: unk
+  support_status_code: unk
+
+seven:
+  team: nwk
+  stage: seven
+  runner: seven
+  support_unit: nwkshuttle1
+  runner_status_code: unk
+  support_status_code: unk
+
+eight:
+  team: nwk
+  stage: eight
+  runner: eight
+  support_unit: nwkshuttle2
+  runner_status_code: unk
+  support_status_code: unk
+
+nine:
+  team: nwk
+  stage: nine
+  runner: nine
+  support_unit: nwkshuttle1
+  runner_status_code: unk
+  support_status_code: unk
+
+ten:
+  team: nwk
+  stage: ten
+  runner: ten
+  support_unit: nwkshuttle2
+  runner_status_code: unk
+  support_status_code: unk
+
+eleven:
+  team: nwk
+  stage: eleven
+  runner: eleven
+  support_unit: nwkshuttle1
+  runner_status_code: unk
+  support_status_code: unk
+
+twelve:
+  team: nwk
+  stage: twelve
+  runner: twelve
+  support_unit: nwkshuttle2
+  runner_status_code: unk
+  support_status_code: unk
+
+thirteen:
+  team: nwk
+  stage: thirteen
+  runner: thirteen
+  support_unit: nwkshuttle1
+  runner_status_code: unk
+  support_status_code: unk
+
+fourteen:
+  team: nwk
+  stage: fourteen
+  runner: fourteen
+  support_unit: nwkshuttle2
+  runner_status_code: unk
+  support_status_code: unk
+
+fifteen:
+  team: nwk
+  stage: fifteen
+  runner: fifteen
+  support_unit: nwkshuttle1
+  runner_status_code: unk
+  support_status_code: unk
+
+sixteen:
+  team: nwk
+  stage: sixteen
+  runner: sixteen
+  support_unit: nwkshuttle2
+  runner_status_code: unk
+  support_status_code: unk
+
+seventeen:
+  team: nwk
+  stage: seventeen
+  runner: seventeen
+  support_unit: nwkshuttle1
+  runner_status_code: unk
+  support_status_code: unk
+
+eighteen:
+  team: nwk
+  stage: eighteen
+  runner: eighteen
+  support_unit: nwkshuttle2
+  runner_status_code: unk
+  support_status_code: unk
+
+nineteen:
+  team: nwk
+  stage: nineteen
+  runner: nineteen
+  support_unit: nwkshuttle1
+  runner_status_code: unk
+  support_status_code: unk
+
+twenty:
+  team: nwk
+  stage: twenty
+  runner: twenty
+  support_unit: nwkshuttle2
+  runner_status_code: unk
+  support_status_code: unk

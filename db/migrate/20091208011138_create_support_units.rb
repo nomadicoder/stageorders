@@ -5,7 +5,7 @@ class CreateSupportUnits < ActiveRecord::Migration
       t.integer :support_type_id
       t.string :tac_callsign
       t.string :ham_callsign
-      t.integer :status_code_id
+      t.integer :support_status_code_id
       t.integer :current_stage_id
       t.float :location_lat
       t.float :location_lon

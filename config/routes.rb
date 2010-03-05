@@ -1,4 +1,8 @@
 ActionController::Routing::Routes.draw do |map|
+  map.resources :stage_statuses
+
+  map.resources :stage_status_codes
+
   map.resources :support_units
 
   map.resources :support_status_codes

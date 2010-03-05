@@ -1,0 +1,28 @@
+<h1>Listing stage_status_codes</h1>
+
+<table>
+  <tr>
+    <th>Sequence</th>
+    <th>Short code</th>
+    <th>Description</th>
+    <th>Runner status code</th>
+    <th>Support status code</th>
+  </tr>
+
+<% @stage_status_codes.each do |stage_status_code| %>
+  <tr>
+    <td><%=h stage_status_code.sequence %></td>
+    <td><%=h stage_status_code.short_code %></td>
+    <td><%=h stage_status_code.description %></td>
+    <td><%=h stage_status_code.runner_status %></td>
+    <td><%=h stage_status_code.support_status %></td>
+    <td><%= link_to 'Show', stage_status_code %></td>
+    <td><%= link_to 'Edit', edit_stage_status_code_path(stage_status_code) %></td>
+    <td><%= link_to 'Destroy', stage_status_code, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New stage_status_code', new_stage_status_code_path %>

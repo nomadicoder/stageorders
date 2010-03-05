@@ -1,0 +1,28 @@
+<p>
+  <b>Short code:</b>
+  <%=h @stage_status_code.short_code %>
+</p>
+
+<p>
+  <b>Sequence:</b>
+  <%=h @stage_status_code.sequence %>
+</p>
+
+<p>
+  <b>Description:</b>
+  <%=h @stage_status_code.description %>
+</p>
+
+<p>
+  <b>Runner status code:</b>
+  <%=h @stage_status_code.runner_status %>
+</p>
+
+<p>
+  <b>Support status code:</b>
+  <%=h @stage_status_code.support_status %>
+</p>
+
+
+<%= link_to 'Edit', edit_stage_status_code_path(@stage_status_code) %> |
+<%= link_to 'Back', stage_status_codes_path %>
