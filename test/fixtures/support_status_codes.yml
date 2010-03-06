@@ -25,4 +25,8 @@ hld:
   short_code: 'HLD'
   description: Unit is held at location (Waiting for next runner, traffic delay, etc)
 
+clr:
+  sequence: 9.0
+  short_code: 'CLR'
+  description: Shuttle has cleared stage
 	

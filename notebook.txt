@@ -798,7 +798,7 @@ Team_id is hear to make things easier, as the runner and support unit can change
 Need Stage_status_code first
 script/generate scaffold stage_status_code short_code:string description:string runner_status_code_id:integer support_status_code_id:integer
 
-Completed Stage Status pages.  need to search stage_status_code for stage staus given runner_status_code and support_status_code.
+Completed Stage Status pages.  need to search stage_status_code for stage status given runner_status_code and support_status_code.
 
 Wednesday, March 3, 2010
 
@@ -817,3 +817,10 @@ SELECT "runners".* FROM "runners" INNER JOIN "stages" ON "stages".id = "runners"
 
 
 find(:first, :joins => [:runner_status_code, :support_status_code], :conditions => "runner_status_codes.short_code = 'CHK' AND support_status_codes.short_code = 'ONS'")
+
+Friday, March 5, 2010
+
+Committed in changes to date.
+Had to fix display of runner and support status codes in stage status code table
+
+Display stage status code in stage statues.

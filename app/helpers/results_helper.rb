@@ -20,7 +20,7 @@ module ResultsHelper
   
   def signed_minutes_to_time (minutes)
     sign = (minutes < 0) ? '-' : ''
-    signed_minutes_to_time = sign + minutes_as_short_time (minutes.abs)
+    signed_minutes_to_time = sign + minutes_as_short_time(minutes.abs)
   end
   
   def time_to_minutes (time)

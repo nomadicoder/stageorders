@@ -20,6 +20,11 @@ run:
   short_code: 'RUN'
   description: Runner is on the course running the stage
 
+one:
+  sequence: 3.5
+  short_code: 'ONE'
+  description: Runner is one mine out
+
 fin:
   sequence: 4.0
   short_code: 'FIN'
