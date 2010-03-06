@@ -1,4 +1,4 @@
-<h1>Listing stage_statuses</h1>
+<h1>Listing Stage Status</h1>
 
 <table border=1>
   <tr>
@@ -17,9 +17,9 @@
     <td><%=h stage_status.stage_number %></td>
     <td><%=h stage_status.runner_name %></td>
     <td><%=h stage_status.tac_callsign %></td>
-    <td><%=h stage_status.runner_status %>*</td>
+    <td><%=h stage_status.runner_status %></td>
     <td><%=h stage_status.support_status %></td>
-    <% if stage_status.stage_status == "GO" %>
+    <% if stage_status.stage_status == "GO" || stage_status.stage_status == "CLEAR" %>
       <td BGCOLOR='GREEN'>
     <% else %>
       <td BGCOLOR='RED'>

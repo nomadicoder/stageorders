@@ -2,7 +2,7 @@ class RunnersController < ApplicationController
   # GET /runners
   # GET /runners.xml
   def index
-    @runners = Runner.find_all_runners
+    @runners = Runner.find(:all, :joins => [:team, :stage], :order => "teams.number, stages.number")
 
     respond_to do |format|
       format.html # index.html.erb
@@ -68,6 +68,12 @@ class RunnersController < ApplicationController
         format.html { render :action => "edit" }
         format.xml  { render :xml => @runner.errors, :status => :unprocessable_entity }
       end
+#      @runner.update_stage_status
+#      stage_number = stage.number
+#      team_name = team.name
+#      stage_status = StageStatus.find(:first, :join => [:stage, :team], :conditions => "stage.number = #{stage.number} AND team.name = #{team.name}")
+#      stage_status.runner_status_code = self.runner_status_code
+#      stage_status.save
     end
   end
 

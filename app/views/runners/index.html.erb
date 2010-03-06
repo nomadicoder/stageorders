@@ -2,6 +2,7 @@
 
 <table border>
   <tr>
+    <th>Team</th>
     <th>Stage</th>
     <th>Name</th>
     <th>Estimated pace</th>
@@ -12,6 +13,7 @@
 
 <% @runners.each do |runner| %>
   <tr>
+    <td><%=h runner.team.short_name %></td>
     <td><%=h runner.stage.number %></td>
     <td><%=h runner.name %></td>
     <td><%=h runner.estimated_pace.strftime("%M:%S") %></td>

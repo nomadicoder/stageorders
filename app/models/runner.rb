@@ -12,6 +12,15 @@ class Runner < ActiveRecord::Base
     self.runner_status_code = RunnerStatusCode.find_by_short_code(runner_status) unless runner_status.blank?
   end
   
+  def update_stage_status
+    # extract the runner's stage
+    stage_number = stage.number
+    team_name = team.name
+    # get stage_status for the runner's stage
+    stage_status = StageStatus.find(:first, :joins => [:stage, :team], :conditions => "stages.number = '#{stage.number}' AND teams.name = '#{team.name}'")
+    stage_status.update_attributes(:runner_status_code => self.runner_status_code)
+  end
+  
   def stage_number
     stage.number if stage
   end
@@ -40,7 +49,7 @@ class Runner < ActiveRecord::Base
   end
   
   def estimated_pace_formatted=(estimated_pace)
-    self.estimated_pace = Time.parse("00"+estimated_pace)
+    self.estimated_pace = Time.parse("00:"+estimated_pace)
   end
 
   def actual_time_formatted
