@@ -2,8 +2,8 @@ class SupportUnitsController < ApplicationController
   # GET /support_units
   # GET /support_units.xml
   def index
-    @support_units = SupportUnit.all
-
+    @support_units = SupportUnit.find(:all, :joins => [:team])
+    
     respond_to do |format|
       format.html # index.html.erb
       format.xml  { render :xml => @support_units }
@@ -58,9 +58,12 @@ class SupportUnitsController < ApplicationController
   # PUT /support_units/1.xml
   def update
     @support_unit = SupportUnit.find(params[:id])
+    @stage_status = StageStatus.find(:first, :readonly => false, :joins => [:stage, :team],
+                                     :conditions => {:stage_id => @support_unit.current_stage_id, :team_id => @support_unit.team_id})
 
     respond_to do |format|
       if @support_unit.update_attributes(params[:support_unit])
+        @stage_status.update_attributes(:support_status_code_id => @support_unit.support_status_code_id) unless @stage_status.nil?
         flash[:notice] = 'SupportUnit was successfully updated.'
         format.html { redirect_to(@support_unit) }
         format.xml  { head :ok }

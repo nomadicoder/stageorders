@@ -2,15 +2,15 @@
 
 nwk:
   number: 92
-  short_name: nwk
+  short_name: NWK
   name: Norwalk Station
 
 cst:
   number: 110
-  short_name: cst
+  short_name: TST
   name: Transportation Bureau
 
 ccb:
   number: 216
-  short_name: ccb
+  short_name: CCB-MDR
   name: Community College Bureau/Marina Del Rey Station

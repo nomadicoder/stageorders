@@ -5,7 +5,7 @@
 
   <p>
     <%= f.label :team_id %><br />
-    <%= f.text_field :team_id %>
+    <%= f.collection_select (:team_id, Team.find(:all), :id, :short_name, :prompt => "Team") %>
   </p>
   <p>
     <%= f.label :support_type_id %><br />
@@ -25,7 +25,7 @@
   </p>
   <p>
     <%= f.label :current_stage_id %><br />
-    <%= f.text_field :current_stage_id %>
+    <%= f.collection_select (:current_stage_id, Stage.find(:all, :order=>:number), :id, :number, :prompt => "Stage") %>
   </p>
   <p>
     <%= f.label :location_lat %><br />

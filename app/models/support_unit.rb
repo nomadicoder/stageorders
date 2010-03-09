@@ -1,6 +1,6 @@
 class SupportUnit < ActiveRecord::Base
+  belongs_to :current_stage, :class_name => "Stage"
   belongs_to :team
-  belongs_to :stage
   belongs_to :support_type
   belongs_to :support_status_code
   has_many :stage_status

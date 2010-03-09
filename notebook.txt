@@ -824,3 +824,120 @@ Committed in changes to date.
 Had to fix display of runner and support status codes in stage status code table
 
 Display stage status code in stage statues.
+
+
+Monday, March 8, 2010
+
+Try changing status from the controller
+
+Encountering:
+  NoMethodError in RunnersController#update
+
+  You have a nil object when you didn't expect it!
+  You might have expected an instance of ActiveRecord::Base.
+  The error occurred while evaluating nil.update_attributes
+  RAILS_ROOT: /Users/skng/Projects/rails/stageorders
+
+  Application Trace | Framework Trace | Full Trace
+  /Users/skng/Projects/rails/stageorders/app/controllers/runners_controller.rb:64:in `update'
+
+Unable to locate problem in:
+
+  @runner = Runner.find(params[:id])
+  @stage_status = StageStatus.find(:first, :readonly => false,
+                                   :joins => [:stage, :team],
+                                   :conditions => "stage_id = '#{@runner.stage_id}' AND team_id = '#{@runner.team_id}'")
+  @state_status.update_attributes(:runner_status_code_id => @runner.runner_status_code_id) unless @runner.nil?
+
+Problem is spelling.  stage, not state (t is above g on keyboard *doh*)
+
+Next problem:
+
+  ActiveRecord::ReadOnlyRecord in RunnersController#update
+
+  ActiveRecord::ReadOnlyRecord
+
+Needed :readonly => false in find call (http://forums.pragprog.com/forums/74/topics/2078)
+
+Implemented as
+
+runner_controller.rb
+
+def update
+  @runner = Runner.find(params[:id])
+  @stage_status = StageStatus.find(:first, :readonly => false,
+                                   :joins => [:stage, :team],
+                                   :conditions => "stage_id = '#{@runner.stage_id}' AND team_id = '#{@runner.team_id}'")
+
+  respond_to do |format|
+    if @runner.update_attributes(params[:runner])
+      @stage_status.update_attributes(:runner_status_code_id => @runner.runner_status_code_id) unless @stage_status.nil?
+      flash[:notice] = 'Runner was successfully updated.'
+      format.html { redirect_to(@runner) }
+      format.xml  { head :ok }
+    else
+      format.html { render :action => "edit" }
+      format.xml  { render :xml => @runner.errors, :status => :unprocessable_entity }
+    end
+  end
+end
+
+
+Support Update Does not update stage status. Need Note that team id for support is 0.
+Fix code and update support unilts test fixtures
+Correct in test fixtures.  
+
+Need to set these.  Requires update to support unit new and edit to select team
+
+Error on support_unit index.  Similar code as runners
+
+<% @support_units.each do |support_unit| %>
+  <tr>
+    <td><%=h support_unit.team.short_name %></td>
+    <td><%=h support_unit.short_code %></td>
+
+Yields:
+
+NoMethodError in Support_units#index
+
+Showing app/views/support_units/index.html.erb where line #17 raised:
+
+undefined method `short_name' for nil:NilClass
+Extracted source (around line #17):
+
+14: 
+15: <% @support_units.each do |support_unit| %>
+16:   <tr>
+17:     <td><%=h support_unit.team.short_name %></td>
+18:     <td><%=h support_unit.short_code %></td>
+19:     <td><%=h support_unit.tac_callsign %></td>
+20:     <td><%=h support_unit.ham_callsign %></td>
+
+@support_unit.team.short_name displays okay in support_units show page.
+
+  <p>
+    <b>Team:</b>
+    <%=h @support_unit.team.short_name %>
+  </p>
+
+Needed Join in controller query
+
+def index
+  @support_units = SupportUnit.find(:all, :joins => [:team])
+  
+  ...
+end
+
+Next, on Support_unit update, current_stage_id is the number.  It should be the stage_id.
+
+Because form field is text field instead of selector.
+
+Support Units and Runner Status working
+Updates Stage Status.
+
+Fix linked fields.
+
+Clean up fixtures.
+
+To do:
+Update overall stage status.
