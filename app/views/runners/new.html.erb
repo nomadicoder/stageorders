@@ -4,6 +4,10 @@
   <%= f.error_messages %>
 
   <p>
+    <%= f.label :team_id %><br />
+    <%= f.collection_select (:team_id, Team.find(:all), :id, :short_name, :prompt => "Team") %>
+  </p>
+  <p>
     <%= f.label :stage_id %><br />
     <%= f.text_field :stage_id %>
   </p>

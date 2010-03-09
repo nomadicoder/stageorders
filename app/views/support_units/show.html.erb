@@ -1,6 +1,6 @@
 <p>
   <b>Team:</b>
-  <%=h @support_unit.team_id %>
+  <%=h @support_unit.team.short_name %>
 </p>
 
 <p>
@@ -25,7 +25,7 @@
 
 <p>
   <b>Current stage:</b>
-  <%=h @support_unit.current_stage_id %>
+  <%=h @support_unit.current_stage.number %>
 </p>
 
 <p>

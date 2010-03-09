@@ -1,181 +1,181 @@
 # Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
 
-one:
+nwkone:
   stage: one
   name: H Rickover
   team: nwk
   estimated_pace: "00:08:42"
   completed: true
+  runner_status_code: unk
   actual_time: "00:44:00"
-  runner_status_code: fin
 
-two:
+nwktwo:
   stage: two
   name: A Stevenson
   team: nwk
   estimated_pace: "00:07:48"
   completed: true
+  runner_status_code: unk
   actual_time: "01:13:41"
-  runner_status_code: fin
 
-three:
+nwkthree:
   stage: three
   name: RJ Traynor
   team: nwk
   estimated_pace: "00:08:49"
   completed: true
+  runner_status_code: unk
   actual_time: "00:47:31"
-  runner_status_code: fin
 
-four:
+nwkfour:
   stage: four
   name: R Hollingshead
   team: nwk
   estimated_pace: "00:08:20"
   completed: false
+  runner_status_code: unk
   actual_time: "00:00:00"
-  runner_status_code: run
 
-five:
+nwkfive:
   stage: five
   name: H Biberman
   team: nwk
   estimated_pace: "00:08:22"
   completed: false
+  runner_status_code: unk
   actual_time: "00:00:00"
-  runner_status_code: chk
 
-six:
+nwksix:
   stage: six
   name: H Aiken
   team: nwk
   estimated_pace: "00:08:52"
   completed: false
+  runner_status_code: unk
   actual_time: "00:00:00"
-  runner_status_code: chk
 
-seven:
+nwkseven:
   stage: seven
   name: A Ingham
   team: nwk
   estimated_pace: "00:07:48"
   completed: false
+  runner_status_code: unk
   actual_time: "00:00:00"
-  runner_status_code: enr
 
-eight:
+nwkeight:
   stage: eight
   name: S Tracy
   team: nwk
   estimated_pace: "00:08:14"
   completed: false
+  runner_status_code: unk
   actual_time: "00:00:00"
-  runner_status_code: enr
 
-nine:
+nwknine:
   stage: nine
   name: C Richter
   team: nwk
   estimated_pace: "00:09:29"
   completed: false
-  actual_time: "00:00:00"
   runner_status_code: unk
+  actual_time: "00:00:00"
 
-ten:
+nwkten:
   stage: ten
   name: T Ladnier
   team: nwk
   estimated_pace: "00:09:03"
   completed: false
-  actual_time: "00:00:00"
   runner_status_code: unk
+  actual_time: "00:00:00"
 
-eleven:
+nwkeleven:
   stage: eleven
   name: R Fisher
   team: nwk
   estimated_pace: "00:08:43"
   completed: false
-  actual_time: "00:00:00"
   runner_status_code: unk
+  actual_time: "00:00:00"
 
-twelve:
+nwktwelve:
   stage: twelve
   name: G Watkins
   team: nwk
   estimated_pace: "00:08:00"
   completed: false
-  actual_time: "00:00:00"
   runner_status_code: unk
+  actual_time: "00:00:00"
 
-thirteen:
+nwkthirteen:
   stage: thirteen
   name: G Gray
   team: nwk
   estimated_pace: "00:09:04"
   completed: false
-  actual_time: "00:00:00"
   runner_status_code: unk
+  actual_time: "00:00:00"
 
-fourteen:
+nwkfourteen:
   stage: fourteen
   name: P Mares
   team: nwk
   estimated_pace: "00:08:28"
   completed: false
-  actual_time: "00:00:00"
   runner_status_code: unk
+  actual_time: "00:00:00"
 
-fifteen:
+nwkfifteen:
   stage: fifteen
   name: G Lewis
   team: nwk
   estimated_pace: "00:08:11"
   completed: false
-  actual_time: "00:00:00"
   runner_status_code: unk
+  actual_time: "00:00:00"
 
-sixteen:
+nwksixteen:
   stage: sixteen
   name: J Babcock
   team: nwk
   estimated_pace: "00:07:21"
   completed: false
-  actual_time: "00:00:00"
   runner_status_code: unk
+  actual_time: "00:00:00"
 
-seventeen:
+nwkseventeen:
   stage: seventeen
   name: E Pyle
   team: nwk
   estimated_pace: "00:08:05"
   completed: false
-  actual_time: "00:00:00"
   runner_status_code: unk
+  actual_time: "00:00:00"
 
-eighteen:
+nwkeighteen:
   stage: eighteen
   name: C Green
   team: nwk
   estimated_pace: "00:08:15"
   completed: false
-  actual_time: "00:00:00"
   runner_status_code: unk
+  actual_time: "00:00:00"
 
-nineteen:
+nwknineteen:
   stage: nineteen
   name: A Porritt
   team: nwk
   estimated_pace: "00:07:35"
   completed: false
-  actual_time: "00:00:00"
   runner_status_code: unk
+  actual_time: "00:00:00"
 
-twenty:
+nwktwenty:
   stage: twenty
   name: P Phillips
   team: nwk
   estimated_pace: "00:08:38"
   completed: false
-  actual_time: "00:00:00"
   runner_status_code: unk
+  actual_time: "00:00:00"
