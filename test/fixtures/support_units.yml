@@ -7,7 +7,7 @@ nwkfollow:
   ham_callsign: "km0rat"
   support_type: follow
   support_status_code: unk
-  current_stage: two
+  current_stage: one
   location_lat: 1.5
   location_lon: 1.5
 
@@ -18,7 +18,7 @@ nwkshuttle1:
   ham_callsign: "n6iqa"
   support_type: shuttle
   support_status_code: unk
-  current_stage: five
+  current_stage: one
   location_lat: 1.5
   location_lon: 1.5
 
@@ -29,6 +29,17 @@ nwkshuttle2:
   ham_callsign: "kf6vom"
   support_type: shuttle
   support_status_code: unk
-  current_stage: six
+  current_stage: two
+  location_lat: 1.5
+  location_lon: 1.5
+
+nwkrover:
+  team: nwk
+  support_type_id: rover
+  tac_callsign: "Rover"
+  ham_callsign: "w7uga"
+  support_type: shuttle
+  support_status_code: unk
+  current_stage: two
   location_lat: 1.5
   location_lon: 1.5

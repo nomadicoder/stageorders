@@ -58,12 +58,15 @@ class RunnersController < ApplicationController
   # PUT /runners/1.xml
   def update
     @runner = Runner.find(params[:id])
-    @stage_status = StageStatus.find(:first, :readonly => false, :joins => [:stage, :team],
-                                     :conditions => {:stage_id => @runner.stage_id, :team_id => @runner.team_id})
 
     respond_to do |format|
       if @runner.update_attributes(params[:runner])
-        @stage_status.update_attributes(:runner_status_code_id => @runner.runner_status_code_id) unless @stage_status.nil?
+        @stage_status = StageStatus.find(:first, :readonly => false, :joins => [:stage, :team],
+                                         :conditions => {:stage_id => @runner.stage_id, :team_id => @runner.team_id})
+        if !@stage_status.nil? then
+          @stage_status.update_attributes(:runner_status_code_id => @runner.runner_status_code_id)
+          @stage_status.update_status
+        end
         flash[:notice] = 'Runner was successfully updated.'
         format.html { redirect_to(@runner) }
         format.xml  { head :ok }

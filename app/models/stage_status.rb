@@ -68,11 +68,15 @@ class StageStatus < ActiveRecord::Base
   end
   
   def stage_status=(short_code)
-    self.stage_short_code = StageStatusCode.find_by_short_code(short_code) unless short_code.blank?
+    self.stage_status_code = StageStatusCode.find_by_short_code(short_code) unless short_code.blank?
   end
   
+  # Update status based on the current runner status and support status codes
   def update_status
-    self.stage_status = StageStatusCode.get_state(runner_status_code.short_code, support_status_code.short_code)
+    if (!runner_status_code.nil? && !support_status_code.nil?)
+      stage_status_code = StageStatusCode.get_state(runner_status_code.short_code, support_status_code.short_code)
+      update_attributes(:stage_status_code_id => stage_status_code.id) unless stage_status_code.nil?
+    end
   end
 
   # orders all of the stages by stage number
