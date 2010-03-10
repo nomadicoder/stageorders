@@ -941,3 +941,28 @@ Clean up fixtures.
 
 To do:
 Update overall stage status.
+
+
+Tuesday, March 9, 2010
+When runner or support status changes, it should change overall stage status.
+
+Modified runner and support unit update controller
+
+  if !@stage_status.nil? then
+    @stage_status.update_attributes(:runner_status_code_id => @runner.runner_status_code_id)
+    @stage_status.update_status
+  end
+
+Broken setting stage status code
+  NoMethodError in Support unitsController#update
+  undefined method `stage_short_code=' for #<StageStatus:0x103578e20>
+  /Library/Ruby/Gems/1.8/gems/activerecord-2.3.5/lib/active_record/attribute_methods.rb:255:in `method_missing'
+  /Users/skng/Projects/rails/stageorders/app/models/stage_status.rb:71:in `stage_status='
+  /Users/skng/Projects/rails/stageorders/app/models/stage_status.rb:76:in `update_status'
+
+Need Update Stage Status codes Test fixtures.
+
+Tested, debugged, etc.
+
+TODO: Add backgorund color.
+Stage should be locations?  Have no way to assign a rover to a non-stage location, unless there is no stage number.

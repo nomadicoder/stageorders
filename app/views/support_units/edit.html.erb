@@ -21,7 +21,7 @@
   </p>
   <p>
     <%= f.label :status_code_id %><br />
-    <%= f.collection_select (:support_status_code_id, SupportStatusCode.find(:all), :id, :short_code, :prompt => "Status") %>
+    <%= f.collection_select (:support_status_code_id, SupportStatusCode.find(:all, :order=>:sequence), :id, :short_code, :prompt => "Status") %>
   </p>
   <p>
     <%= f.label :current_stage_id %><br />
