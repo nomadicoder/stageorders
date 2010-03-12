@@ -43,11 +43,11 @@ class Runner < ActiveRecord::Base
     find(:all, :joins => :stage, :order => "stages.number")
   end
   
-  def self.find_all_runners_for_team_code (team_code)
+  def self.find_all_runners_for_team_code(team_code)
     team = find_all_runners_for_team(Team.find_by_short_code(team_code))
   end
   
-  def self.find_all_runners_for_team (team)
+  def self.find_all_runners_for_team(team)
     find(:all, :joins => :stage, :conditions => "team_id = #{team.id}", :order => "stages.number") unless team.nil?
   end
   
