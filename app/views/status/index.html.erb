@@ -2,7 +2,7 @@
 
 <% form_for :team, :url => {:action => :change_team} do |f| %>
 <p>
-  <%= f.collection_select (:team_id, Team.find(:all), :id, :short_name, :prompt => "Team") %>
+  <%= f.collection_select( :team_id, Team.find(:all), :id, :short_name, :prompt => "Team" ) %>
 </p>
 <%= f.submit 'change_team' %>
 <% end %>

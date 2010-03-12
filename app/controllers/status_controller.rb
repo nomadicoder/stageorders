@@ -2,11 +2,11 @@ class StatusController < ApplicationController
   def index
     stage_collection = Stage.find_all_stages
     if session[:current_team_id].nil?
-      short_name = Team.find(:first).short_name
+      team = Team.find(:first)
     else
       team = Team.find(session[:current_team_id]) unless session[:current_team_id].nil?
-      short_name = team.short_name
     end
+    short_name = team.short_name
     @runners = Runner.find_all_runners_for_team_code(short_name)
     #@support_unit = SupportUnits.find_all_support_units
     @stages = stage_collection
