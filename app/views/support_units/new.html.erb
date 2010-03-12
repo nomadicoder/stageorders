@@ -5,11 +5,11 @@
 
   <p>
     <%= f.label :team_id %><br />
-    <%= f.collection_select (:team_id, Team.find(:all), :id, :short_name, :prompt => "Team") %>
+    <%= f.collection_select( :team_id, Team.find(:all), :id, :short_name, :prompt => "Team") %>
   </p>
   <p>
     <%= f.label :support_type_id %><br />
-    <%= f.collection_select (:support_type_id, SupportType.find(:all), :id, :short_code, :prompt => "Type") %>
+    <%= f.collection_select( :support_type_id, SupportType.find(:all), :id, :short_code, :prompt => "Type") %>
   </p>
   <p>
     <%= f.label :tac_callsign %><br />
@@ -21,11 +21,11 @@
   </p>
   <p>
     <%= f.label :status_code_id %><br />
-    <%= f.collection_select (:support_status_code_id, SupportStatusCode.find(:all, :order=>:sequence), :id, :short_code, :prompt => "Status") %>
+    <%= f.collection_select( :support_status_code_id, SupportStatusCode.find(:all, :order=>:sequence), :id, :short_code, :prompt => "Status") %>
   </p>
   <p>
     <%= f.label :current_stage_id %><br />
-    <%= f.collection_select (:current_stage_id, Stage.find(:all, :order=>:number), :id, :number, :prompt => "Stage") %>
+    <%= f.collection_select( :current_stage_id, Stage.find(:all, :order=>:number), :id, :number, :prompt => "Stage") %>
   </p>
   <p>
     <%= f.label :location_lat %><br />

@@ -17,11 +17,11 @@
   </p>
   <p>
     <%= f.label :runner_status_code_id %><br />
-    <%= f.collection_select (:runner_status_code_id, RunnerStatusCode.find(:all, :order => :sequence), :id, :description, :prompt => "Runner Status") %>
+    <%= f.collection_select( :runner_status_code_id, RunnerStatusCode.find(:all, :order => :sequence), :id, :description, :prompt => "Runner Status") %>
   </p>
   <p>
     <%= f.label :support_status_code_id %><br />
-    <%= f.collection_select (:support_status_code_id, SupportStatusCode.find(:all, :order => :sequence), :id, :description, :prompt => "Support Status") %>
+    <%= f.collection_select( :support_status_code_id, SupportStatusCode.find(:all, :order => :sequence), :id, :description, :prompt => "Support Status") %>
   </p>
   <p>
     <%= f.submit 'Update' %>

@@ -5,7 +5,7 @@
 
   <p>
     <%= f.label :team_id %><br />
-    <%= f.collection_select( :team_id, Team.find(:all), :id, :short_name, :prompt => "Team") %>
+    <%= f.collection_select(:team_id, Team.find(:all), :id, :short_name, :prompt => "Team") %>
   </p>
   <p>
     <%= f.label :stage_id %><br />
@@ -29,7 +29,7 @@
   </p>
   <p>
     <%= f.label :runner_status_code_id %><br />
-    <%= f.collection_select( :runner_status_code_id, RunnerStatusCode.find(:all, :order => :sequence), :id, :short_code, :prompt => "Status") %>
+    <%= f.collection_select(:runner_status_code_id, RunnerStatusCode.find(:all, :order => :sequence), :id, :short_code, :prompt => "Status") %>
   </p>
   <p>
     <%= f.submit 'Create' %>
