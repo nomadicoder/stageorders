@@ -5,11 +5,11 @@
 
   <p>
     <%= f.label :team_id %><br />
-    <%= f.collection_select(:team_id, Team.find(:all), :id, :short_name, :prompt => "Team") %>
+    <%= f.collection_select( :team_id, Team.find(:all), :id, :short_name, :prompt => "Team" ) %>
   </p>
   <p>
     <%= f.label :stage_id %><br />
-    <%= f.text_field :stage_id %>
+    <%= f.collection_select( :stage_id, Stage.find(:all, :order=>:number), :id, :number, :prompt => "Stage" ) %>
   </p>
   <p>
     <%= f.label :name %><br />
@@ -17,7 +17,7 @@
   </p>
   <p>
     <%= f.label :estimated_pace %><br />
-    <%= f.datetime_select :estimated_pace %>
+    <%= f.text_field :estimated_pace_formatted %>
   </p>
   <p>
     <%= f.label :completed %><br />
@@ -25,11 +25,11 @@
   </p>
   <p>
     <%= f.label :actual_time %><br />
-    <%= f.datetime_select :actual_time %>
+    <%= f.text_field :actual_time_formatted %>
   </p>
   <p>
     <%= f.label :runner_status_code_id %><br />
-    <%= f.collection_select(:runner_status_code_id, RunnerStatusCode.find(:all, :order => :sequence), :id, :short_code, :prompt => "Status") %>
+    <%= f.collection_select( :runner_status_code_id, RunnerStatusCode.find(:all, :order => :sequence), :id, :short_code, :prompt => "Status" ) %>
   </p>
   <p>
     <%= f.submit 'Create' %>
