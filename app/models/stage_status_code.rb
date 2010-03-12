@@ -20,7 +20,7 @@ class StageStatusCode < ActiveRecord::Base
     end
     
     # get the stage for the given runner and support status codes
-    def self.get_state (runner_status_code, support_status_code)
+    def self.get_state(runner_status_code, support_status_code)
       # check to see if stage state for runner state is a terminal state
       state = find(:first,
                    :conditions => {:runner_status_code_id  => RunnerStatusCode.find_by_short_code(runner_status_code).id,
