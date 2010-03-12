@@ -1,121 +1,361 @@
 # Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
 
-one:
+nwkone:
   team: nwk
   stage: one
   runner: nwkone
   support_unit: nwkshuttle1
 
-two:
+nwktwo:
   team: nwk
   stage: two
   runner: nwktwo
   support_unit: nwkshuttle2
 
-three:
+nwkthree:
   team: nwk
   stage: three
   runner: nwkthree
   support_unit: nwkshuttle1
 
-four:
+nwkfour:
   team: nwk
   stage: four
   runner: nwkfour
   support_unit: nwkshuttle2
 
-five:
+nwkfive:
   team: nwk
   stage: five
   runner: nwkfive
   support_unit: nwkshuttle1
 
-six:
+nwksix:
   team: nwk
   stage: six
   runner: nwksix
   support_unit: nwkshuttle2
 
-seven:
+nwkseven:
   team: nwk
   stage: seven
   runner: nwkseven
   support_unit: nwkshuttle1
 
-eight:
+nwkeight:
   team: nwk
   stage: eight
   runner: nwkeight
   support_unit: nwkshuttle2
 
-nine:
+nwknine:
   team: nwk
   stage: nine
   runner: nwknine
   support_unit: nwkshuttle1
 
-ten:
+nwkten:
   team: nwk
   stage: ten
   runner: nwkten
   support_unit: nwkshuttle2
 
-eleven:
+nwkeleven:
   team: nwk
   stage: eleven
   runner: nwkeleven
   support_unit: nwkshuttle1
 
-twelve:
+nwktwelve:
   team: nwk
   stage: twelve
   runner: nwktwelve
   support_unit: nwkshuttle2
 
-thirteen:
+nwkthirteen:
   team: nwk
   stage: thirteen
   runner: nwkthirteen
   support_unit: nwkshuttle1
 
-fourteen:
+nwkfourteen:
   team: nwk
   stage: fourteen
   runner: nwkfourteen
   support_unit: nwkshuttle2
 
-fifteen:
+nwkfifteen:
   team: nwk
   stage: fifteen
   runner: nwkfifteen
   support_unit: nwkshuttle1
 
-sixteen:
+nwksixteen:
   team: nwk
   stage: sixteen
   runner: nwksixteen
   support_unit: nwkshuttle2
 
-seventeen:
+nwkseventeen:
   team: nwk
   stage: seventeen
   runner: nwkseventeen
   support_unit: nwkshuttle1
 
-eighteen:
+nwkeighteen:
   team: nwk
   stage: eighteen
   runner: nwkeighteen
   support_unit: nwkshuttle2
 
-nineteen:
+nwknineteen:
   team: nwk
   stage: nineteen
   runner: nwknineteen
   support_unit: nwkshuttle1
 
-twenty:
+nwktwenty:
   team: nwk
   stage: twenty
   runner: nwktwenty
   support_unit: nwkshuttle2
+
+ccbone:
+  team: ccb
+  stage: one
+  runner: ccbone
+  support_unit: ccbshuttle1
+
+ccbtwo:
+  team: ccb
+  stage: two
+  runner: ccbtwo
+  support_unit: ccbshuttle2
+
+ccbthree:
+  team: ccb
+  stage: three
+  runner: ccbthree
+  support_unit: ccbshuttle1
+
+ccbfour:
+  team: ccb
+  stage: four
+  runner: ccbfour
+  support_unit: ccbshuttle2
+
+ccbfive:
+  team: ccb
+  stage: five
+  runner: ccbfive
+  support_unit: ccbshuttle1
+
+ccbsix:
+  team: ccb
+  stage: six
+  runner: ccbsix
+  support_unit: ccbshuttle2
+
+ccbseven:
+  team: ccb
+  stage: seven
+  runner: ccbseven
+  support_unit: ccbshuttle1
+
+ccbeight:
+  team: ccb
+  stage: eight
+  runner: ccbeight
+  support_unit: ccbshuttle2
+
+ccbnine:
+  team: ccb
+  stage: nine
+  runner: ccbnine
+  support_unit: ccbshuttle1
+
+ccbten:
+  team: ccb
+  stage: ten
+  runner: ccbten
+  support_unit: ccbshuttle2
+
+ccbeleven:
+  team: ccb
+  stage: eleven
+  runner: ccbeleven
+  support_unit: ccbshuttle1
+
+ccbtwelve:
+  team: ccb
+  stage: twelve
+  runner: ccbtwelve
+  support_unit: ccbshuttle2
+
+ccbthirteen:
+  team: ccb
+  stage: thirteen
+  runner: ccbthirteen
+  support_unit: ccbshuttle1
+
+ccbfourteen:
+  team: ccb
+  stage: fourteen
+  runner: ccbfourteen
+  support_unit: ccbshuttle2
+
+ccbfifteen:
+  team: ccb
+  stage: fifteen
+  runner: ccbfifteen
+  support_unit: ccbshuttle1
+
+ccbsixteen:
+  team: ccb
+  stage: sixteen
+  runner: ccbsixteen
+  support_unit: ccbshuttle2
+
+ccbseventeen:
+  team: ccb
+  stage: seventeen
+  runner: ccbseventeen
+  support_unit: ccbshuttle1
+
+ccbeighteen:
+  team: ccb
+  stage: eighteen
+  runner: ccbeighteen
+  support_unit: ccbshuttle2
+
+ccbnineteen:
+  team: ccb
+  stage: nineteen
+  runner: ccbnineteen
+  support_unit: ccbshuttle1
+
+ccbtwenty:
+  team: ccb
+  stage: twenty
+  runner: ccbtwenty
+  support_unit: ccbshuttle2
+
+tstone:
+  team: tst
+  stage: one
+  runner: tstone
+  support_unit: tstshuttle1
+
+tsttwo:
+  team: tst
+  stage: two
+  runner: tsttwo
+  support_unit: tstshuttle2
+
+tstthree:
+  team: tst
+  stage: three
+  runner: tstthree
+  support_unit: tstshuttle1
+
+tstfour:
+  team: tst
+  stage: four
+  runner: tstfour
+  support_unit: tstshuttle2
+
+tstfive:
+  team: tst
+  stage: five
+  runner: tstfive
+  support_unit: tstshuttle1
+
+tstsix:
+  team: tst
+  stage: six
+  runner: tstsix
+  support_unit: tstshuttle2
+
+tstseven:
+  team: tst
+  stage: seven
+  runner: tstseven
+  support_unit: tstshuttle1
+
+tsteight:
+  team: tst
+  stage: eight
+  runner: tsteight
+  support_unit: tstshuttle2
+
+tstnine:
+  team: tst
+  stage: nine
+  runner: tstnine
+  support_unit: tstshuttle1
+
+tstten:
+  team: tst
+  stage: ten
+  runner: tstten
+  support_unit: tstshuttle2
+
+tsteleven:
+  team: tst
+  stage: eleven
+  runner: tsteleven
+  support_unit: tstshuttle1
+
+tsttwelve:
+  team: tst
+  stage: twelve
+  runner: tsttwelve
+  support_unit: tstshuttle2
+
+tstthirteen:
+  team: tst
+  stage: thirteen
+  runner: tstthirteen
+  support_unit: tstshuttle1
+
+tstfourteen:
+  team: tst
+  stage: fourteen
+  runner: tstfourteen
+  support_unit: tstshuttle2
+
+tstfifteen:
+  team: tst
+  stage: fifteen
+  runner: tstfifteen
+  support_unit: tstshuttle1
+
+tstsixteen:
+  team: tst
+  stage: sixteen
+  runner: tstsixteen
+  support_unit: tstshuttle2
+
+tstseventeen:
+  team: tst
+  stage: seventeen
+  runner: tstseventeen
+  support_unit: tstshuttle1
+
+tsteighteen:
+  team: tst
+  stage: eighteen
+  runner: tsteighteen
+  support_unit: tstshuttle2
+
+tstnineteen:
+  team: tst
+  stage: nineteen
+  runner: tstnineteen
+  support_unit: tstshuttle1
+
+tsttwenty:
+  team: tst
+  stage: twenty
+  runner: tsttwenty
+  support_unit: tstshuttle2

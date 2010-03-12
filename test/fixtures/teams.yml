@@ -5,7 +5,7 @@ nwk:
   short_name: NWK
   name: Norwalk Station
 
-cst:
+tst:
   number: 110
   short_name: TST
   name: Transportation Bureau
