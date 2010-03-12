@@ -1,5 +1,12 @@
 <h1>Stage Status</h1>
 
+<% form_for :team, :url => {:action => :change_team} do |f| %>
+<p>
+  <%= f.collection_select (:team_id, Team.find(:all), :id, :short_name, :prompt => "Team") %>
+</p>
+<%= f.submit 'change_team' %>
+<% end %>
+
 <table border>
   <tr>
     <th>Stage</th>
@@ -11,6 +18,8 @@
     <th>Support Unit</th>
     <th>Runner Status</th>
     <th>Support Status</th>
+    <th>Stage Status</th>
+    <th>Time</th>
   </tr>
 
 <% @runners.each do |runner| %>
@@ -24,6 +33,8 @@
     <td></td>
     <td align='center'><%=h runner.runner_status_code.short_code %></td>
     <td></td>
+    <td></td>
+    <td><%= runner.actual_time.strftime("%H:%M:%S") %></td>
   </tr>
 <% end %>
 </table>

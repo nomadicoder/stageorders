@@ -6,8 +6,8 @@ nwkone:
   team: nwk
   estimated_pace: "00:08:42"
   completed: true
-  runner_status_code: unk
   actual_time: "00:44:00"
+  runner_status_code: unk
 
 nwktwo:
   stage: two
@@ -15,8 +15,8 @@ nwktwo:
   team: nwk
   estimated_pace: "00:07:48"
   completed: true
-  runner_status_code: unk
   actual_time: "01:13:41"
+  runner_status_code: unk
 
 nwkthree:
   stage: three
@@ -24,8 +24,8 @@ nwkthree:
   team: nwk
   estimated_pace: "00:08:49"
   completed: true
-  runner_status_code: unk
   actual_time: "00:47:31"
+  runner_status_code: unk
 
 nwkfour:
   stage: four
@@ -33,8 +33,8 @@ nwkfour:
   team: nwk
   estimated_pace: "00:08:20"
   completed: false
-  runner_status_code: unk
   actual_time: "00:00:00"
+  runner_status_code: unk
 
 nwkfive:
   stage: five
@@ -42,8 +42,8 @@ nwkfive:
   team: nwk
   estimated_pace: "00:08:22"
   completed: false
-  runner_status_code: unk
   actual_time: "00:00:00"
+  runner_status_code: unk
 
 nwksix:
   stage: six
@@ -51,8 +51,8 @@ nwksix:
   team: nwk
   estimated_pace: "00:08:52"
   completed: false
-  runner_status_code: unk
   actual_time: "00:00:00"
+  runner_status_code: unk
 
 nwkseven:
   stage: seven
@@ -60,8 +60,8 @@ nwkseven:
   team: nwk
   estimated_pace: "00:07:48"
   completed: false
-  runner_status_code: unk
   actual_time: "00:00:00"
+  runner_status_code: unk
 
 nwkeight:
   stage: eight
@@ -69,8 +69,8 @@ nwkeight:
   team: nwk
   estimated_pace: "00:08:14"
   completed: false
-  runner_status_code: unk
   actual_time: "00:00:00"
+  runner_status_code: unk
 
 nwknine:
   stage: nine
@@ -78,8 +78,8 @@ nwknine:
   team: nwk
   estimated_pace: "00:09:29"
   completed: false
-  runner_status_code: unk
   actual_time: "00:00:00"
+  runner_status_code: unk
 
 nwkten:
   stage: ten
@@ -87,8 +87,8 @@ nwkten:
   team: nwk
   estimated_pace: "00:09:03"
   completed: false
-  runner_status_code: unk
   actual_time: "00:00:00"
+  runner_status_code: unk
 
 nwkeleven:
   stage: eleven
@@ -96,8 +96,8 @@ nwkeleven:
   team: nwk
   estimated_pace: "00:08:43"
   completed: false
-  runner_status_code: unk
   actual_time: "00:00:00"
+  runner_status_code: unk
 
 nwktwelve:
   stage: twelve
@@ -105,8 +105,8 @@ nwktwelve:
   team: nwk
   estimated_pace: "00:08:00"
   completed: false
-  runner_status_code: unk
   actual_time: "00:00:00"
+  runner_status_code: unk
 
 nwkthirteen:
   stage: thirteen
@@ -114,8 +114,8 @@ nwkthirteen:
   team: nwk
   estimated_pace: "00:09:04"
   completed: false
-  runner_status_code: unk
   actual_time: "00:00:00"
+  runner_status_code: unk
 
 nwkfourteen:
   stage: fourteen
@@ -123,8 +123,8 @@ nwkfourteen:
   team: nwk
   estimated_pace: "00:08:28"
   completed: false
-  runner_status_code: unk
   actual_time: "00:00:00"
+  runner_status_code: unk
 
 nwkfifteen:
   stage: fifteen
@@ -132,8 +132,8 @@ nwkfifteen:
   team: nwk
   estimated_pace: "00:08:11"
   completed: false
-  runner_status_code: unk
   actual_time: "00:00:00"
+  runner_status_code: unk
 
 nwksixteen:
   stage: sixteen
@@ -141,8 +141,8 @@ nwksixteen:
   team: nwk
   estimated_pace: "00:07:21"
   completed: false
-  runner_status_code: unk
   actual_time: "00:00:00"
+  runner_status_code: unk
 
 nwkseventeen:
   stage: seventeen
@@ -150,8 +150,8 @@ nwkseventeen:
   team: nwk
   estimated_pace: "00:08:05"
   completed: false
-  runner_status_code: unk
   actual_time: "00:00:00"
+  runner_status_code: unk
 
 nwkeighteen:
   stage: eighteen
@@ -159,8 +159,8 @@ nwkeighteen:
   team: nwk
   estimated_pace: "00:08:15"
   completed: false
-  runner_status_code: unk
   actual_time: "00:00:00"
+  runner_status_code: unk
 
 nwknineteen:
   stage: nineteen
@@ -168,8 +168,8 @@ nwknineteen:
   team: nwk
   estimated_pace: "00:07:35"
   completed: false
-  runner_status_code: unk
   actual_time: "00:00:00"
+  runner_status_code: unk
 
 nwktwenty:
   stage: twenty
@@ -177,5 +177,365 @@ nwktwenty:
   team: nwk
   estimated_pace: "00:08:38"
   completed: false
-  runner_status_code: unk
   actual_time: "00:00:00"
+  runner_status_code: unk
+
+ccbone:
+  stage: one
+  name: C Young
+  team: ccb
+  estimated_pace: "00:08:42"
+  completed: true
+  actual_time: "00:44:00"
+  runner_status_code: unk
+
+ccbtwo:
+  stage: two
+  name: K Kwon
+  team: ccb
+  estimated_pace: "00:07:48"
+  completed: true
+  actual_time: "01:13:41"
+  runner_status_code: unk
+
+ccbthree:
+  stage: three
+  name: A Guthrie
+  team: ccb
+  estimated_pace: "00:08:49"
+  completed: true
+  actual_time: "00:47:31"
+  runner_status_code: unk
+
+ccbfour:
+  stage: four
+  name: M Żywczyński
+  team: ccb
+  estimated_pace: "00:08:20"
+  completed: false
+  actual_time: "00:00:00"
+  runner_status_code: unk
+
+ccbfive:
+  stage: five
+  name: B Daniels
+  team: ccb
+  estimated_pace: "00:08:22"
+  completed: false
+  actual_time: "00:00:00"
+  runner_status_code: unk
+
+ccbsix:
+  stage: six
+  name: A Tarski	
+  team: ccb
+  estimated_pace: "00:08:52"
+  completed: false
+  actual_time: "00:00:00"
+  runner_status_code: unk
+
+ccbseven:
+  stage: seven
+  name: F Batista
+  team: ccb
+  estimated_pace: "00:07:48"
+  completed: false
+  actual_time: "00:00:00"
+  runner_status_code: unk
+
+ccbeight:
+  stage: eight
+  name: F Zamboni
+  team: ccb
+  estimated_pace: "00:08:14"
+  completed: false
+  actual_time: "00:00:00"
+  runner_status_code: unk
+
+ccbnine:
+  stage: nine
+  name: M Naguib
+  team: ccb
+  estimated_pace: "00:09:29"
+  completed: false
+  actual_time: "00:00:00"
+  runner_status_code: unk
+
+ccbten:
+  stage: ten
+  name: H Calder
+  team: ccb
+  estimated_pace: "00:09:03"
+  completed: false
+  actual_time: "00:00:00"
+  runner_status_code: unk
+
+ccbeleven:
+  stage: eleven
+  name: S Symington
+  team: ccb
+  estimated_pace: "00:08:43"
+  completed: false
+  actual_time: "00:00:00"
+  runner_status_code: unk
+
+ccbtwelve:
+  stage: twelve
+  name: A Rooney
+  team: ccb
+  estimated_pace: "00:08:00"
+  completed: false
+  actual_time: "00:00:00"
+  runner_status_code: unk
+
+ccbthirteen:
+  stage: thirteen
+  name: E Taylor
+  team: ccb
+  estimated_pace: "00:09:04"
+  completed: false
+  actual_time: "00:00:00"
+  runner_status_code: unk
+
+ccbfourteen:
+  stage: fourteen
+  name: R Caracciola
+  team: ccb
+  estimated_pace: "00:08:28"
+  completed: false
+  actual_time: "00:00:00"
+  runner_status_code: unk
+
+ccbfifteen:
+  stage: fifteen
+  name: C Gable
+  team: ccb
+  estimated_pace: "00:08:11"
+  completed: false
+  actual_time: "00:00:00"
+  runner_status_code: unk
+
+ccbsixteen:
+  stage: sixteen
+  name: F Buckles
+  team: ccb
+  estimated_pace: "00:07:21"
+  completed: false
+  actual_time: "00:00:00"
+  runner_status_code: unk
+
+ccbseventeen:
+  stage: seventeen
+  name: J Heifetz
+  team: ccb
+  estimated_pace: "00:08:05"
+  completed: false
+  actual_time: "00:00:00"
+  runner_status_code: unk
+
+ccbeighteen:
+  stage: eighteen
+  name: S Adler
+  team: ccb
+  estimated_pace: "00:08:15"
+  completed: false
+  actual_time: "00:00:00"
+  runner_status_code: unk
+
+ccbnineteen:
+  stage: nineteen
+  name: J Núncio
+  team: ccb
+  estimated_pace: "00:07:35"
+  completed: false
+  actual_time: "00:00:00"
+  runner_status_code: unk
+
+ccbtwenty:
+  stage: twenty
+  name: M Davis
+  team: ccb
+  estimated_pace: "00:08:38"
+  completed: false
+  actual_time: "00:00:00"
+  runner_status_code: unk
+
+cstone:
+  stage: one
+  name: Z Marx
+  team: cst
+  estimated_pace: "00:08:42"
+  completed: true
+  actual_time: "00:44:00"
+  runner_status_code: unk
+
+csttwo:
+  stage: two
+  name: H Luro
+  team: cst
+  estimated_pace: "00:07:48"
+  completed: true
+  actual_time: "01:13:41"
+  runner_status_code: unk
+
+cstthree:
+  stage: three
+  name: L Pauling
+  team: cst
+  estimated_pace: "00:08:49"
+  completed: true
+  actual_time: "00:47:31"
+  runner_status_code: unk
+
+cstfour:
+  stage: four
+  name: C Choules
+  team: cst
+  estimated_pace: "00:08:20"
+  completed: false
+  actual_time: "00:00:00"
+  runner_status_code: unk
+
+cstfive:
+  stage: five
+  name: C Goren
+  team: cst
+  estimated_pace: "00:08:22"
+  completed: false
+  actual_time: "00:00:00"
+  runner_status_code: unk
+
+cstsix:
+  stage: six
+  name: J Rabearivelo
+  team: cst
+  estimated_pace: "00:08:52"
+  completed: false
+  actual_time: "00:00:00"
+  runner_status_code: unk
+
+cstseven:
+  stage: seven
+  name: A Newman
+  team: cst
+  estimated_pace: "00:07:48"
+  completed: false
+  actual_time: "00:00:00"
+  runner_status_code: unk
+
+csteight:
+  stage: eight
+  name: K Arnold
+  team: cst
+  estimated_pace: "00:08:14"
+  completed: false
+  actual_time: "00:00:00"
+  runner_status_code: unk
+
+cstnine:
+  stage: nine
+  name: G Kempton
+  team: cst
+  estimated_pace: "00:09:29"
+  completed: false
+  actual_time: "00:00:00"
+  runner_status_code: unk
+
+cstten:
+  stage: ten
+  name: U Iwerks
+  team: cst
+  estimated_pace: "00:09:03"
+  completed: false
+  actual_time: "00:00:00"
+  runner_status_code: unk
+
+csteleven:
+  stage: eleven
+  name: C Barks
+  team: cst
+  estimated_pace: "00:08:43"
+  completed: false
+  actual_time: "00:00:00"
+  runner_status_code: unk
+
+csttwelve:
+  stage: twelve
+  name: E Ollenhauer
+  team: cst
+  estimated_pace: "00:08:00"
+  completed: false
+  actual_time: "00:00:00"
+  runner_status_code: unk
+
+cstthirteen:
+  stage: thirteen
+  name: E Sato
+  team: cst
+  estimated_pace: "00:09:04"
+  completed: false
+  actual_time: "00:00:00"
+  runner_status_code: unk
+
+cstfourteen:
+  stage: fourteen
+  name: K Slessor
+  team: cst
+  estimated_pace: "00:08:28"
+  completed: false
+  actual_time: "00:00:00"
+  runner_status_code: unk
+
+cstfifteen:
+  stage: fifteen
+  name: J Weil
+  team: cst
+  estimated_pace: "00:08:11"
+  completed: false
+  actual_time: "00:00:00"
+  runner_status_code: unk
+
+cstsixteen:
+  stage: sixteen
+  name: W Chambers
+  team: cst
+  estimated_pace: "00:07:21"
+  completed: false
+  actual_time: "00:00:00"
+  runner_status_code: unk
+
+cstseventeen:
+  stage: seventeen
+  name: J Davis
+  team: cst
+  estimated_pace: "00:08:05"
+  completed: false
+  actual_time: "00:00:00"
+  runner_status_code: unk
+
+csteighteen:
+  stage: eighteen
+  name: A Lewis
+  team: cst
+  estimated_pace: "00:08:15"
+  completed: false
+  actual_time: "00:00:00"
+  runner_status_code: unk
+
+cstnineteen:
+  stage: nineteen
+  name: E Hirohito
+  team: cst
+  estimated_pace: "00:07:35"
+  completed: false
+  actual_time: "00:00:00"
+  runner_status_code: unk
+
+csttwenty:
+  stage: twenty
+  name: S Kuznets
+  team: cst
+  estimated_pace: "00:08:38"
+  completed: false
+  actual_time: "00:00:00"
+  runner_status_code: unk
