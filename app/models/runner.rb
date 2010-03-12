@@ -4,6 +4,8 @@ class Runner < ActiveRecord::Base
   belongs_to :runner_status_code
   has_one :stage_status
   
+  #validates_format_of :estimated_pace, :with => /\d+:\d+/
+  
   def runner_status
     runner_status_code.short_code if runner_status_code
   end
@@ -41,7 +43,12 @@ class Runner < ActiveRecord::Base
     find(:all, :joins => :stage, :order => "stages.number")
   end
   
-  def self.find_all_runners_for_team (team_id)
+  def self.find_all_runners_for_team_code (team_code)
+    team = find_all_runners_for_team(Team.find_by_short_code(team_code))
+  end
+  
+  def self.find_all_runners_for_team (team)
+    find(:all, :joins => :stage, :conditions => "team_id = #{team.id}", :order => "stages.number") unless team.nil?
   end
   
   def estimated_pace_formatted

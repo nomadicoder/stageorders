@@ -61,6 +61,7 @@ class SupportUnitsController < ApplicationController
 
     respond_to do |format|
       if @support_unit.update_attributes(params[:support_unit])
+        # TODO: Too many queries for stage_status update.  Optimize this
         @stage_status = StageStatus.find(:first, :readonly => false, :joins => [:stage, :team],
                                          :conditions => {:stage_id => @support_unit.current_stage_id, :team_id => @support_unit.team_id})
         if !@stage_status.nil? then

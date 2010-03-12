@@ -61,6 +61,7 @@ class RunnersController < ApplicationController
 
     respond_to do |format|
       if @runner.update_attributes(params[:runner])
+        # TODO: Too many queries for stage_status update.  Optimize this
         @stage_status = StageStatus.find(:first, :readonly => false, :joins => [:stage, :team],
                                          :conditions => {:stage_id => @runner.stage_id, :team_id => @runner.team_id})
         if !@stage_status.nil? then
@@ -88,4 +89,5 @@ class RunnersController < ApplicationController
       format.xml  { head :ok }
     end
   end
+  
 end
