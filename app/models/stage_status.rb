@@ -83,4 +83,10 @@ class StageStatus < ActiveRecord::Base
   def self.find_all_stage_statuses
     find(:all, :joins => :stage, :order => "stages.number")
   end
+  
+  # find by team
+  def self.find_by_team_code (team_code)
+    team = Team.find_by_short_code(team_code)
+    find(:first, :conditions => "team_id = '#{team.id}'" )
+  end
 end
