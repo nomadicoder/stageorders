@@ -22,9 +22,9 @@ ActiveRecord::Schema.define(:version => 20100303040840) do
   create_table "runners", :force => true do |t|
     t.integer  "stage_id"
     t.string   "name"
-    t.time     "estimated_pace"
+    t.time     "estimated_pace",        :default => '2000-01-01 00:00:00'
     t.boolean  "completed"
-    t.time     "actual_time"
+    t.time     "actual_time",           :default => '2000-01-01 00:00:00'
     t.datetime "created_at"
     t.datetime "updated_at"
     t.integer  "team_id",               :default => 0

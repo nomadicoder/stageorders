@@ -3,9 +3,9 @@ class CreateRunners < ActiveRecord::Migration
     create_table :runners do |t|
       t.integer :stage_id
       t.string :name
-      t.time :estimated_pace
+      t.time :estimated_pace, :default => "00:00"
       t.boolean :completed
-      t.time :actual_time
+      t.time :actual_time, :default => "00:00:00"
 
       t.timestamps
     end
