@@ -186,25 +186,25 @@ ccbone:
   team: ccb
   estimated_pace: "00:08:42"
   completed: true
-  actual_time: "00:44:00"
+  actual_time: "00:45:02"
   runner_status_code: unk
 
 ccbtwo:
   stage: two
   name: K Kwon
   team: ccb
-  estimated_pace: "00:07:48"
+  estimated_pace: "00:08:40"
   completed: true
-  actual_time: "01:13:41"
+  actual_time: "01:14:52"
   runner_status_code: unk
 
 ccbthree:
   stage: three
   name: A Guthrie
   team: ccb
-  estimated_pace: "00:08:49"
+  estimated_pace: "00:09:50"
   completed: true
-  actual_time: "00:47:31"
+  actual_time: "00:48:32"
   runner_status_code: unk
 
 ccbfour:
