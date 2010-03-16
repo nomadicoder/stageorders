@@ -7,13 +7,6 @@ class Runner < ActiveRecord::Base
   validates_presence_of :name, :team
   validate :pace_time_valid, :actual_time_valid
   
-  before_save :validate_pace
-  
-  def initialize
-    @valid_estimated_pace = false
-    @valid_actual_time = false
-  end
-  
   def runner_status
     runner_status_code.short_code if runner_status_code
   end
@@ -64,9 +57,9 @@ class Runner < ActiveRecord::Base
   end
   
   def estimated_pace_formatted=(estimated_pace)
-    # Preserve the actual time status for notificaiton if time is invalid
-    @valid_estimated_pace = !/^\d+:\d+$/.match(estimated_pace).nil?
-    if @valid_estimated_pace
+    # Preserve the actual time incase it is invalid
+    @estimated_pace_check = estimated_pace
+    if !/^\d+:\d+$/.match(estimated_pace).nil?
       self.estimated_pace = Time.parse("00:"+estimated_pace)
     end
   end
@@ -76,25 +69,21 @@ class Runner < ActiveRecord::Base
   end
   
   def actual_time_formatted=(actual_time)
-    # Preserve the actual time status for notificaiton if time is invalid
-    @valid_actual_time = !/^\d+:\d+:\d+$/.match(actual_time).nil?
-    if @valid_actual_time
+    # Preserve the actual time incase it is invalid
+    @actual_time_check = actual_time
+    if !/^\d+:\d+:\d+$/.match(actual_time).nil?
       self.actual_time = Time.parse(actual_time)
     end
   end
   
 protected
-  def validate_pace
-    logger.info("***** validate_pace")
-  end
-  
   def pace_time_valid
     # If the formatted time is invalid, display error message and highlight the field
-    errors.add(:estimated_pace_formatted, "Format of Pace Time should be 'mm:ss'") if !@valid_estimated_pace
+    errors.add(:estimated_pace_formatted, "Format of Pace Time should be 'mm:ss'") if /^\d+:\d+$/.match(@estimated_pace_check).nil?
   end
 
   def actual_time_valid
     # If the formatted time is invalid, display error message and highlight the field
-    errors.add(:actual_time_formatted, "Format of Actual Time should be 'hh:mm:ss'") if !@valid_actual_time
+    errors.add(:actual_time_formatted, "Format of Actual Time should be 'hh:mm:ss'") if /^\d+:\d+:\d+$/.match(@actual_time_check).nil?
   end
 end
