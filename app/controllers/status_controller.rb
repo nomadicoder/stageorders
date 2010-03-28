@@ -7,6 +7,7 @@ class StatusController < ApplicationController
       team = Team.find(session[:current_team_id])
     end
     @team_name = team.name
+    @team_id = team.id
     @runners = Runner.find_all_runners_for_team_code(team.short_name)
     @stages = stage_collection
   end

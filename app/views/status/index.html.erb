@@ -1,4 +1,4 @@
-<h1><%= @team_name %> Stage Status</h1>
+<h1><%= @team.name %> Stage Status</h1>
 
 <table border>
   <tr>
@@ -36,7 +36,7 @@
 
 <% form_for :team, :url => {:action => "change_team"} do |f| %>
 <p>
-  <%= f.collection_select( :team_id, Team.find(:all), :id, :short_name, :prompt => "Select Team" ) %>
+  <%= f.collection_select( :team_id, Team.find(:all), :id, :short_name, :prompt => "Select Team", :selected => @team_id ) %>
   <%= f.submit 'change_team' %>
 </p>
 <% end %>
