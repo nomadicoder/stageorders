@@ -1,4 +1,6 @@
 class ResultsController < ApplicationController
+  layout "results"
+
   def index
     if session[:current_team_id].nil? || session[:current_team_id].blank?
       team = Team.find(:first)
@@ -16,10 +18,10 @@ class ResultsController < ApplicationController
   end
 
   def change_team
-    if params[:team][:team_id].nil? || params[:team][:team_id].blank?
+    if params[:id].nil? || params[:id].blank?
       session[:current_team_id] = Team.find(:first).id
     else
-      session[:current_team_id] = params[:team][:team_id]
+      session[:current_team_id] = params[:id]
     end
     @team = Team.find(session[:current_team_id])
     redirect_to :action => :index

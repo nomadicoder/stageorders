@@ -1,4 +1,6 @@
 class StatusController < ApplicationController
+  layout "status"
+  
   def index
     stage_collection = Stage.find_all_stages
     if session[:current_team_id].nil? || session[:current_team_id].blank?
