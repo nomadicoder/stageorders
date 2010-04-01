@@ -17,17 +17,7 @@ ActionController::Routing::Routes.draw do |map|
 
   map.resources :runners
 
-  map.resources :stages
-
-  map.resources :stages
-
-  map.resources :stages
-
-  map.resources :stages
-
-  map.resources :stages
-
-  map.resources :stages
+  map.resources :results
 
   map.resources :stages
 
@@ -72,4 +62,5 @@ ActionController::Routing::Routes.draw do |map|
   # consider removing or commenting them out if you're using named routes and resources.
   map.connect ':controller/:action/:id'
   map.connect ':controller/:action/:id.:format'
+  
 end
