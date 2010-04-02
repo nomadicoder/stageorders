@@ -3,7 +3,7 @@ class CreateStages < ActiveRecord::Migration
     create_table :stages do |t|
       t.integer :number
       t.string :landmark
-      t.decimal :miles, :precision=> 1, :scale=> 3
+      t.decimal :miles, :precision=> 3, :scale=> 1
       t.integer :difficulty
       t.time :estimated_pace
       t.time :estimated_time
