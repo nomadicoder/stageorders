@@ -1,0 +1,37 @@
+<div id="team_runners">
+<% form_for(:runner) do |f| %>
+  <%= f.error_messages %>
+
+  <p>
+    <%= f.label :team_id %> : 
+    <%= f.collection_select( :team_id, Team.find(:all), :id, :short_name, :prompt => "Team", :selected => @team_id ) %>
+    <%= observe_field "runner_team_id", :update => "team_runners", :with => "update_team_id", :url => {:action => "update_team_runners"} %>
+  </p>
+  <p>
+    <%= f.label :stage_id %> : 
+    <%= f.collection_select( :stage_id, @stages, :id, :number, :prompt => "Stage" ) %>
+  </p>
+  <p>
+    <%= f.label :runner_id %><br />
+    <%= f.collection_select( :runner_id, @runners, :id, :name, :prompt => "Runner") %>
+  <p>
+    <%= f.label :completed %> : 
+    <%= f.check_box :completed %>
+  </p>
+  <p>
+    <%= f.label :actual_time %> : 
+    <%= f.text_field :actual_time_formatted %>
+  </p>
+  <p>
+    <%= f.label :runner_status_code_id %> : 
+    <%= f.collection_select( :runner_status_code_id, RunnerStatusCode.find(:all, :order => :sequence), :id, :short_code, :prompt => "Status" ) %>
+  </p>
+  <p>
+    <%= f.label :runner_note %> : 
+    <%= f.text_field :runner_note %>
+  </p>
+  <p>
+    <%= f.submit 'Update Runner Status' %>
+  </p>
+<% end %>
+</div> <!-- team_runners -->
