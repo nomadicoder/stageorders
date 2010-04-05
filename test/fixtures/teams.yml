@@ -1,5 +1,10 @@
 # Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
 
+mcj:
+  number: 1
+  short_name: MCJ-IRC
+  name: Men's Central Jail/Inmate Reception Center
+
 nwk:
   number: 92
   short_name: NWK
@@ -12,5 +17,5 @@ tst:
 
 ccb:
   number: 216
-  short_name: CCB-MDR
-  name: Community College Bureau/Marina Del Rey Station
+  short_name: CCS-MDR
+  name: Community College Service/Marina Del Rey Station

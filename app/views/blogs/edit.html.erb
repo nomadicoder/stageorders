@@ -1,0 +1,44 @@
+<h1>Editing blog</h1>
+
+<% form_for(@blog) do |f| %>
+  <%= f.error_messages %>
+
+  <p>
+    <%= f.label :team_id %><br />
+    <%= f.collection_select( :team_id, Team.find(:all), :id, :short_name ) %>
+  </p>
+  <p>
+    <%= f.label :blog_url %><br />
+    <%= f.text_field :blog_url %>
+  </p>
+  <p>
+    <%= f.label :results_url %><br />
+    <%= f.text_field :results_url %>
+  </p>
+  <p>
+    <%= f.label :access_url %><br />
+    <%= f.text_field :access_url %>
+  </p>
+  <p>
+    <%= f.label :username %><br />
+    <%= f.text_field :username %>
+  </p>
+  <p>
+    <%= f.label :password %><br />
+    <%= f.text_field :password %>
+  </p>
+  <p>
+    <%= f.label :blog_number %><br />
+    <%= f.text_field :blog_number %>
+  </p>
+  <p>
+    <%= f.label :results_post_number %><br />
+    <%= f.text_field :results_post_number %>
+  </p>
+  <p>
+    <%= f.submit 'Update' %>
+  </p>
+<% end %>
+
+<%= link_to 'Show', @blog %> |
+<%= link_to 'Back', blogs_path %>

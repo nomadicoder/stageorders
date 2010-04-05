@@ -1,0 +1,34 @@
+<h1>Listing blogs</h1>
+
+<table>
+  <tr>
+    <th>Name</th>
+    <th>Team</th>
+    <th>Blog url</th>
+    <th>Results url</th>
+    <th>Access url</th>
+    <th>Username</th>
+    <th>Password</th>
+    <th>Blog</th>
+  </tr>
+
+<% @blogs.each do |blog| %>
+  <tr>
+    <td><%=h blog.team.short_name %></td>
+    <td><%=h blog.blog_url %></td>
+    <td><%=h blog.results_url %></td>
+    <td><%=h blog.access_url %></td>
+    <td><%=h blog.username %></td>
+    <td><%=h blog.password %></td>
+    <td><%=h blog.blog_number %></td>
+    <td><%=h blog.results_post_number %></td>
+    <td><%= link_to 'Show', blog %></td>
+    <td><%= link_to 'Edit', edit_blog_path(blog) %></td>
+    <td><%= link_to 'Destroy', blog, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New blog', new_blog_path %>
