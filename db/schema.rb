@@ -9,7 +9,20 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20100303040840) do
+ActiveRecord::Schema.define(:version => 20100404223149) do
+
+  create_table "blogs", :force => true do |t|
+    t.integer  "team_id"
+    t.string   "blog_url"
+    t.string   "results_url"
+    t.string   "access_url"
+    t.string   "username"
+    t.string   "password"
+    t.string   "blog_number"
+    t.integer  "results_post_number"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "runner_status_codes", :force => true do |t|
     t.float    "sequence"

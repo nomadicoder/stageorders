@@ -1,0 +1,42 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+mcjblog:
+  team: mcj
+  blog_url: http://localhost/taxonomy/term/2
+  results_url: http://localhost/node/132
+  access_url: http://localhost/xmlrpc.php
+  username: root
+  password: rootpass
+  blog_number: 1
+  results_post_number: 132
+
+nwkblog:
+  team: nwk
+  blog_url: http://localhost/taxonomy/term/3
+  results_url: http://localhost/node/133
+  access_url: http://localhost/xmlrpc.php
+  username: root
+  password: rootpass
+  blog_number: 1
+  results_post_number: 133
+
+tstblog:
+  team: tst
+  blog_url: http://localhost/taxonomy/term/4
+  results_url: http://localhost/node/134
+  access_url: http://localhost/xmlrpc.php
+  username: root
+  password: rootpass
+  blog_number: 1
+  results_post_number: 134
+
+ccbblog:
+  team: ccb
+  blog_url: http://localhost/taxonomy/term/1
+  results_url: http://localhost/node/135
+  access_url: http://localhost/xmlrpc.php
+  username: root
+  password: rootpass
+  blog_number: 1
+  results_post_number: 135
+

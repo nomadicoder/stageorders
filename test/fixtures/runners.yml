@@ -1,5 +1,185 @@
 # Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
 
+mcjone:
+  stage: one
+  name: B Nupen
+  team: mcj
+  estimated_pace: "00:08:42"
+  completed: true
+  actual_time: "00:44:00"
+  runner_status_code: unk
+
+mcjtwo:
+  stage: two
+  name: D Keating
+  team: mcj
+  estimated_pace: "00:07:48"
+  completed: true
+  actual_time: "01:13:41"
+  runner_status_code: unk
+
+mcjthree:
+  stage: three
+  name: R Bing
+  team: mcj
+  estimated_pace: "00:08:49"
+  completed: true
+  actual_time: "00:47:31"
+  runner_status_code: unk
+
+mcjfour:
+  stage: four
+  name: J Escrivá
+  team: mcj
+  estimated_pace: "00:08:20"
+  completed: false
+  actual_time: "00:00:00"
+  runner_status_code: unk
+
+mcjfive:
+  stage: five
+  name: A Cooper
+  team: mcj
+  estimated_pace: "00:08:22"
+  completed: false
+  actual_time: "00:00:00"
+  runner_status_code: unk
+
+mcjsix:
+  stage: six
+  name: M Duruflé
+  team: mcj
+  estimated_pace: "00:08:52"
+  completed: false
+  actual_time: "00:00:00"
+  runner_status_code: unk
+
+mcjseven:
+  stage: seven
+  name: E Liddell
+  team: mcj
+  estimated_pace: "00:07:48"
+  completed: false
+  actual_time: "00:00:00"
+  runner_status_code: unk
+
+mcjeight:
+  stage: eight
+  name: K Barry
+  team: mcj
+  estimated_pace: "00:08:14"
+  completed: false
+  actual_time: "00:00:00"
+  runner_status_code: unk
+
+mcjnine:
+  stage: nine
+  name: D Kinsey
+  team: mcj
+  estimated_pace: "00:09:29"
+  completed: false
+  actual_time: "00:00:00"
+  runner_status_code: unk
+
+mcjten:
+  stage: ten
+  name: E Speiser
+  team: mcj
+  estimated_pace: "00:09:03"
+  completed: false
+  actual_time: "00:00:00"
+  runner_status_code: unk
+
+mcjeleven:
+  stage: eleven
+  name: A Beaufre
+  team: mcj
+  estimated_pace: "00:08:43"
+  completed: false
+  actual_time: "00:00:00"
+  runner_status_code: unk
+
+mcjtwelve:
+  stage: twelve
+  name: P Antonio
+  team: mcj
+  estimated_pace: "00:08:00"
+  completed: false
+  actual_time: "00:00:00"
+  runner_status_code: unk
+
+mcjthirteen:
+  stage: thirteen
+  name: M Braak
+  team: mcj
+  estimated_pace: "00:09:04"
+  completed: false
+  actual_time: "00:00:00"
+  runner_status_code: unk
+
+mcjfourteen:
+  stage: fourteen
+  name: T Bankhead
+  team: mcj
+  estimated_pace: "00:08:28"
+  completed: false
+  actual_time: "00:00:00"
+  runner_status_code: unk
+
+mcjfifteen:
+  stage: fifteen
+  name: A Myrdal
+  team: mcj
+  estimated_pace: "00:08:11"
+  completed: false
+  actual_time: "00:00:00"
+  runner_status_code: unk
+
+mcjsixteen:
+  stage: sixteen
+  name: L Hughes
+  team: mcj
+  estimated_pace: "00:07:21"
+  completed: false
+  actual_time: "00:00:00"
+  runner_status_code: unk
+
+mcjseventeen:
+  stage: seventeen
+  name: C Lindbergh
+  team: mcj
+  estimated_pace: "00:08:05"
+  completed: false
+  actual_time: "00:00:00"
+  runner_status_code: unk
+
+mcjeighteen:
+  stage: eighteen
+  name: H Shawcross
+  team: mcj
+  estimated_pace: "00:08:15"
+  completed: false
+  actual_time: "00:00:00"
+  runner_status_code: unk
+
+mcjnineteen:
+  stage: nineteen
+  name: I Kaoru
+  team: mcj
+  estimated_pace: "00:07:35"
+  completed: false
+  actual_time: "00:00:00"
+  runner_status_code: unk
+
+mcjtwenty:
+  stage: twenty
+  name: W Brattain
+  team: mcj
+  estimated_pace: "00:08:38"
+  completed: false
+  actual_time: "00:00:00"
+  runner_status_code: unk
+
 nwkone:
   stage: one
   name: H Rickover

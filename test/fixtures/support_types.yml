@@ -23,3 +23,7 @@ cp:
 mountaintop:
   short_code: 'MOUNTAINTOP'
   description: Mountain top radio relay
+
+res:
+  short_code: 'RES'
+  description: Rotating Crew

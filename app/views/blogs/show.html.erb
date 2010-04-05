@@ -1,0 +1,43 @@
+<p>
+  <b>Team:</b>
+  <%=h @blog.team.name %>
+</p>
+
+<p>
+  <b>Blog url:</b>
+  <%=h @blog.blog_url %>
+</p>
+
+<p>
+  <b>Results url:</b>
+  <%=h @blog.results_url %>
+</p>
+
+<p>
+  <b>Access url:</b>
+  <%=h @blog.access_url %>
+</p>
+
+<p>
+  <b>Username:</b>
+  <%=h @blog.username %>
+</p>
+
+<p>
+  <b>Password:</b>
+  <%=h @blog.password %>
+</p>
+
+<p>
+  <b>Blog:</b>
+  <%=h @blog.blog_number %>
+</p>
+
+<p>
+  <b>Results:</b>
+  <%=h @blog.results_post_number %>
+</p>
+
+
+<%= link_to 'Edit', edit_blog_path(@blog) %> |
+<%= link_to 'Back', blogs_path %>

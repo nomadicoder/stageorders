@@ -1,5 +1,125 @@
 # Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
 
+mcjone:
+  team: mcj
+  stage: one
+  runner: mcjone
+  support_unit: mcjshuttle1
+
+mcjtwo:
+  team: mcj
+  stage: two
+  runner: mcjtwo
+  support_unit: mcjshuttle2
+
+mcjthree:
+  team: mcj
+  stage: three
+  runner: mcjthree
+  support_unit: mcjshuttle1
+
+mcjfour:
+  team: mcj
+  stage: four
+  runner: mcjfour
+  support_unit: mcjshuttle2
+
+mcjfive:
+  team: mcj
+  stage: five
+  runner: mcjfive
+  support_unit: mcjshuttle1
+
+mcjsix:
+  team: mcj
+  stage: six
+  runner: mcjsix
+  support_unit: mcjshuttle2
+
+mcjseven:
+  team: mcj
+  stage: seven
+  runner: mcjseven
+  support_unit: mcjshuttle1
+
+mcjeight:
+  team: mcj
+  stage: eight
+  runner: mcjeight
+  support_unit: mcjshuttle2
+
+mcjnine:
+  team: mcj
+  stage: nine
+  runner: mcjnine
+  support_unit: mcjshuttle1
+
+mcjten:
+  team: mcj
+  stage: ten
+  runner: mcjten
+  support_unit: mcjshuttle2
+
+mcjeleven:
+  team: mcj
+  stage: eleven
+  runner: mcjeleven
+  support_unit: mcjshuttle1
+
+mcjtwelve:
+  team: mcj
+  stage: twelve
+  runner: mcjtwelve
+  support_unit: mcjshuttle2
+
+mcjthirteen:
+  team: mcj
+  stage: thirteen
+  runner: mcjthirteen
+  support_unit: mcjshuttle1
+
+mcjfourteen:
+  team: mcj
+  stage: fourteen
+  runner: mcjfourteen
+  support_unit: mcjshuttle2
+
+mcjfifteen:
+  team: mcj
+  stage: fifteen
+  runner: mcjfifteen
+  support_unit: mcjshuttle1
+
+mcjsixteen:
+  team: mcj
+  stage: sixteen
+  runner: mcjsixteen
+  support_unit: mcjshuttle2
+
+mcjseventeen:
+  team: mcj
+  stage: seventeen
+  runner: mcjseventeen
+  support_unit: mcjshuttle1
+
+mcjeighteen:
+  team: mcj
+  stage: eighteen
+  runner: mcjeighteen
+  support_unit: mcjshuttle2
+
+mcjnineteen:
+  team: mcj
+  stage: nineteen
+  runner: mcjnineteen
+  support_unit: mcjshuttle1
+
+mcjtwenty:
+  team: mcj
+  stage: twenty
+  runner: mcjtwenty
+  support_unit: mcjshuttle2
+
 nwkone:
   team: nwk
   stage: one
