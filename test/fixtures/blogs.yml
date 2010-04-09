@@ -2,41 +2,53 @@
 
 mcjblog:
   team: mcj
+  host_url: localhost
+  access_path: /xmlrpc.php
   blog_url: http://localhost/taxonomy/term/2
   results_url: http://localhost/node/132
-  access_url: http://localhost/xmlrpc.php
+  access_url: http://localhost//xmlrpc.php
   username: root
   password: rootpass
   blog_number: 1
   results_post_number: 132
+  category: LASD MCJ/IRC
 
 nwkblog:
   team: nwk
+  host_url: localhost
+  access_path: /xmlrpc.php
   blog_url: http://localhost/taxonomy/term/3
   results_url: http://localhost/node/133
-  access_url: http://localhost/xmlrpc.php
+  access_url: http://localhost//xmlrpc.php
   username: root
   password: rootpass
   blog_number: 1
   results_post_number: 133
+  category: LASD Norwalk
 
 tstblog:
   team: tst
+  host_url: localhost
+  access_path: /xmlrpc.php
   blog_url: http://localhost/taxonomy/term/4
   results_url: http://localhost/node/134
-  access_url: http://localhost/xmlrpc.php
+  access_url: http://localhost//xmlrpc.php
   username: root
   password: rootpass
   blog_number: 1
   results_post_number: 134
+  category: LASD Transportation
 
-ccbblog:
-  team: ccb
+ccsblog:
+  team: ccs
+  host_url: localhost
+  access_path: /xmlrpc.php
   blog_url: http://localhost/taxonomy/term/1
   results_url: http://localhost/node/135
-  access_url: http://localhost/xmlrpc.php
+  access_url: http://localhost//xmlrpc.php
   username: root
   password: rootpass
   blog_number: 1
   results_post_number: 135
+  category: LASD CCS/MDR
 

@@ -38,6 +38,10 @@
   <%=h @blog.results_post_number %>
 </p>
 
+<p>
+  <b>Category:</b>
+  <%=h @blog.blog_category %>
+</p>
 
 <%= link_to 'Edit', edit_blog_path(@blog) %> |
 <%= link_to 'Back', blogs_path %>

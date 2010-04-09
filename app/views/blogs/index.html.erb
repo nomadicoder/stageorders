@@ -10,6 +10,7 @@
     <th>Username</th>
     <th>Password</th>
     <th>Blog</th>
+    <th>Category</th>
   </tr>
 
 <% @blogs.each do |blog| %>
@@ -22,6 +23,7 @@
     <td><%=h blog.password %></td>
     <td><%=h blog.blog_number %></td>
     <td><%=h blog.results_post_number %></td>
+    <td><%=h blog.blog_category %></td>
     <td><%= link_to 'Show', blog %></td>
     <td><%= link_to 'Edit', edit_blog_path(blog) %></td>
     <td><%= link_to 'Destroy', blog, :confirm => 'Are you sure?', :method => :delete %></td>

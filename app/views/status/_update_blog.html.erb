@@ -1,7 +1,11 @@
 <div id="update_blog">
-<% form_for(:blog) do |f| %>
+<% form_for(:post, :url => { :action => "update_blog" }) do |f| %>
   <%= f.error_messages %>
 
+  <p>
+    <%= f.label :team_id %> : 
+    <%= f.collection_select( :team_id, Team.find(:all), :id, :short_name, :prompt => "Team", :selected => @team_id) %>
+  </p>
   <p>
     <%= f.label :title %> : 
     <%= f.text_field :title %>
@@ -11,8 +15,8 @@
     <%= f.text_area :content %>
   </p>
   <p>
-    <%= f.label :public %> : 
-    <%= f.check_box :public %>
+    <%= f.label :publish %> : 
+    <%= f.check_box :publish %>
   </p>
   <p>
     <%= f.submit 'Post' %>

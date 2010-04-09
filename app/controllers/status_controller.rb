@@ -53,5 +53,62 @@ class StatusController < ApplicationController
     @runners = Runner.find_all_runners_for_team_code(team.short_name)
     @stages = stage_collection
   end
+  
+  def update_blog
+    team = Team.find(params[:post][:team_id])
+    title = params[:post][:title]
+    description = params[:post][:content]
+    @team_name = team.name
+    @team_id = team.id
+    
+    # get selected team
+    blog = Blog.find(:first, :conditions => { :team_id => team.id })    
+    blog_client = BlogClient.new(blog.host_url, blog.access_path, 'blog', blog.username, blog.password)
+    
+    blog_categories = blog_client.getCategories
+    logger.info "Blog Categories : " + blog_categories.to_s
+    logger.info "Blog Categories : " + blog_categories[0].to_s
+    
+    # Post entry to website
+    blogpost = {
+      'title' => title,
+      'description' => description,
+      'categories' => ["LASD MCJ/IRC"],
+      'pubDate' => Time.now
+    }
+    
+    publish = (params[:post][:publish].to_i == 1)
+    blog_client.newPost(blogpost, publish)
+    
+    redirect_to :action => :update
+  end
+  
+  def update_results
+    team = Team.find(params[:results][:team_id])
+    @team_name = team.name
+    @team_id = team.id
+    # get selected team
+    blog = Blog.find(:first, :conditions => { :team_id => team.id })
+    
+    blog_client = BlogClient.new(blog.host_url, blog.access_path, 'page', blog.username, blog.password)
+    
+    # Create runner results tabel for team
+    @runners = Runner.find(:all, :joins => [:stage], :conditions => {:team_id => team.id}, :order => "stages.number")
+    
+    # Render the HTML for the table
+    results_table = render_to_string :partial => "results/stage_table"
+    
+    #Post runner results table to public website
+    
+    results_post = {
+      'title' => team.name + " Stage Results",
+      'description' => results_table,
+      'pubDate' => Time.now
+    }
+    
+    blog_client.editPost(blog.results_post_number.to_s, results_post, true)
+
+    redirect_to :action => :update
+  end
 
 end
