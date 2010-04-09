@@ -2,6 +2,8 @@ class CreateBlogs < ActiveRecord::Migration
   def self.up
     create_table :blogs do |t|
       t.integer :team_id
+      t.string :host_url
+      t.string :access_path
       t.string :blog_url
       t.string :results_url
       t.string :access_url
@@ -9,6 +11,7 @@ class CreateBlogs < ActiveRecord::Migration
       t.string :password
       t.string :blog_number
       t.integer :results_post_number
+      t.string :category
 
       t.timestamps
     end

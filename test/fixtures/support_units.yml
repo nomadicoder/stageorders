@@ -44,8 +44,8 @@ nwkrover:
   location_lat: 1.5
   location_lon: 1.5
 
-ccbfollow:
-  team: ccb
+ccsfollow:
+  team: ccs
   support_type_id: follow
   tac_callsign: "CCB Follow"
   ham_callsign: "km0rat"
@@ -55,8 +55,8 @@ ccbfollow:
   location_lat: 1.5
   location_lon: 1.5
 
-ccbshuttle1:
-  team: ccb
+ccsshuttle1:
+  team: ccs
   support_type_id: shuttle
   tac_callsign: "CCB Shuttle 1"
   ham_callsign: "n6iqa"
@@ -66,8 +66,8 @@ ccbshuttle1:
   location_lat: 1.5
   location_lon: 1.5
 
-ccbshuttle2:
-  team: ccb
+ccsshuttle2:
+  team: ccs
   support_type_id: shuttle
   tac_callsign: "CCB Shuttle 2"
   ham_callsign: "kf6vom"
@@ -77,8 +77,8 @@ ccbshuttle2:
   location_lat: 1.5
   location_lon: 1.5
 
-ccbrover:
-  team: ccb
+ccsrover:
+  team: ccs
   support_type_id: rover
   tac_callsign: "CCB Rover"
   ham_callsign: "w7uga"

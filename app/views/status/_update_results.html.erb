@@ -1,0 +1,13 @@
+<div id="update_results">
+<% form_for(:results, :url => { :action => "update_results" }) do |f| %>
+  <%= f.error_messages %>
+
+  <p>
+    <%= f.label :team_id %> : 
+    <%= f.collection_select( :team_id, Team.find(:all), :id, :short_name, :prompt => "Team", :selected => @team_id) %>
+  </p>
+  <p>
+    <%= f.submit 'Refresh Results' %>
+  </p>
+<% end %>
+</div>

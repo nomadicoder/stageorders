@@ -240,125 +240,125 @@ nwktwenty:
   runner: nwktwenty
   support_unit: nwkshuttle2
 
-ccbone:
-  team: ccb
+ccsone:
+  team: ccs
   stage: one
-  runner: ccbone
-  support_unit: ccbshuttle1
+  runner: ccsone
+  support_unit: ccsshuttle1
 
-ccbtwo:
-  team: ccb
+ccstwo:
+  team: ccs
   stage: two
-  runner: ccbtwo
-  support_unit: ccbshuttle2
+  runner: ccstwo
+  support_unit: ccsshuttle2
 
-ccbthree:
-  team: ccb
+ccsthree:
+  team: ccs
   stage: three
-  runner: ccbthree
-  support_unit: ccbshuttle1
+  runner: ccsthree
+  support_unit: ccsshuttle1
 
-ccbfour:
-  team: ccb
+ccsfour:
+  team: ccs
   stage: four
-  runner: ccbfour
-  support_unit: ccbshuttle2
+  runner: ccsfour
+  support_unit: ccsshuttle2
 
-ccbfive:
-  team: ccb
+ccsfive:
+  team: ccs
   stage: five
-  runner: ccbfive
-  support_unit: ccbshuttle1
+  runner: ccsfive
+  support_unit: ccsshuttle1
 
-ccbsix:
-  team: ccb
+ccssix:
+  team: ccs
   stage: six
-  runner: ccbsix
-  support_unit: ccbshuttle2
+  runner: ccssix
+  support_unit: ccsshuttle2
 
-ccbseven:
-  team: ccb
+ccsseven:
+  team: ccs
   stage: seven
-  runner: ccbseven
-  support_unit: ccbshuttle1
+  runner: ccsseven
+  support_unit: ccsshuttle1
 
-ccbeight:
-  team: ccb
+ccseight:
+  team: ccs
   stage: eight
-  runner: ccbeight
-  support_unit: ccbshuttle2
+  runner: ccseight
+  support_unit: ccsshuttle2
 
-ccbnine:
-  team: ccb
+ccsnine:
+  team: ccs
   stage: nine
-  runner: ccbnine
-  support_unit: ccbshuttle1
+  runner: ccsnine
+  support_unit: ccsshuttle1
 
-ccbten:
-  team: ccb
+ccsten:
+  team: ccs
   stage: ten
-  runner: ccbten
-  support_unit: ccbshuttle2
+  runner: ccsten
+  support_unit: ccsshuttle2
 
-ccbeleven:
-  team: ccb
+ccseleven:
+  team: ccs
   stage: eleven
-  runner: ccbeleven
-  support_unit: ccbshuttle1
+  runner: ccseleven
+  support_unit: ccsshuttle1
 
-ccbtwelve:
-  team: ccb
+ccstwelve:
+  team: ccs
   stage: twelve
-  runner: ccbtwelve
-  support_unit: ccbshuttle2
+  runner: ccstwelve
+  support_unit: ccsshuttle2
 
-ccbthirteen:
-  team: ccb
+ccsthirteen:
+  team: ccs
   stage: thirteen
-  runner: ccbthirteen
-  support_unit: ccbshuttle1
+  runner: ccsthirteen
+  support_unit: ccsshuttle1
 
-ccbfourteen:
-  team: ccb
+ccsfourteen:
+  team: ccs
   stage: fourteen
-  runner: ccbfourteen
-  support_unit: ccbshuttle2
+  runner: ccsfourteen
+  support_unit: ccsshuttle2
 
-ccbfifteen:
-  team: ccb
+ccsfifteen:
+  team: ccs
   stage: fifteen
-  runner: ccbfifteen
-  support_unit: ccbshuttle1
+  runner: ccsfifteen
+  support_unit: ccsshuttle1
 
-ccbsixteen:
-  team: ccb
+ccssixteen:
+  team: ccs
   stage: sixteen
-  runner: ccbsixteen
-  support_unit: ccbshuttle2
+  runner: ccssixteen
+  support_unit: ccsshuttle2
 
-ccbseventeen:
-  team: ccb
+ccsseventeen:
+  team: ccs
   stage: seventeen
-  runner: ccbseventeen
-  support_unit: ccbshuttle1
+  runner: ccsseventeen
+  support_unit: ccsshuttle1
 
-ccbeighteen:
-  team: ccb
+ccseighteen:
+  team: ccs
   stage: eighteen
-  runner: ccbeighteen
-  support_unit: ccbshuttle2
+  runner: ccseighteen
+  support_unit: ccsshuttle2
 
-ccbnineteen:
-  team: ccb
+ccsnineteen:
+  team: ccs
   stage: nineteen
-  runner: ccbnineteen
-  support_unit: ccbshuttle1
+  runner: ccsnineteen
+  support_unit: ccsshuttle1
 
-ccbtwenty:
-  team: ccb
+ccstwenty:
+  team: ccs
   stage: twenty
-  runner: ccbtwenty
-  support_unit: ccbshuttle2
+  runner: ccstwenty
+  support_unit: ccsshuttle2
 
 tstone:
   team: tst
