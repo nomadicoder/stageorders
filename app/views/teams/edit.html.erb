@@ -16,6 +16,9 @@
     <%= f.text_field :name %>
   </p>
   <p>
+    <%= f.label :start_time %><br />
+    <%= f.datetime_select :start_time %>
+  <p>
     <%= f.submit 'Update' %>
   </p>
 <% end %>

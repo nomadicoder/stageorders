@@ -13,6 +13,8 @@ ActiveRecord::Schema.define(:version => 20100404223149) do
 
   create_table "blogs", :force => true do |t|
     t.integer  "team_id"
+    t.string   "host_url"
+    t.string   "access_path"
     t.string   "blog_url"
     t.string   "results_url"
     t.string   "access_url"
@@ -20,6 +22,7 @@ ActiveRecord::Schema.define(:version => 20100404223149) do
     t.string   "password"
     t.string   "blog_number"
     t.integer  "results_post_number"
+    t.string   "category"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -107,6 +110,7 @@ ActiveRecord::Schema.define(:version => 20100404223149) do
     t.integer  "number"
     t.string   "name"
     t.string   "short_name"
+    t.datetime "start_time"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

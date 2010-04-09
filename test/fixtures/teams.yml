@@ -2,20 +2,24 @@
 
 mcj:
   number: 1
-  short_name: MCJ-IRC
+  short_name: MCJ/IRC
   name: Men's Central Jail/Inmate Reception Center
+  start_time: 2010-04-17 22:00:00 UTC
 
 nwk:
   number: 92
   short_name: NWK
   name: Norwalk Station
+  start_time: 2010-04-17 19:00:00 UTC
 
 tst:
   number: 110
   short_name: TST
   name: Transportation Bureau
+  start_time: 2010-04-17 21:00:00 UTC
 
-ccb:
+ccs:
   number: 216
-  short_name: CCS-MDR
+  short_name: CCS/MDR
   name: Community College Service/Marina Del Rey Station
+  start_time: 2010-04-17 16:00:00 UTC
