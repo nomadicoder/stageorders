@@ -7,6 +7,8 @@ class ResultsController < ApplicationController
     else
       team = Team.find(session[:current_team_id])
     end
+    @team_rec = team
+    @start_time = team.start_time
     @team_name = team.name
     @team_id = team.id
     @runners = Runner.find(:all, :joins => [:stage], :conditions => {:team_id => team.id}, :order => "stages.number")
