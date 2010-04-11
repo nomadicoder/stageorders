@@ -5,7 +5,7 @@ mcjone:
   name: B Nupen
   team: mcj
   estimated_pace: "00:08:42"
-  completed: true
+  completed: false
   actual_time: "00:00:00"
   runner_status_code: unk
 
@@ -14,7 +14,7 @@ mcjtwo:
   name: D Keating
   team: mcj
   estimated_pace: "00:07:48"
-  completed: true
+  completed: false
   actual_time: "00:00:00"
   runner_status_code: unk
 
@@ -23,7 +23,7 @@ mcjthree:
   name: R Bing
   team: mcj
   estimated_pace: "00:08:49"
-  completed: true
+  completed: false
   actual_time: "00:00:00"
   runner_status_code: unk
 
@@ -185,7 +185,7 @@ nwkone:
   name: H Rickover
   team: nwk
   estimated_pace: "00:08:42"
-  completed: true
+  completed: false
   actual_time: "00:00:00"
   runner_status_code: unk
 
@@ -194,7 +194,7 @@ nwktwo:
   name: A Stevenson
   team: nwk
   estimated_pace: "00:07:48"
-  completed: true
+  completed: false
   actual_time: "00:00:00"
   runner_status_code: unk
 
@@ -203,7 +203,7 @@ nwkthree:
   name: RJ Traynor
   team: nwk
   estimated_pace: "00:08:49"
-  completed: true
+  completed: false
   actual_time: "00:00:00"
   runner_status_code: unk
 
@@ -365,7 +365,7 @@ ccsone:
   name: C Young
   team: ccs
   estimated_pace: "00:08:42"
-  completed: true
+  completed: false
   actual_time: "00:00:00"
   runner_status_code: unk
 
@@ -374,7 +374,7 @@ ccstwo:
   name: K Kwon
   team: ccs
   estimated_pace: "00:08:40"
-  completed: true
+  completed: false
   actual_time: "00:00:00"
   runner_status_code: unk
 
@@ -383,7 +383,7 @@ ccsthree:
   name: A Guthrie
   team: ccs
   estimated_pace: "00:09:50"
-  completed: true
+  completed: false
   actual_time: "00:00:00"
   runner_status_code: unk
 
@@ -545,7 +545,7 @@ tstone:
   name: Z Marx
   team: tst
   estimated_pace: "00:08:42"
-  completed: true
+  completed: false
   actual_time: "00:00:00"
   runner_status_code: unk
 
@@ -554,7 +554,7 @@ tsttwo:
   name: H Luro
   team: tst
   estimated_pace: "00:07:48"
-  completed: true
+  completed: false
   actual_time: "00:00:00"
   runner_status_code: unk
 
@@ -563,7 +563,7 @@ tstthree:
   name: L Pauling
   team: tst
   estimated_pace: "00:08:49"
-  completed: true
+  completed: false
   actual_time: "00:00:00"
   runner_status_code: unk
 
