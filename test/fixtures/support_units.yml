@@ -1,5 +1,49 @@
 # Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
 
+mcjfollow:
+  team: mcj
+  support_type_id: follow
+  tac_callsign: "MCJ Follow"
+  ham_callsign: "km0rat"
+  support_type: follow
+  support_status_code: unk
+  current_stage: one
+  location_lat: 1.5
+  location_lon: 1.5
+
+mcjshuttle1:
+  team: mcj
+  support_type_id: shuttle
+  tac_callsign: "MCJ Shuttle 1"
+  ham_callsign: "n6iqa"
+  support_type: shuttle
+  support_status_code: unk
+  current_stage: one
+  location_lat: 1.5
+  location_lon: 1.5
+
+mcjshuttle2:
+  team: mcj
+  support_type_id: shuttle
+  tac_callsign: "MCJ Shuttle 2"
+  ham_callsign: "kf6vom"
+  support_type: shuttle
+  support_status_code: unk
+  current_stage: two
+  location_lat: 1.5
+  location_lon: 1.5
+
+mcjrover:
+  team: mcj
+  support_type_id: rover
+  tac_callsign: "MCJ Rover"
+  ham_callsign: "w7uga"
+  support_type: rover
+  support_status_code: unk
+  current_stage: two
+  location_lat: 1.5
+  location_lon: 1.5
+
 nwkfollow:
   team: nwk
   support_type_id: follow
