@@ -19,6 +19,7 @@
     <th width=65>Estimated</th>
     <th width=65>Actual</th>
     <th width=75>Difference</th>
+    <th width=75>Est Start</th>
   </tr>
 
 <!-- TODO: Move these calculations to model? -->
@@ -26,7 +27,10 @@
 <% total_estimated_minutes = 0.0 %>
 <% total_off_pace = 0.0 %>
 <% time_zero = 946684800 %>
+<% stage_start = @start_time %>
+<% @team_rec.init_time %>
 <% @runners.each do |runner| %>
+  <% @team_rec.update_time (runner) %>
   <% estimated_minutes = stage_time(runner.stage.miles, runner.estimated_pace) %>
   <% total_estimated_minutes = total_estimated_minutes + estimated_minutes %>
   <% if runner.actual_time.to_i != time_zero %>
@@ -46,12 +50,19 @@
     <td align='right'>
         <% if runner.actual_time.to_i != time_zero %>
             <%=h show_short_time runner.actual_time %>
+            <% stage_time = time_to_minutes(runner.actual_time) %>
+        <% else %>
+            <% stage_time = estimated_minutes %>
         <% end %>
     </td>
     <td align='right'>
         <% if runner.actual_time.to_i != time_zero %>
             <%=h signed_minutes_to_time off_pace %>
         <% end %>
+    </td>
+    <td align='right'>
+    <%= show_short_time stage_start %>
+    <% stage_start += 60 * stage_time %>
     </td>
   </tr>
 <% end %>
@@ -60,6 +71,7 @@
   <td align='right'><%=h minutes_as_short_time total_estimated_minutes %></td>
   <td align='right'><%=h minutes_as_short_time total_minutes %></td>
   <td align='right'><%=h minutes_as_short_time total_off_pace %></td>
+  <td align='right'><%=h show_short_time stage_start %></td>
   </tr>
 </table>
 <br />
