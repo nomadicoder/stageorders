@@ -21,8 +21,6 @@ body, p, ol, ul, td {
 	padding-top: 10px;
 	padding-bottom: 20px;
 	border-bottom: 1px solid;
-	font: small-caps 40px/40px "Times New Roman", serif;
-	color #282;
 }
 
 #header img {
@@ -40,7 +38,9 @@ body, p, ol, ul, td {
 	padding-top: 4px;
 	padding-left: 2em;
 	background: white;
+	font-size: 0.9em;
 }
+
 #side {
 	float:left;
 	padding-top: 1em;
