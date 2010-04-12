@@ -5,14 +5,29 @@
 <head>
   <meta http-equiv="content-type" content="text/html;charset=UTF-8" />
   <title>StageStatuses: <%= controller.action_name %></title>
-  <%= stylesheet_link_tag 'scaffold' %>
+  <%= stylesheet_link_tag 'stageorders' %>
   <%= javascript_include_tag :defaults %>
 </head>
-<body>
+<body id="stage_status">
+<div id="header">
+  <img src="/images/logo.png">
+  <div id="title">
+  <%= @page_title || "Stage Orders" %>
+  </div>
+</div>
+<div id="side">
+  <a href="/status">Status</a><br />
+  <a href="/results">Results</a><br />
+  <a href="http://mojaverats.com">Website</a><br />
+</div>
 
+<div id="main">
 <p style="color: green"><%= flash[:notice] %></p>
 
 <%= yield %>
+</div>
 
-</body>
+<div id="footer">
+  Copyright 2010 MojaveRATS
+</div></body>
 </html>

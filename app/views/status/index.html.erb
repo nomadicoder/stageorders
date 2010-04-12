@@ -4,7 +4,7 @@
 <% form_for :team, :url => {:action => "change_team"} do |f| %>
 <p>
   <%= f.collection_select( :team_id, Team.find(:all), :id, :short_name, :prompt => "Select Team", :selected => @team_id ) %>
-  <%= observe_field "team_team_id", :update => "status_table", :with => "id", :url => { :action => "change_team" } %>
+  <%= observe_field "team_team_id", :update => "status", :with => "id", :url => { :action => "change_team" } %>
 </p>
 <% end %>
 
