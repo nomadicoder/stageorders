@@ -3,7 +3,8 @@
 
 <% form_for :team, :url => {:action => "change_team"} do |f| %>
 <p>
-  <%= f.collection_select( :team_id, Team.find(:all), :id, :short_name, :prompt => "Select Team", :selected => @team_id ) %>
+  <%= f.collection_select( :team_id, Team.find(:all, :order => "number", :conditions => "number > 0"), :id, :short_name,
+                           :prompt => "Select Team", :selected => @team_id ) %>
   <%= observe_field "team_team_id", :update => "status", :with => "id", :url => { :action => "change_team" } %>
 </p>
 <% end %>
@@ -13,9 +14,9 @@
     <th>Stage</th>
     <th>Landmark</th>
     <th>Miles</th>
-    <th>Difficulty</th>
+    <th>Rating</th>
     <th>Runner</th>
-    <th>Estimated<br/>Start</th>
+    <th>Est Start</th>
     <th>Support </th>
     <th>Runner<br/>Status</th>
     <th>Support<br/>Status</th>
