@@ -28,6 +28,10 @@ class StatusController < ApplicationController
     redirect_to :action => :index
   end
 
+  def refresh
+    redirect_to :action => :index
+  end
+
   def update_team_runners
     stage_collection = Stage.find_all_stages
     team_collection = Team.find(:all)
