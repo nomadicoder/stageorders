@@ -28,6 +28,10 @@ class StageStatusesController < ApplicationController
     redirect_to :action => :index
   end
   
+  def refresh
+    redirect_to :action => :index
+  end
+
   # GET /stage_statuses/1
   # GET /stage_statuses/1.xml
   def show

@@ -29,6 +29,10 @@ class ResultsController < ApplicationController
     redirect_to :action => :index
   end
 
+  def refresh
+    redirect_to :action => :index
+  end
+
   def authorize
   end
 

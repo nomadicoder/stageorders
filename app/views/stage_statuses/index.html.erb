@@ -6,7 +6,7 @@
   <%= f.collection_select( :team_id, Team.find(:all, :order => "number", :conditions => "number > 0"), :id, :short_name,
                            :prompt => "Select Team", :selected => @team_id ) %>
   <%= observe_field "team_team_id", :update => "stage_status", :with => "id", :url => { :action => "change_team" } %>
-  <%= periodically_call_remote :update => "status", :url => { }, :frequency => '30' %>
+  <%= periodically_call_remote :update => "stage_status", :url => { :action => "refresh" }, :frequency => '30' %>
   Updated: <%= show_short_time Time.now() %>
 </p>
 <% end %>
