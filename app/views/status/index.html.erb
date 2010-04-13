@@ -1,5 +1,5 @@
 <div id="status_table">
-<h1><%= @team_name %> Stage Status</h1>
+<h1><%= @team_name %> Listing Stage Status</h1>
 
 <% form_for :team, :url => {:action => "change_team"} do |f| %>
 <p>
@@ -10,38 +10,33 @@
 </p>
 <% end %>
 
-<table border>
+<table border=1>
   <tr>
-    <th>Stage</th>
-    <th>Landmark</th>
-    <th>Miles</th>
-    <th>Rating</th>
-    <th>Runner</th>
-    <th>Est Start</th>
-    <th>Support </th>
-    <th>Runner<br/>Status</th>
-    <th>Support<br/>Status</th>
-    <th>Stage<br/>Status</th>
-    <th>Time</th>
+    <th width=50>Stage</th>
+    <th width=120>Runner</th>
+    <th width=120>Support</th>
+    <th width=80>Runner<br/>status</th>
+    <th width=80>Support<br/>status</th>
+    <th width=50>Ready</th>
   </tr>
 
-<% @runners.each do |runner| %>
-  <tr>
-    <td align='center'><%=h runner.stage.number %></td>
-    <td><%=h runner.stage.landmark %></td>
-    <td align='center'><%=h runner.stage.miles %></td>
-    <td align='center'><%=h runner.stage.difficulty %></td>
-    <td><%=h runner.name %></td>
-    <td align='center'>TBD</td>
-    <td></td>
-    <td align='center'><%=h runner.runner_status_code.short_code %></td>
-    <td></td>
-    <td></td>
-    <td><%= runner.actual_time.strftime("%H:%M:%S") %></td>
+<% @stage_statuses.each do |stage_status| %>
+  <tr align='center'>
+    <td><%=h stage_status.stage_number %></td>
+    <td><%=h stage_status.runner_name %></td>
+    <td><%=h stage_status.tac_callsign %></td>
+    <td><%=h stage_status.runner_status %></td>
+    <td><%=h stage_status.support_status %></td>
+    <% if stage_status.stage_status == "GO" || stage_status.stage_status == "CLEAR" %>
+      <td BGCOLOR='GREEN'>
+    <% else %>
+      <td BGCOLOR='RED'>
+    <% end %>
+    <%=h stage_status.stage_status %></td>
   </tr>
 <% end %>
 </table>
 
 <br />
-</div>
 
+</div>
