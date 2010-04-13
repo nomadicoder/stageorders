@@ -2,7 +2,7 @@ class StatusController < ApplicationController
   layout "status"
   
   def index
-    @stages = Stage.find_all_stages
+    stage_collection = Stage.find_all_stages
     if session[:current_team_id].nil? || session[:current_team_id].blank?
       team = Team.find(:first, :conditions => "number > 0", :order => :number)
     else
@@ -10,7 +10,12 @@ class StatusController < ApplicationController
     end
     @team_name = team.name
     @team_id = team.id
-    @runners = Runner.find_all_runners_for_team_code(team.short_name)
+    @stage_statuses = StageStatus.find(:all, :joins => [:stage], :conditions => {:team_id => team.id}, :order => "stages.number")
+
+    respond_to do |format|
+      format.html # index.html.erb
+      format.xml  { render :xml => @stage_statuses }
+    end
   end
   
   def change_team

@@ -34,7 +34,7 @@ class StageStatus < ActiveRecord::Base
   def runner_name
     runner.name if runner
   end
-  
+
   def runner_name=(name)
     self.runner = Runner.find_by_name(name) unless name.blank?
   end
