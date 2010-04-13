@@ -4,7 +4,7 @@ class StatusController < ApplicationController
   def index
     @stages = Stage.find_all_stages
     if session[:current_team_id].nil? || session[:current_team_id].blank?
-      team = Team.find(:first)
+      team = Team.find(:first, :conditions => "number > 0", :order => :number)
     else
       team = Team.find(session[:current_team_id])
     end
