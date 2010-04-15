@@ -2,17 +2,7 @@ class ResultsController < ApplicationController
   layout "results"
 
   def index
-    if session[:current_team_id].nil? || session[:current_team_id].blank?
-      team = Team.find(:first, :conditions => "number > 0", :order => :number)
-    else
-      team = Team.find(session[:current_team_id])
-    end
-    @start_time = team.start_time
-    @team_name = team.name
-    @team_id = team.id
-    @runners = Runner.find(:all, :joins => [:stage], :conditions => {:team_id => team.id}, :order => "stages.number")
-    
-    @results = Results.new (team)
+    update_index
     
     respond_to do |format|
       format.html # index.html.erb
@@ -35,10 +25,27 @@ class ResultsController < ApplicationController
   end
 
   def refresh
-    redirect_to :action => :index
+    update_index
+
+    render :partial => "stage_table"
   end
 
   def authorize
+  end
+  
+private
+  def update_index
+    if session[:current_team_id].nil? || session[:current_team_id].blank?
+      team = Team.find(:first, :conditions => "number > 0", :order => :number)
+    else
+      team = Team.find(session[:current_team_id])
+    end
+    @start_time = team.start_time
+    @team_name = team.name
+    @team_id = team.id
+    @runners = Runner.find(:all, :joins => [:stage], :conditions => {:team_id => team.id}, :order => "stages.number")
+    
+    @results = Results.new (team)
   end
 
 end
