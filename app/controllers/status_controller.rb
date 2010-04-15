@@ -2,15 +2,7 @@ class StatusController < ApplicationController
   layout "status"
   
   def index
-    stage_collection = Stage.find_all_stages
-    if session[:current_team_id].nil? || session[:current_team_id].blank?
-      team = Team.find(:first, :conditions => "number > 0", :order => :number)
-    else
-      team = Team.find(session[:current_team_id])
-    end
-    @team_name = team.name
-    @team_id = team.id
-    @stage_statuses = StageStatus.find(:all, :joins => [:stage], :conditions => {:team_id => team.id}, :order => "stages.number")
+    update_index
 
     respond_to do |format|
       format.html # index.html.erb
@@ -29,7 +21,9 @@ class StatusController < ApplicationController
   end
 
   def refresh
-    redirect_to :action => :index
+    update_index
+
+    render :partial => "stage_table"
   end
 
   def update_team_runners
@@ -118,6 +112,19 @@ class StatusController < ApplicationController
     blog_client.editPost(blog.results_post_number.to_s, results_post, true)
 
     redirect_to :action => :update
+  end
+  
+private
+  def update_index
+    stage_collection = Stage.find_all_stages
+    if session[:current_team_id].nil? || session[:current_team_id].blank?
+      team = Team.find(:first, :conditions => "number > 0", :order => :number)
+    else
+      team = Team.find(session[:current_team_id])
+    end
+    @team_name = team.name
+    @team_id = team.id
+    @stage_statuses = StageStatus.find(:all, :joins => [:stage], :conditions => {:team_id => team.id}, :order => "stages.number")
   end
 
 end
