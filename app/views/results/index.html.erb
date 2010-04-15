@@ -25,22 +25,8 @@
   </tr>
 
 <!-- TODO: Move these calculations to model? -->
-<% total_minutes = 0.0 %>
-<% total_estimated_minutes = 0.0 %>
-<% total_off_pace = 0.0 %>
-<% time_zero = 946684800 %>
-<% stage_start = @start_time %>
-<% @team_rec.init_time %>
 <% @runners.each do |runner| %>
-  <% @team_rec.update_time (runner) %>
-  <% estimated_minutes = stage_time(runner.stage.miles, runner.estimated_pace) %>
-  <% total_estimated_minutes = total_estimated_minutes + estimated_minutes %>
-  <% if runner.actual_time.to_i != time_zero %>
-    <% actual_minutes = time_to_minutes(runner.actual_time) %>
-    <% total_minutes = total_minutes + actual_minutes %>
-    <% off_pace = actual_minutes - estimated_minutes %>
-    <% total_off_pace = total_off_pace + off_pace %>
-  <% end %>
+  <% @results.calculate_stage_results (runner) %>
   <tr>
     <td align='center'><%=h runner.stage.number %></td>
     <td><%=h runner.stage.landmark %></td>
@@ -48,32 +34,28 @@
     <td align='center'><%=h runner.stage.difficulty %></td>
     <td><%=h runner.name %></td>
     <td align='right'><%= show_short_time runner.estimated_pace %></td>
-    <td align='right'><%= minutes_as_short_time estimated_minutes %> </td>
+    <td align='right'><%= minutes_as_short_time @results.estimated_minutes %> </td>
     <td align='right'>
-        <% if runner.actual_time.to_i != time_zero %>
+        <% if runner.actual_time.to_i != @results.time_zero %>
             <%=h show_short_time runner.actual_time %>
-            <% stage_time = time_to_minutes(runner.actual_time) %>
-        <% else %>
-            <% stage_time = estimated_minutes %>
         <% end %>
     </td>
     <td align='right'>
-        <% if runner.actual_time.to_i != time_zero %>
-            <%=h signed_minutes_to_time off_pace %>
+        <% if runner.actual_time.to_i != @results.time_zero %>
+            <%=h signed_minutes_to_time @results.off_pace %>
         <% end %>
     </td>
     <td align='right'>
-    <%= show_short_time stage_start %>
-    <% stage_start += 60 * stage_time %>
+    <%= show_short_time @results.stage_start %>
     </td>
   </tr>
 <% end %>
   <tr>
   <td colspan='6'></td>
-  <td align='right'><%=h minutes_as_short_time total_estimated_minutes %></td>
-  <td align='right'><%=h minutes_as_short_time total_minutes %></td>
-  <td align='right'><%=h minutes_as_short_time total_off_pace %></td>
-  <td align='right'><%=h show_short_time stage_start %></td>
+  <td align='right'><%=h minutes_as_short_time @results.total_estimated_minutes %></td>
+  <td align='right'><%=h minutes_as_short_time @results.total_minutes %></td>
+  <td align='right'><%=h minutes_as_short_time @results.total_off_pace %></td>
+  <td align='right'><%=h show_short_time @results.stage_finish %></td>
   </tr>
 </table>
 <br />
