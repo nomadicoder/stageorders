@@ -40,9 +40,8 @@ class StatusController < ApplicationController
     @stages = stage_collection
     render :partial => "update_team_runners"
   end
-
+  
   def update
-    logger.info "update begin"
     stage_collection = Stage.find_all_stages
     team_collection = Team.find(:all)
     if session[:current_team_id].nil? || session[:current_team_id].blank?
