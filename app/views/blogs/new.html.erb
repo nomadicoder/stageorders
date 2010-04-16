@@ -8,6 +8,14 @@
     <%= f.collection_select( :team_id, Team.find(:all), :id, :short_name ) %>
   </p>
   <p>
+    <%= f.label :host_url %><br />
+    <%= f.text_field :host_url %>
+  </p>
+  <p>
+    <%= f.label :access_path %><br />
+    <%= f.text_field :access_path %>
+  </p>
+  <p>
     <%= f.label :blog_url %><br />
     <%= f.text_field :blog_url %>
   </p>
