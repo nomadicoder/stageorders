@@ -1,25 +1,19 @@
-<div id="update_blog">
 <% form_for(:post, :url => { :action => "update_blog" }) do |f| %>
   <%= f.error_messages %>
 
   <p>
     <%= f.label :team_id %> : 
     <%= f.collection_select( :team_id, Team.find(:all), :id, :short_name, :prompt => "Team", :selected => @team_id) %>
-  </p>
-  <p>
+  <br />
     <%= f.label :title %> : 
-    <%= f.text_field :title %>
-  </p>
-  <p>
+    <%= f.text_field :title, :size => 80 %>
+  <br />
     <%= f.label :content %> : 
-    <%= f.text_area :content %>
-  </p>
-  <p>
+    <%= f.text_area :content, :size => "80x4"%>
+  <br />
     <%= f.label :publish %> : 
     <%= f.check_box :publish %>
-  </p>
-  <p>
+  <br />
     <%= f.submit 'Post' %>
   </p>
 <% end %>
-</div>
