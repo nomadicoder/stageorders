@@ -97,8 +97,11 @@ class StatusController < ApplicationController
     # Create runner results tabel for team
     @runners = Runner.find(:all, :joins => [:stage], :conditions => {:team_id => team.id}, :order => "stages.number")
     
+    update_index
+    
     # Render the HTML for the table
-    results_table = render_to_string :partial => "results/stage_table"
+    @results = Results.new (team)
+    results_table = render_to_string :partial => "results_table"
     
     #Post runner results table to public website
     
