@@ -4,23 +4,24 @@
   <tr>
     <th>Name</th>
     <th>Team</th>
+    <th>Host url</th>
+    <th>Access path</th>
     <th>Blog url</th>
     <th>Results url</th>
     <th>Access url</th>
-    <th>Username</th>
-    <th>Password</th>
     <th>Blog</th>
+    <th>Results Page</th>
     <th>Category</th>
   </tr>
 
 <% @blogs.each do |blog| %>
   <tr>
     <td><%=h blog.team.short_name %></td>
+    <td><%=h blog.host_url %></td>
+    <td><%=h blog.access_path %></td>
     <td><%=h blog.blog_url %></td>
     <td><%=h blog.results_url %></td>
     <td><%=h blog.access_url %></td>
-    <td><%=h blog.username %></td>
-    <td><%=h blog.password %></td>
     <td><%=h blog.blog_number %></td>
     <td><%=h blog.results_post_number %></td>
     <td><%=h blog.category %></td>
