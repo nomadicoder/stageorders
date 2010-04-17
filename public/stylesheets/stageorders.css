@@ -55,6 +55,16 @@ body, p, ol, ul, td {
 	font-size: small;
 }
 
+#twitter {
+	float:right;
+	padding-top: 0.25em;
+	padding-right: 1em;
+	padding-left: 1em;
+	padding-bottom: 1em;
+	width: 12em;
+	background: #D4CDFB;
+}
+
 #footer {
 	clear: both;
 	background-color: #D4CDFB;
