@@ -1,0 +1,46 @@
+Updated: <%= show_short_time Time.now() %>
+<table>
+  <tr>
+    <th width=50>Stage</th>
+    <th>Landmark</th>
+    <th>Distance</th>
+    <th>Rating</th>
+    <th>Est Pace</th>
+    <th>Est Time</th>
+    <th width=65>Actual</th>
+    <th width=75>Difference</th>
+    <th>Est Start</th>
+  </tr>
+
+<% @runners.each do |runner| %>
+  <% @results.calculate_stage_results (runner) %>
+  <tr>
+    <td align='center'><%=h runner.stage.number %></td>
+    <td><%=h runner.stage.landmark %></td>
+    <td align='center'><%=h runner.stage.miles %></td>
+    <td align='center'><%=h runner.stage.difficulty %></td>
+    <td align='left'><%= show_short_time runner.estimated_pace %></td>
+    <td align='left'><%= minutes_as_short_time @results.estimated_minutes %> </td>
+    <td align='left'>
+        <% if runner.actual_time.to_i != @results.time_zero %>
+            <%=h show_short_time runner.actual_time %>
+        <% end %>
+    </td>
+    <td align='left'>
+        <% if runner.actual_time.to_i != @results.time_zero %>
+            <%=h signed_minutes_to_time @results.off_pace %>
+        <% end %>
+    </td>
+    <td align='left'>
+    <%= show_short_time @results.stage_start %>
+    </td>
+  </tr>
+<% end %>
+  <tr>
+  <td colspan='6'></td>
+  <td align='left'><%=h minutes_as_short_time @results.total_estimated_minutes %></td>
+  <td align='left'><%=h minutes_as_short_time @results.total_minutes %></td>
+  <td align='left'><%=h minutes_as_short_time @results.total_off_pace %></td>
+  <td align='left'><%=h show_short_time @results.stage_finish %></td>
+  </tr>
+</table>

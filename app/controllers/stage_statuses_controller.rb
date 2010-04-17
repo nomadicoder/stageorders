@@ -104,4 +104,76 @@ class StageStatusesController < ApplicationController
       format.xml  { head :ok }
     end
   end
+
+  def update_blog
+    team = Team.find(params[:post][:team_id])
+    title = params[:post][:title]
+    description = params[:post][:content]
+    @team_name = team.name
+    @team_id = team.id
+    
+    # get selected team
+    blog = Blog.find(:first, :conditions => { :team_id => team.id })    
+    blog_client = BlogClient.new(blog.host_url, blog.access_path, 'blog', blog.username, blog.password)
+    
+    logger.info "Blog Category : " + blog.category
+    logger.info "pub date: " + Time.now.strftime("%m/%d/%Y")
+    
+    # Post entry to website
+    blogpost = {
+      'title' => title,
+      'description' => description,
+      'category' => [blog.category],
+      'pubDate' => Time.now.to_s
+    }
+    
+    publish = (params[:post][:publish].to_i == 1)
+    blog_client.newPost(blogpost, publish)
+    
+    redirect_to :action => :index
+  end
+  
+  def update_results
+    team = Team.find(params[:results][:team_id])
+    @team_name = team.name
+    @team_id = team.id
+    # get selected team
+    blog = Blog.find(:first, :conditions => { :team_id => team.id })
+    
+    blog_client = BlogClient.new(blog.host_url, blog.access_path, 'page', blog.username, blog.password)
+    
+    # Create runner results tabel for team
+    @runners = Runner.find(:all, :joins => [:stage], :conditions => {:team_id => team.id}, :order => "stages.number")
+    
+    update_index
+    
+    # Render the HTML for the table
+    @results = Results.new (team)
+    results_table = render_to_string :partial => "results_table"
+    
+    #Post runner results table to public website
+    
+    results_post = {
+      'title' => team.name + " Stage Results",
+      'description' => results_table,
+      'pubDate' => Time.now.to_s
+    }
+    
+    blog_client.editPost(blog.results_post_number.to_s, results_post, true)
+
+    redirect_to :action => :index
+  end
+
+  private
+    def update_index
+      stage_collection = Stage.find_all_stages
+      if session[:current_team_id].nil? || session[:current_team_id].blank?
+        team = Team.find(:first, :conditions => "number > 0", :order => :number)
+      else
+        team = Team.find(session[:current_team_id])
+      end
+      @team_name = team.name
+      @team_id = team.id
+      @stage_statuses = StageStatus.find(:all, :joins => [:stage], :conditions => {:team_id => team.id}, :order => "stages.number")
+    end
 end
