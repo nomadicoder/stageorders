@@ -42,9 +42,11 @@
 <% end %>
 </table>
 
-<br />
+<div id="update_results">
+  <%= render :partial => "update_results" %>
+</div>
 
-<%= link_to 'New stage_status', new_stage_status_path %>
+<hr />
 
 <div id="update_blog">
   <%= render :partial => "update_blog" %>
@@ -52,8 +54,6 @@
 
 <hr />
 
-<div id="update_results">
-  <%= render :partial => "update_results" %>
-</div>
+<%= link_to 'New stage_status', new_stage_status_path %>
 
 </div>
