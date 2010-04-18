@@ -22,16 +22,8 @@
     <td align='center'><%=h runner.stage.difficulty %></td>
     <td align='left'><%= show_short_time runner.estimated_pace %></td>
     <td align='left'><%= minutes_as_short_time @results.estimated_minutes %> </td>
-    <td align='left'>
-        <% if runner.actual_time.to_i != @results.time_zero %>
-            <%=h show_short_time runner.actual_time %>
-        <% end %>
-    </td>
-    <td align='left'>
-        <% if runner.actual_time.to_i != @results.time_zero %>
-            <%=h signed_minutes_to_time @results.off_pace %>
-        <% end %>
-    </td>
+    <td align='left'><% if runner.actual_time.to_i != @results.time_zero %><%=h show_short_time runner.actual_time %><% end %></td>
+    <td align='left'><% if runner.actual_time.to_i != @results.time_zero %><%=h signed_minutes_to_time @results.off_pace %><% end %></td>
     <td align='left'>
     <%= show_short_time @results.stage_start %>
     </td>
