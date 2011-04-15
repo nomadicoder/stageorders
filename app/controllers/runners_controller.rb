@@ -103,11 +103,11 @@ class RunnersController < ApplicationController
 
     title = runner.team.name +
             " Stage " + runner.stage.number.to_s +
-            " Result (" + runner.estimated_pace.strftime("%M:%S") + ")"
+            " Result (" + runner.actual_time.strftime("%M:%S") + ")"
     description = runner.team.name + " completed the " +
                   runner.stage.miles.to_s + " mile of Stage " +
                   runner.stage.number.to_s + " with a time of " +
-                  runner.estimated_pace.strftime("%M:%S")
+                  runner.actual_time.strftime("%M:%S")
     
     # get selected team
     blog = Blog.find(:first, :conditions => { :team_id => runner.team.id })    
