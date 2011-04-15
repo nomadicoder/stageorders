@@ -1,18 +1,5 @@
 # Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
 
-mcjblog:
-  team: mcj
-  host_url: localhost
-  access_path: /xmlrpc.php
-  blog_url: http://localhost/taxonomy/term/2
-  results_url: http://localhost/node/132
-  access_url: http://localhost//xmlrpc.php
-  username: root
-  password: rootpass
-  blog_number: 1
-  results_post_number: 132
-  category: LASD MCJ/IRC
-
 nwkblog:
   team: nwk
   host_url: localhost
@@ -43,12 +30,12 @@ ccsblog:
   team: ccs
   host_url: localhost
   access_path: /xmlrpc.php
-  blog_url: http://localhost/taxonomy/term/1
+  blog_url: http://localhost/taxonomy/term/5
   results_url: http://localhost/node/135
   access_url: http://localhost//xmlrpc.php
   username: root
   password: rootpass
   blog_number: 1
   results_post_number: 135
-  category: LASD CCS/MDR
+  category: LASD CCS
 

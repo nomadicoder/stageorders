@@ -1,16 +1,17 @@
-<% form_for(:runner) do |f| %>
+<% form_for(:runner, :url => { :action => "update_runner" }) do |f| %>
   <%= f.error_messages %>
 
   <p>
     <%= f.label :team_id %> : 
-    <%= f.collection_select( :team_id, Team.find(:all), :id, :short_name, :prompt => "Team", :selected => @team_id ) %>
+    <%= f.collection_select( :team_id, @teams, :id, :short_name, :prompt => "Team", :selected => @team_id ) %>
     <%= observe_field "runner_team_id", :update => "team_runners", :with => "update_team_id", :url => {:action => "update_team_runners"} %>
   <br />
     <%= f.label :stage_id %> : 
-    <%= f.collection_select( :stage_id, @stages, :id, :number, :prompt => "Stage" ) %>
+    <%= f.collection_select( :stage_id, @stages, :id, :number, :prompt => "Stage", :selected => @stage_id ) %>
+    <%= observe_field "runner_stage_id", :update => "team_runners", :with => "update_stage_id", :url => {:action => "update_stage_runners"} %>
   <br />
-    <%= f.label :runner_id %><br />
-    <%= f.collection_select( :runner_id, @runners, :id, :name, :prompt => "Runner") %>
+    <%= f.label :runner_id %> :
+    <%= f.collection_select( :runner_id, @runners, :id, :name, :prompt => "Runner", :selected => @runner_id) %>
   <br />
     <%= f.label :completed %> : 
     <%= f.check_box :completed %>

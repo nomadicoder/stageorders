@@ -58,7 +58,7 @@ class RunnersController < ApplicationController
   # PUT /runners/1.xml
   def update
     @runner = Runner.find(params[:id])
-
+    already_completed = @runner.completed
     respond_to do |format|
       if @runner.update_attributes(params[:runner])
         # TODO: Too many queries for stage_status update.  Optimize this
@@ -68,7 +68,9 @@ class RunnersController < ApplicationController
           @stage_status.update_attributes(:runner_status_code_id => @runner.runner_status_code_id)
           @stage_status.update_status
         end
+
         flash[:notice] = 'Runner was successfully updated.'
+        post_stage_result @runner unless !@runner.completed unless already_completed
         format.html { redirect_to(@runner) }
         format.xml  { head :ok }
       else
@@ -90,4 +92,39 @@ class RunnersController < ApplicationController
     end
   end
   
+  def post_stage_result (runner)
+    @team_name = runner.team.name
+    @team_id = runner.team.id
+
+    # Create posting
+    # NWK Stage 18 result (54:32)
+    # LASD Norwalk Station Completed 8.7 miles of Stage 18 with a time of 54:32.
+    # Stage was 10:32 off pace. Team is currently xx:xx off pace.
+
+    title = runner.team.name +
+            " Stage " + runner.stage.number.to_s +
+            " Result (" + runner.estimated_pace.strftime("%M:%S") + ")"
+    description = runner.team.name + " completed the " +
+                  runner.stage.miles.to_s + " mile of Stage " +
+                  runner.stage.number.to_s + " with a time of " +
+                  runner.estimated_pace.strftime("%M:%S")
+    
+    # get selected team
+    blog = Blog.find(:first, :conditions => { :team_id => runner.team.id })    
+    blog_client = BlogClient.new(blog.host_url, blog.access_path, 'blog', blog.username, blog.password)
+    
+    logger.info "Blog Category : " + blog.category
+    logger.info "pub date: " + Time.now.strftime("%m/%d/%Y")
+    
+    # Post entry to website
+    blogpost = {
+      'title' => title,
+      'description' => description,
+      'category' => [blog.category],
+      'pubDate' => Time.now.to_s
+    }
+    
+    blog_client.newPost(blogpost, true)
+    
+  end
 end
