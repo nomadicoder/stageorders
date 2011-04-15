@@ -51,6 +51,10 @@ class Runner < ActiveRecord::Base
   def self.find_all_runners_for_team(team)
     find(:all, :joins => :stage, :conditions => "team_id = #{team.id}", :order => "stages.number") unless team.nil?
   end
+
+  def self.find_all_runners_for_team_and_stage(team, stage)
+    find(:all, :joins => :stage, :conditions => "team_id = #{team.id} AND stage_id = #{stage.id}") unless (team.nil? || stage.nil?)
+  end
   
   def estimated_pace_formatted
     self.estimated_pace.strftime("%M:%S")

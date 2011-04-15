@@ -26,34 +26,82 @@ class StatusController < ApplicationController
     render :partial => "stage_table"
   end
 
+  def set_runner_form_params
+    @teams = Team.find(:all)
+    team = Team.find(session[:current_team_id])
+    @team_id = team.id
+    @stages = Stage.find_all_stages
+    stage = Stage.find(session[:current_stage_id])
+    @stage_id = stage.id
+    @runners = Runner.find_all_runners_for_team(team)
+    runners = Runner.find_all_runners_for_team_and_stage(team, stage)
+    if !runners.first.nil?
+      @runner_id = runners.first.id
+    end
+  end
+
   def update_team_runners
-    stage_collection = Stage.find_all_stages
-    team_collection = Team.find(:all)
     if params[:update_team_id].nil? || params[:update_team_id].blank?
       session[:current_team_id] = Team.find(:first).id
     else
       session[:current_team_id] = params[:update_team_id]
     end
-    team = Team.find(session[:current_team_id])
-    @team_id = team.id
-    @runners = Runner.find_all_runners_for_team_code(team.short_name)
-    @stages = stage_collection
+    set_runner_form_params
     render :partial => "update_team_runners"
   end
   
+  def update_stage_runners
+    if params[:update_stage_id].nil? || params[:update_stage_id].blank?
+      session[:current_stage_id] = Stage.find(:first).id
+    else
+      session[:current_stage_id] = params[:update_stage_id]
+    end
+    set_runner_form_params
+    render :partial => "update_team_runners"
+  end
+  
+  def update_runner
+    runner = params[:runner]
+    @runner = Runner.find(runner[:runner_id])
+    stage_result  = {
+      :completed => runner[:completed].to_i,
+      :actual_time_formatted => runner[:actual_time_formatted],
+      :runner_status_code_id => runner[:runner_status_code_id].to_i
+    }
+    
+    logger.info "Stage Result: " + stage_result.to_s
+
+    if @runner.update_attributes(stage_result)
+      # TODO: Too many queries for stage_status update.  Optimize this
+#      @stage_status = StageStatus.find(:first, :readonly => false, :joins => [:stage, :team],
+#                                       :conditions => {:stage_id => @runner.stage_id, :team_id => @runner.team_id})
+#      if !@stage_status.nil? then
+#        @stage_status.update_attributes(:runner_status_code_id => @runner.runner_status_code_id)
+#        @stage_status.update_status
+#      end
+      flash[:notice] = 'Runner was successfully updated.'
+    end
+
+    redirect_to :action => :update
+  end
+  
   def update
-    stage_collection = Stage.find_all_stages
-    team_collection = Team.find(:all)
     if session[:current_team_id].nil? || session[:current_team_id].blank?
       team = Team.find(:first)
     else
       team = Team.find(session[:current_team_id])
     end
-    @teams = team_collection
-    @team_name = team.name
-    @team_id = team.id
-    @runners = Runner.find_all_runners_for_team_code(team.short_name)
-    @stages = stage_collection
+    if session[:current_stage_id].nil? || session[:current_stage_id].blank?
+      stage = Stage.find(:first)
+    else
+      stage = Stage.find(session[:current_stage_id])
+    end
+    if session[:current_runner_id].nil? || session[:current_runner_id].blank?
+      runner = Runner.find(:first)
+    else
+      runner = Runner.find(session[:current_runner_id])
+    end
+    set_runner_form_params
   end
   
   def update_blog
