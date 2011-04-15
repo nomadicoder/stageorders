@@ -23,7 +23,7 @@ run:
 one:
   sequence: 3.5
   short_code: 'ONE'
-  description: Runner is one mine out
+  description: Runner is one mile out
 
 fin:
   sequence: 4.0
