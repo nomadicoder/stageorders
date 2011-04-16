@@ -91,10 +91,12 @@ class RunnersController < ApplicationController
       format.xml  { head :ok }
     end
   end
-  
+
   def post_stage_result (runner)
     @team_name = runner.team.name
     @team_id = runner.team.id
+
+
 
     # Create posting
     # NWK Stage 18 result (54:32)
@@ -107,7 +109,7 @@ class RunnersController < ApplicationController
     description = runner.team.name + " completed the " +
                   runner.stage.miles.to_s + " mile of Stage " +
                   runner.stage.number.to_s + " with a time of " +
-                  runner.actual_time.strftime("%M:%S")
+                  runner.actual_time.strftime("%H:%M:%S")
     
     # get selected team
     blog = Blog.find(:first, :conditions => { :team_id => runner.team.id })    
