@@ -3,7 +3,6 @@
 <table>
   <tr>
     <th width=50>Stage</th>
-    <th>Name</th>
     <th>Landmark</th>
     <th>Distance</th>
     <th>Rating</th>
@@ -18,7 +17,6 @@
   <% @results.calculate_stage_results (runner) %>
   <tr>
     <td align='center'><%=h runner.stage.number %></td>
-    <td align='left'><%=h runner.name %></td>
     <td><%=h runner.stage.landmark %></td>
     <td align='center'><%=h runner.stage.miles %></td>
     <td align='center'><%=h runner.stage.difficulty %></td>
@@ -33,7 +31,7 @@
   </tr>
 <% end %>
   <tr>
-  <td colspan='6'></td>
+  <td colspan='5'></td>
   <td align='left'><%=h minutes_as_short_time @results.total_estimated_minutes %></td>
   <td align='left'><%=h minutes_as_short_time @results.total_minutes %></td>
   <td align='left'><%=h minutes_as_short_time @results.total_off_pace %></td>
