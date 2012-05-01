@@ -1,6 +1,4 @@
 class StatusController < ApplicationController
-  layout "status"
-  
   def index
     update_index
 
@@ -11,13 +9,15 @@ class StatusController < ApplicationController
   end
   
   def change_team
-    if params[:id].nil? || params[:id].blank?
+    if params[:team][:id].nil? || params[:team][:id].blank?
       session[:current_team_id] = Team.find(:first).id
     else
-      session[:current_team_id] = params[:id]
+      session[:current_team_id] = params[:team][:id]
     end
     @team = Team.find(session[:current_team_id])
-    redirect_to :action => :index
+    #redirect_to :action => :index
+    update_index    
+    render :partial => "status_table"
   end
 
   def refresh

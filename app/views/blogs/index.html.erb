@@ -2,36 +2,42 @@
 
 <table>
   <tr>
-    <th>Name</th>
     <th>Team</th>
     <th>Host url</th>
     <th>Access path</th>
     <th>Blog url</th>
     <th>Results url</th>
     <th>Access url</th>
-    <th>Blog</th>
-    <th>Results Page</th>
+    <th>Username</th>
+    <th>Password</th>
+    <th>Blog number</th>
+    <th>Results post number</th>
     <th>Category</th>
+    <th></th>
+    <th></th>
+    <th></th>
   </tr>
 
 <% @blogs.each do |blog| %>
   <tr>
-    <td><%=h blog.team.short_name %></td>
-    <td><%=h blog.host_url %></td>
-    <td><%=h blog.access_path %></td>
-    <td><%=h blog.blog_url %></td>
-    <td><%=h blog.results_url %></td>
-    <td><%=h blog.access_url %></td>
-    <td><%=h blog.blog_number %></td>
-    <td><%=h blog.results_post_number %></td>
-    <td><%=h blog.category %></td>
+    <td><%= blog.team_id %></td>
+    <td><%= blog.host_url %></td>
+    <td><%= blog.access_path %></td>
+    <td><%= blog.blog_url %></td>
+    <td><%= blog.results_url %></td>
+    <td><%= blog.access_url %></td>
+    <td><%= blog.username %></td>
+    <td><%= blog.password %></td>
+    <td><%= blog.blog_number %></td>
+    <td><%= blog.results_post_number %></td>
+    <td><%= blog.category %></td>
     <td><%= link_to 'Show', blog %></td>
     <td><%= link_to 'Edit', edit_blog_path(blog) %></td>
-    <td><%= link_to 'Destroy', blog, :confirm => 'Are you sure?', :method => :delete %></td>
+    <td><%= link_to 'Destroy', blog, confirm: 'Are you sure?', method: :delete %></td>
   </tr>
 <% end %>
 </table>
 
 <br />
 
-<%= link_to 'New blog', new_blog_path %>
+<%= link_to 'New Blog', new_blog_path %>

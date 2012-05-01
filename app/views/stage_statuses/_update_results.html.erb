@@ -1,10 +1,10 @@
-<% form_for(:results, :url => { :action => "update_results" }) do |f| %>
-  <%= f.error_messages %>
-
-  <p>
-    <%= f.hidden_field :team_id, :value => @team_id %>
-  </p>
-  <p>
-    <%= f.submit 'Refresh Results' %>
-  </p>
-<% end %>
+<div id="update_results">
+  <%= form_for(:results, :url => { :action => "update_results" }) do |f| %>
+    <p>
+      <%= f.hidden_field :team_id, :value => @team_id %>
+    </p>
+    <p>
+      <%= f.submit 'Refresh Results' %>
+    </p>
+  <% end %>
+</div>

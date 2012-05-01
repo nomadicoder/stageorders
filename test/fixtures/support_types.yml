@@ -1,29 +1,9 @@
-# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
 
-none:
-  short_code: 'NONE'
-  description: None
+one:
+  short_code: MyString
+  description: MyText
 
-follow:
-  short_code: 'FOLLOW'
-  description: Follow Van -- Follows runner on course
-
-shuttle:
-  short_code: 'SHUTTLE'
-  description: Shuttle Van -- Transports runners and personnel between stages
-
-rover:
-  short_code: 'ROVER'
-  description: Rover vehicle -- Performs utility functions
-
-cp:
-  short_code: 'CP'
-  description: Command Post -- Center of support operations
-
-mountaintop:
-  short_code: 'MOUNTAINTOP'
-  description: Mountain top radio relay
-
-res:
-  short_code: 'RES'
-  description: Rotating Crew
+two:
+  short_code: MyString
+  description: MyText

@@ -2,6 +2,11 @@ module ResultsHelper
   def show_short_time(time)
     time.strftime("%H:%M:%S")
   end
+
+  def show_local_time(time)
+    time.strftime("%H:%M")
+    #period_for_local(time, dst=true)
+  end
   
   def minutes_as_short_time(time)
     hours = '%02d' % (time / 60).truncate

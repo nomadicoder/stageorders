@@ -1,18 +1,8 @@
-<div id="status_table">
-<h1><%= @team_name %> Listing Stage Status</h1>
+<%= render :partial => "status_table" %>
 
-<% form_for :team, :url => {:action => "change_team"} do |f| %>
+<%= form_for :team, :url => {:action => "change_team"} do |f| %>
 <p>
-  <%= f.collection_select( :team_id, Team.find(:all, :order => "number", :conditions => "number > 0"), :id, :short_name,
-                           :prompt => "Select Team", :selected => @team_id ) %>
-  <%= observe_field "team_team_id", :update => "status", :with => "id", :url => { :action => "change_team" } %>
-  <%= periodically_call_remote :update => "stage_table", :url => { :action => "refresh"}, :frequency => '30' %>
+  <%= f.collection_select(:id, Team.find(:all, :order => "number", :conditions => "number > 0"), :id, :short_name,
+    :prompt => "Select Team", :selected => @team_id ) %>
 </p>
 <% end %>
-
-<div id="stage_table">
-<%= render :partial => "stage_table" %>
-</div>
-<br />
-
-</div>

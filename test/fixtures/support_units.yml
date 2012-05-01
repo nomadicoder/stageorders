@@ -1,177 +1,21 @@
-# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
 
-mcjfollow:
-  team: mcj
-  support_type_id: follow
-  tac_callsign: "MCJ Follow"
-  ham_callsign: "km0rat"
-  support_type: follow
-  support_status_code: unk
-  current_stage: one
+one:
+  team_id: 1
+  support_type_id: 1
+  tac_callsign: MyString
+  ham_callsign: MyString
+  support_status_code_id: 1
+  current_stage_id: 1
   location_lat: 1.5
   location_lon: 1.5
 
-mcjshuttle1:
-  team: mcj
-  support_type_id: shuttle
-  tac_callsign: "MCJ Shuttle 1"
-  ham_callsign: "n6iqa"
-  support_type: shuttle
-  support_status_code: unk
-  current_stage: one
-  location_lat: 1.5
-  location_lon: 1.5
-
-mcjshuttle2:
-  team: mcj
-  support_type_id: shuttle
-  tac_callsign: "MCJ Shuttle 2"
-  ham_callsign: "kf6vom"
-  support_type: shuttle
-  support_status_code: unk
-  current_stage: two
-  location_lat: 1.5
-  location_lon: 1.5
-
-mcjrover:
-  team: mcj
-  support_type_id: rover
-  tac_callsign: "MCJ Rover"
-  ham_callsign: "w7uga"
-  support_type: rover
-  support_status_code: unk
-  current_stage: two
-  location_lat: 1.5
-  location_lon: 1.5
-
-nwkfollow:
-  team: nwk
-  support_type_id: follow
-  tac_callsign: "NWK Follow"
-  ham_callsign: "km0rat"
-  support_type: follow
-  support_status_code: unk
-  current_stage: one
-  location_lat: 1.5
-  location_lon: 1.5
-
-nwkshuttle1:
-  team: nwk
-  support_type_id: shuttle
-  tac_callsign: "NWK Shuttle 1"
-  ham_callsign: "n6iqa"
-  support_type: shuttle
-  support_status_code: unk
-  current_stage: one
-  location_lat: 1.5
-  location_lon: 1.5
-
-nwkshuttle2:
-  team: nwk
-  support_type_id: shuttle
-  tac_callsign: "NWK Shuttle 2"
-  ham_callsign: "kf6vom"
-  support_type: shuttle
-  support_status_code: unk
-  current_stage: two
-  location_lat: 1.5
-  location_lon: 1.5
-
-nwkrover:
-  team: nwk
-  support_type_id: rover
-  tac_callsign: "NWK Rover"
-  ham_callsign: "w7uga"
-  support_type: rover
-  support_status_code: unk
-  current_stage: two
-  location_lat: 1.5
-  location_lon: 1.5
-
-ccsfollow:
-  team: ccs
-  support_type_id: follow
-  tac_callsign: "CCB Follow"
-  ham_callsign: "km0rat"
-  support_type: follow
-  support_status_code: unk
-  current_stage: one
-  location_lat: 1.5
-  location_lon: 1.5
-
-ccsshuttle1:
-  team: ccs
-  support_type_id: shuttle
-  tac_callsign: "CCB Shuttle 1"
-  ham_callsign: "n6iqa"
-  support_type: shuttle
-  support_status_code: unk
-  current_stage: one
-  location_lat: 1.5
-  location_lon: 1.5
-
-ccsshuttle2:
-  team: ccs
-  support_type_id: shuttle
-  tac_callsign: "CCB Shuttle 2"
-  ham_callsign: "kf6vom"
-  support_type: shuttle
-  support_status_code: unk
-  current_stage: two
-  location_lat: 1.5
-  location_lon: 1.5
-
-ccsrover:
-  team: ccs
-  support_type_id: rover
-  tac_callsign: "CCB Rover"
-  ham_callsign: "w7uga"
-  support_type: rover
-  support_status_code: unk
-  current_stage: two
-  location_lat: 1.5
-  location_lon: 1.5
-
-tstfollow:
-  team: tst
-  support_type_id: follow
-  tac_callsign: "TST Follow"
-  ham_callsign: "km0rat"
-  support_type: follow
-  support_status_code: unk
-  current_stage: one
-  location_lat: 1.5
-  location_lon: 1.5
-
-tstshuttle1:
-  team: tst
-  support_type_id: shuttle
-  tac_callsign: "TST Shuttle 1"
-  ham_callsign: "n6iqa"
-  support_type: shuttle
-  support_status_code: unk
-  current_stage: one
-  location_lat: 1.5
-  location_lon: 1.5
-
-tstshuttle2:
-  team: tst
-  support_type_id: shuttle
-  tac_callsign: "TST Shuttle 2"
-  ham_callsign: "kf6vom"
-  support_type: shuttle
-  support_status_code: unk
-  current_stage: two
-  location_lat: 1.5
-  location_lon: 1.5
-
-tstrover:
-  team: tst
-  support_type_id: rover
-  tac_callsign: "TST Rover"
-  ham_callsign: "w7uga"
-  support_type: rover
-  support_status_code: unk
-  current_stage: two
+two:
+  team_id: 1
+  support_type_id: 1
+  tac_callsign: MyString
+  ham_callsign: MyString
+  support_status_code_id: 1
+  current_stage_id: 1
   location_lat: 1.5
   location_lon: 1.5

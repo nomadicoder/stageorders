@@ -1,32 +1,11 @@
-# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
 
-unk:
-  sequence: 0.0
-  short_code: 'UNK'
-  description: Support status is unknown
+one:
+  sequence: 1.5
+  short_code: MyString
+  description: MyText
 
-enr:
-  sequence: 1.0
-  short_code: 'ENR'
-  description: Shuttle is enroute to assignment
-
-ons:
-  sequence: 2.0
-  short_code: 'ONS'
-  description: Unit has arrived at assignment
-
-out:
-  sequence: 0.2
-  short_code: 'OUT'
-  description: Shuttle is out of service (on break, refueling, disabled, etc)
-
-hld:
-  sequence: 0.1
-  short_code: 'HLD'
-  description: Unit is held at location (Waiting for next runner, traffic delay, etc)
-
-clr:
-  sequence: 9.0
-  short_code: 'CLR'
-  description: Shuttle has cleared stage
-	
+two:
+  sequence: 1.5
+  short_code: MyString
+  description: MyText

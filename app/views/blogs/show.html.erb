@@ -1,57 +1,60 @@
+<p id="notice"><%= notice %></p>
+
 <p>
   <b>Team:</b>
-  <%=h @blog.team.name %>
+  <%= @blog.team_id %>
 </p>
 
 <p>
-  <b>host URL:</b>
-  <%=h @blog.host_url %>
+  <b>Host url:</b>
+  <%= @blog.host_url %>
 </p>
 
 <p>
-  <b>Access Path:</b>
-  <%=h @blog.access_path %>
+  <b>Access path:</b>
+  <%= @blog.access_path %>
 </p>
 
 <p>
   <b>Blog url:</b>
-  <%=h @blog.blog_url %>
+  <%= @blog.blog_url %>
 </p>
 
 <p>
   <b>Results url:</b>
-  <%=h @blog.results_url %>
+  <%= @blog.results_url %>
 </p>
 
 <p>
   <b>Access url:</b>
-  <%=h @blog.access_url %>
+  <%= @blog.access_url %>
 </p>
 
 <p>
   <b>Username:</b>
-  <%=h @blog.username %>
+  <%= @blog.username %>
 </p>
 
 <p>
   <b>Password:</b>
-  <%=h @blog.password %>
+  <%= @blog.password %>
 </p>
 
 <p>
-  <b>Blog:</b>
-  <%=h @blog.blog_number %>
+  <b>Blog number:</b>
+  <%= @blog.blog_number %>
 </p>
 
 <p>
-  <b>Results:</b>
-  <%=h @blog.results_post_number %>
+  <b>Results post number:</b>
+  <%= @blog.results_post_number %>
 </p>
 
 <p>
   <b>Category:</b>
-  <%=h @blog.category %>
+  <%= @blog.category %>
 </p>
+
 
 <%= link_to 'Edit', edit_blog_path(@blog) %> |
 <%= link_to 'Back', blogs_path %>

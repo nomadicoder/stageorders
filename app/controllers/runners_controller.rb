@@ -1,34 +1,34 @@
 class RunnersController < ApplicationController
   # GET /runners
-  # GET /runners.xml
+  # GET /runners.json
   def index
     @runners = Runner.find(:all, :joins => [:team, :stage], :order => "teams.number, stages.number")
 
     respond_to do |format|
       format.html # index.html.erb
-      format.xml  { render :xml => @runners }
+      format.json { render json: @runners }
     end
   end
 
   # GET /runners/1
-  # GET /runners/1.xml
+  # GET /runners/1.json
   def show
     @runner = Runner.find(params[:id])
 
     respond_to do |format|
       format.html # show.html.erb
-      format.xml  { render :xml => @runner }
+      format.json { render json: @runner }
     end
   end
 
   # GET /runners/new
-  # GET /runners/new.xml
+  # GET /runners/new.json
   def new
     @runner = Runner.new
 
     respond_to do |format|
       format.html # new.html.erb
-      format.xml  { render :xml => @runner }
+      format.json { render json: @runner }
     end
   end
 
@@ -38,57 +38,55 @@ class RunnersController < ApplicationController
   end
 
   # POST /runners
-  # POST /runners.xml
+  # POST /runners.json
   def create
     @runner = Runner.new(params[:runner])
 
     respond_to do |format|
       if @runner.save
-        flash[:notice] = 'Runner was successfully created.'
-        format.html { redirect_to(@runner) }
-        format.xml  { render :xml => @runner, :status => :created, :location => @runner }
+        format.html { redirect_to @runner, notice: 'Runner was successfully created.' }
+        format.json { render json: @runner, status: :created, location: @runner }
       else
-        format.html { render :action => "new" }
-        format.xml  { render :xml => @runner.errors, :status => :unprocessable_entity }
+        format.html { render action: "new" }
+        format.json { render json: @runner.errors, status: :unprocessable_entity }
       end
     end
   end
 
   # PUT /runners/1
-  # PUT /runners/1.xml
+  # PUT /runners/1.json
   def update
     @runner = Runner.find(params[:id])
     already_completed = @runner.completed
-    respond_to do |format|
-      if @runner.update_attributes(params[:runner])
-        # TODO: Too many queries for stage_status update.  Optimize this
-        @stage_status = StageStatus.find(:first, :readonly => false, :joins => [:stage, :team],
-                                         :conditions => {:stage_id => @runner.stage_id, :team_id => @runner.team_id})
-        if !@stage_status.nil? then
-          @stage_status.update_attributes(:runner_status_code_id => @runner.runner_status_code_id)
-          @stage_status.update_status
-        end
 
-        flash[:notice] = 'Runner was successfully updated.'
+    respond_to do |format|
+      # TODO: Too many queries for stage_status update.  Optimize this
+      @stage_status = StageStatus.find(:first, :readonly => false, :joins => [:stage, :team],
+                                       :conditions => {:stage_id => @runner.stage_id, :team_id => @runner.team_id})
+      if !@stage_status.nil? then
+        @stage_status.update_attributes(:runner_status_code_id => @runner.runner_status_code_id)
+        @stage_status.update_status
+      end
+      if @runner.update_attributes(params[:runner])
         post_stage_result @runner unless !@runner.completed unless already_completed
-        format.html { redirect_to(@runner) }
-        format.xml  { head :ok }
+        format.html { redirect_to @runner, notice: 'Runner was successfully updated.' }
+        format.json { head :no_content }
       else
-        format.html { render :action => "edit" }
-        format.xml  { render :xml => @runner.errors, :status => :unprocessable_entity }
+        format.html { render action: "edit" }
+        format.json { render json: @runner.errors, status: :unprocessable_entity }
       end
     end
   end
 
   # DELETE /runners/1
-  # DELETE /runners/1.xml
+  # DELETE /runners/1.json
   def destroy
     @runner = Runner.find(params[:id])
     @runner.destroy
 
     respond_to do |format|
-      format.html { redirect_to(runners_url) }
-      format.xml  { head :ok }
+      format.html { redirect_to runners_url }
+      format.json { head :no_content }
     end
   end
 

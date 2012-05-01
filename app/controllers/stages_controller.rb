@@ -1,34 +1,34 @@
 class StagesController < ApplicationController
   # GET /stages
-  # GET /stages.xml
+  # GET /stages.json
   def index
     @stages = Stage.all(:order => "number")
 
     respond_to do |format|
       format.html # index.html.erb
-      format.xml  { render :xml => @stages }
+      format.json { render json: @stages }
     end
   end
 
   # GET /stages/1
-  # GET /stages/1.xml
+  # GET /stages/1.json
   def show
     @stage = Stage.find(params[:id])
 
     respond_to do |format|
       format.html # show.html.erb
-      format.xml  { render :xml => @stage }
+      format.json { render json: @stage }
     end
   end
 
   # GET /stages/new
-  # GET /stages/new.xml
+  # GET /stages/new.json
   def new
     @stage = Stage.new
 
     respond_to do |format|
       format.html # new.html.erb
-      format.xml  { render :xml => @stage }
+      format.json { render json: @stage }
     end
   end
 
@@ -38,48 +38,46 @@ class StagesController < ApplicationController
   end
 
   # POST /stages
-  # POST /stages.xml
+  # POST /stages.json
   def create
     @stage = Stage.new(params[:stage])
 
     respond_to do |format|
       if @stage.save
-        flash[:notice] = 'Stage was successfully created.'
-        format.html { redirect_to(@stage) }
-        format.xml  { render :xml => @stage, :status => :created, :location => @stage }
+        format.html { redirect_to @stage, notice: 'Stage was successfully created.' }
+        format.json { render json: @stage, status: :created, location: @stage }
       else
-        format.html { render :action => "new" }
-        format.xml  { render :xml => @stage.errors, :status => :unprocessable_entity }
+        format.html { render action: "new" }
+        format.json { render json: @stage.errors, status: :unprocessable_entity }
       end
     end
   end
 
   # PUT /stages/1
-  # PUT /stages/1.xml
+  # PUT /stages/1.json
   def update
     @stage = Stage.find(params[:id])
 
     respond_to do |format|
       if @stage.update_attributes(params[:stage])
-        flash[:notice] = 'Stage was successfully updated.'
-        format.html { redirect_to(@stage) }
-        format.xml  { head :ok }
+        format.html { redirect_to @stage, notice: 'Stage was successfully updated.' }
+        format.json { head :no_content }
       else
-        format.html { render :action => "edit" }
-        format.xml  { render :xml => @stage.errors, :status => :unprocessable_entity }
+        format.html { render action: "edit" }
+        format.json { render json: @stage.errors, status: :unprocessable_entity }
       end
     end
   end
 
   # DELETE /stages/1
-  # DELETE /stages/1.xml
+  # DELETE /stages/1.json
   def destroy
     @stage = Stage.find(params[:id])
     @stage.destroy
 
     respond_to do |format|
-      format.html { redirect_to(stages_url) }
-      format.xml  { head :ok }
+      format.html { redirect_to stages_url }
+      format.json { head :no_content }
     end
   end
   

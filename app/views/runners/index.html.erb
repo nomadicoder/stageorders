@@ -1,38 +1,39 @@
 <h1>Listing runners</h1>
 
-<table border>
+<table>
   <tr>
-    <th>Team</th>
     <th>Stage</th>
+    <th>Team</th>
+    <th>Runner status code</th>
     <th>Name</th>
     <th>Estimated pace</th>
-    <th>Status</th>
     <th>Completed</th>
     <th>Actual time</th>
+    <th></th>
+    <th></th>
+    <th></th>
   </tr>
 
 <% @runners.each do |runner| %>
   <tr>
-    <td><%=h runner.team.short_name %></td>
-    <td><%=h runner.stage.number %></td>
-    <td><%=h runner.name %></td>
-    <td><%=h runner.estimated_pace.strftime("%M:%S") %></td>
+    <td><%= runner.stage.number %></td>
+    <td><%= runner.team.short_name %></td>
+    <td><%= runner.runner_status_code.short_code %></td>
+    <td><%= runner.name %></td>
+    <td><%= runner.estimated_pace.strftime("%M:%S") %></td>
+    <td><%= runner.completed %></td>
     <td>
-      <%=h runner.runner_status %>
-    </td>
-    <td><%=h runner.completed %></td>
-    <td>
-        <% if runner.actual_time != nil %>
-            <%=h runner.actual_time.strftime("%H:%M:%S") %>
-         <% end %>
+      <% if runner.actual_time != nil %>
+        <%= runner.actual_time.strftime("%H:%M:%S") %>
+      <% end %>
     </td>
     <td><%= link_to 'Show', runner %></td>
     <td><%= link_to 'Edit', edit_runner_path(runner) %></td>
-    <td><%= link_to 'Destroy', runner, :confirm => 'Are you sure?', :method => :delete %></td>
+    <td><%= link_to 'Destroy', runner, confirm: 'Are you sure?', method: :delete %></td>
   </tr>
 <% end %>
 </table>
 
 <br />
 
-<%= link_to 'New runner', new_runner_path %>
+<%= link_to 'New Runner', new_runner_path %>

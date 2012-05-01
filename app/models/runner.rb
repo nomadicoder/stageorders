@@ -1,11 +1,13 @@
 class Runner < ActiveRecord::Base
+  attr_accessible :actual_time, :completed, :estimated_pace, :name, :runner_status_code_id, :stage_id, :team_id
+  attr_accessible :estimated_pace_formatted, :actual_time_formatted
   belongs_to :stage
   belongs_to :team
   belongs_to :runner_status_code
   has_one :stage_status
   
   validates_presence_of :name, :team
-  validate :pace_time_valid, :actual_time_valid
+  #validate :pace_time_valid, :actual_time_valid
   
   def runner_status
     runner_status_code.short_code if runner_status_code

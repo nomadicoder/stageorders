@@ -1,6 +1,4 @@
 class ResultsController < ApplicationController
-  layout "results"
-
   def index
     update_index
     
@@ -15,13 +13,15 @@ class ResultsController < ApplicationController
   end
 
   def change_team
-    if params[:id].nil? || params[:id].blank?
+    if params[:team][:id].nil? || params[:team][:id].blank?
       session[:current_team_id] = Team.find(:first).id
     else
-      session[:current_team_id] = params[:id]
+      session[:current_team_id] = params[:team][:id]
     end
     @team = Team.find(session[:current_team_id])
-    redirect_to :action => :index
+    
+    update_index    
+    render :partial => "status_table"
   end
 
   def refresh
@@ -44,7 +44,7 @@ private
     @team_name = team.name
     @team_id = team.id
     @runners = Runner.find(:all, :joins => [:stage], :conditions => {:team_id => team.id}, :order => "stages.number")
-    
+    puts @team_id
     @results = Results.new (team)
   end
 
