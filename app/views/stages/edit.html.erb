@@ -1,28 +1,6 @@
 <h1>Editing stage</h1>
 
-<% form_for(@stage) do |f| %>
-  <%= f.error_messages %>
-
-  <p>
-    <%= f.label :number %><br />
-    <%= f.text_field :number %>
-  </p>
-  <p>
-    <%= f.label :landmark %><br />
-    <%= f.text_field :landmark %>
-  </p>
-  <p>
-    <%= f.label :miles %><br />
-    <%= f.text_field :miles %>
-  </p>
-  <p>
-    <%= f.label :difficulty %><br />
-    <%= f.text_field :difficulty %>
-  </p>
-  <p>
-    <%= f.submit 'Update' %>
-  </p>
-<% end %>
+<%= render 'form' %>
 
 <%= link_to 'Show', @stage %> |
 <%= link_to 'Back', stages_path %>

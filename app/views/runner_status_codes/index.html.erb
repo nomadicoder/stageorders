@@ -2,22 +2,26 @@
 
 <table>
   <tr>
+    <th>Sequence</th>
     <th>Short code</th>
     <th>Description</th>
+    <th></th>
+    <th></th>
+    <th></th>
   </tr>
 
 <% @runner_status_codes.each do |runner_status_code| %>
   <tr>
-    <td><%=h runner_status_code.sequence %></td>
-    <td><%=h runner_status_code.short_code %></td>
-    <td><%=h runner_status_code.description %></td>
+    <td><%= runner_status_code.sequence %></td>
+    <td><%= runner_status_code.short_code %></td>
+    <td><%= runner_status_code.description %></td>
     <td><%= link_to 'Show', runner_status_code %></td>
     <td><%= link_to 'Edit', edit_runner_status_code_path(runner_status_code) %></td>
-    <td><%= link_to 'Destroy', runner_status_code, :confirm => 'Are you sure?', :method => :delete %></td>
+    <td><%= link_to 'Destroy', runner_status_code, confirm: 'Are you sure?', method: :delete %></td>
   </tr>
 <% end %>
 </table>
 
 <br />
 
-<%= link_to 'New runner_status_code', new_runner_status_code_path %>
+<%= link_to 'New Runner status code', new_runner_status_code_path %>

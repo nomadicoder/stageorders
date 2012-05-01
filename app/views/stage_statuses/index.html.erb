@@ -1,59 +1,16 @@
-<div id="stage_status_table">
-<h1><%= @team_name %> Listing Stage Status</h1>
+<%= render :partial => "status_table" %>
 
-<% form_for :team, :url => {:action => "change_team"} do |f| %>
+<%= form_for :team, :url => {:action => "change_team"} do |f| %>
 <p>
-  <%= f.collection_select( :team_id, Team.find(:all, :order => "number", :conditions => "number > 0"), :id, :short_name,
-                           :prompt => "Select Team", :selected => @team_id ) %>
-  <%= observe_field "team_team_id", :update => "stage_status", :with => "id", :url => { :action => "change_team" } %>
-  Updated: <%= show_short_time Time.now() %>
+  <%= f.collection_select(:id, Team.find(:all, :order => "number", :conditions => "number > 0"), :id, :short_name,
+    :prompt => "Select Team", :selected => @team_id ) %>
 </p>
 <% end %>
 
-<table border=1>
-  <tr>
-    <th width=80>Team</th>
-    <th width=50>Stage</th>
-    <th width=120>Runner</th>
-    <th width=120>Support</th>
-    <th width=80>Runner<br/>status</th>
-    <th width=80>Support<br/>status</th>
-    <th width=50>Ready</th>
-  </tr>
-
-<% @stage_statuses.each do |stage_status| %>
-  <tr align='center'>
-    <td><%=h stage_status.team_short_name %></td>
-    <td><%=h stage_status.stage_number %></td>
-    <td><%=h stage_status.runner_name %></td>
-    <td><%=h stage_status.tac_callsign %></td>
-    <td><%=h stage_status.runner_status %></td>
-    <td><%=h stage_status.support_status %></td>
-    <% if stage_status.stage_status == "GO" || stage_status.stage_status == "CLEAR" %>
-      <td BGCOLOR='GREEN'>
-    <% else %>
-      <td BGCOLOR='RED'>
-    <% end %>
-    <%=h stage_status.stage_status %></td>
-    <td><%= link_to 'Show', stage_status %></td>
-    <td><%= link_to 'Edit', edit_stage_status_path(stage_status) %></td>
-    <td><%= link_to 'Destroy', stage_status, :confirm => 'Are you sure?', :method => :delete %></td>
-  </tr>
-<% end %>
-</table>
-
-<div id="update_results">
-  <%= render :partial => "update_results" %>
-</div>
-
 <hr />
-
-<div id="update_blog">
-  <%= render :partial => "update_blog" %>
-</div>
-
+<%= render :partial => "update_results" %>
+<hr />
+<%= render :partial => "update_blog" %>
 <hr />
 
 <%= link_to 'New stage_status', new_stage_status_path %>
-
-</div>

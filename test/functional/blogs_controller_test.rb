@@ -1,6 +1,10 @@
 require 'test_helper'
 
 class BlogsControllerTest < ActionController::TestCase
+  setup do
+    @blog = blogs(:one)
+  end
+
   test "should get index" do
     get :index
     assert_response :success
@@ -14,30 +18,30 @@ class BlogsControllerTest < ActionController::TestCase
 
   test "should create blog" do
     assert_difference('Blog.count') do
-      post :create, :blog => { }
+      post :create, blog: { access_path: @blog.access_path, access_url: @blog.access_url, blog_number: @blog.blog_number, blog_url: @blog.blog_url, category: @blog.category, host_url: @blog.host_url, password: @blog.password, results_post_number: @blog.results_post_number, results_url: @blog.results_url, team_id: @blog.team_id, username: @blog.username }
     end
 
     assert_redirected_to blog_path(assigns(:blog))
   end
 
   test "should show blog" do
-    get :show, :id => blogs(:one).to_param
+    get :show, id: @blog
     assert_response :success
   end
 
   test "should get edit" do
-    get :edit, :id => blogs(:one).to_param
+    get :edit, id: @blog
     assert_response :success
   end
 
   test "should update blog" do
-    put :update, :id => blogs(:one).to_param, :blog => { }
+    put :update, id: @blog, blog: { access_path: @blog.access_path, access_url: @blog.access_url, blog_number: @blog.blog_number, blog_url: @blog.blog_url, category: @blog.category, host_url: @blog.host_url, password: @blog.password, results_post_number: @blog.results_post_number, results_url: @blog.results_url, team_id: @blog.team_id, username: @blog.username }
     assert_redirected_to blog_path(assigns(:blog))
   end
 
   test "should destroy blog" do
     assert_difference('Blog.count', -1) do
-      delete :destroy, :id => blogs(:one).to_param
+      delete :destroy, id: @blog
     end
 
     assert_redirected_to blogs_path

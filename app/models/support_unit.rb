@@ -22,4 +22,5 @@ class SupportUnit < ActiveRecord::Base
   def support_status=(short_code)
     self.support_status_code = SupportStatusCode.find_by_short_code(short_code) unless short_code.blank?
   end
+  attr_accessible :current_stage_id, :ham_callsign, :location_lat, :location_lon, :support_status_code_id, :support_type_id, :tac_callsign, :team_id
 end

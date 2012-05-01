@@ -1,34 +1,34 @@
 class BlogsController < ApplicationController
   # GET /blogs
-  # GET /blogs.xml
+  # GET /blogs.json
   def index
     @blogs = Blog.all
 
     respond_to do |format|
       format.html # index.html.erb
-      format.xml  { render :xml => @blogs }
+      format.json { render json: @blogs }
     end
   end
 
   # GET /blogs/1
-  # GET /blogs/1.xml
+  # GET /blogs/1.json
   def show
     @blog = Blog.find(params[:id])
 
     respond_to do |format|
       format.html # show.html.erb
-      format.xml  { render :xml => @blog }
+      format.json { render json: @blog }
     end
   end
 
   # GET /blogs/new
-  # GET /blogs/new.xml
+  # GET /blogs/new.json
   def new
     @blog = Blog.new
 
     respond_to do |format|
       format.html # new.html.erb
-      format.xml  { render :xml => @blog }
+      format.json { render json: @blog }
     end
   end
 
@@ -38,48 +38,46 @@ class BlogsController < ApplicationController
   end
 
   # POST /blogs
-  # POST /blogs.xml
+  # POST /blogs.json
   def create
     @blog = Blog.new(params[:blog])
 
     respond_to do |format|
       if @blog.save
-        flash[:notice] = 'Blog was successfully created.'
-        format.html { redirect_to(@blog) }
-        format.xml  { render :xml => @blog, :status => :created, :location => @blog }
+        format.html { redirect_to @blog, notice: 'Blog was successfully created.' }
+        format.json { render json: @blog, status: :created, location: @blog }
       else
-        format.html { render :action => "new" }
-        format.xml  { render :xml => @blog.errors, :status => :unprocessable_entity }
+        format.html { render action: "new" }
+        format.json { render json: @blog.errors, status: :unprocessable_entity }
       end
     end
   end
 
   # PUT /blogs/1
-  # PUT /blogs/1.xml
+  # PUT /blogs/1.json
   def update
     @blog = Blog.find(params[:id])
 
     respond_to do |format|
       if @blog.update_attributes(params[:blog])
-        flash[:notice] = 'Blog was successfully updated.'
-        format.html { redirect_to(@blog) }
-        format.xml  { head :ok }
+        format.html { redirect_to @blog, notice: 'Blog was successfully updated.' }
+        format.json { head :no_content }
       else
-        format.html { render :action => "edit" }
-        format.xml  { render :xml => @blog.errors, :status => :unprocessable_entity }
+        format.html { render action: "edit" }
+        format.json { render json: @blog.errors, status: :unprocessable_entity }
       end
     end
   end
 
   # DELETE /blogs/1
-  # DELETE /blogs/1.xml
+  # DELETE /blogs/1.json
   def destroy
     @blog = Blog.find(params[:id])
     @blog.destroy
 
     respond_to do |format|
-      format.html { redirect_to(blogs_url) }
-      format.xml  { head :ok }
+      format.html { redirect_to blogs_url }
+      format.json { head :no_content }
     end
   end
 end

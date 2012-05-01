@@ -1,31 +1,11 @@
-# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
-
-unk: 
-  sequence: 0.0
-  short_code: 'UNK'
-  description: Runner status is unknown
-
-enr:
-  sequence: 1.0
-  short_code: 'ENR'
-  description: Runner is enroute to stage
-
-chk:
-  sequence: 2.0
-  short_code: 'CHK'
-  description: Runner has checked in at the stage
-
-run:
-  sequence: 3.0
-  short_code: 'RUN'
-  description: Runner is on the course running the stage
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
 
 one:
-  sequence: 3.5
-  short_code: 'ONE'
-  description: Runner is one mile out
+  sequence: 1.5
+  short_code: MyString
+  description: MyText
 
-fin:
-  sequence: 4.0
-  short_code: 'FIN'
-  description: Runner has completed the stage
+two:
+  sequence: 1.5
+  short_code: MyString
+  description: MyText

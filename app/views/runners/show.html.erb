@@ -1,21 +1,28 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Team:</b>
+  <%= @runner.team.short_name %>
+</p>
+
 <p>
   <b>Stage:</b>
-  <%=h @runner.stage.number %> (<%=h @runner.stage.landmark %>)
+  <%= @runner.stage.number %> (<%= @runner.stage.landmark %>)
 </p>
 
 <p>
   <b>Name:</b>
-  <%=h @runner.name %>
+  <%= @runner.name %>
 </p>
 
 <p>
   <b>Estimated pace:</b>
-  <%=h @runner.estimated_pace_formatted %>
+  <%= @runner.estimated_pace_formatted %>
 </p>
 
 <p>
   <b>Completed:</b>
-  <%=h @runner.completed %>
+  <%= @runner.completed %>
 </p>
 
 <p>
@@ -24,8 +31,13 @@
 </p>
 
 <p>
-  <b>Runner status:</b>
+  <b>Runner status code:</b>
   <%= @runner.runner_status_code.description %>
+</p>
+
+<p>
+  <b>Actual time:</b>
+  <%= @runner.actual_time %>
 </p>
 
 

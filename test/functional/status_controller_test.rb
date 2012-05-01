@@ -1,8 +1,14 @@
 require 'test_helper'
 
 class StatusControllerTest < ActionController::TestCase
-  # Replace this with your real tests.
-  test "the truth" do
-    assert true
+  test "should get index" do
+    get :index
+    assert_response :success
   end
+
+  test "should get update" do
+    get :update
+    assert_response :success
+  end
+
 end

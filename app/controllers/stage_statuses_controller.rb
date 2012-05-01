@@ -1,3 +1,5 @@
+require 'assets/blog_client'
+
 class StageStatusesController < ApplicationController
   # GET /stage_statuses
   # GET /stage_statuses.xml
@@ -19,17 +21,20 @@ class StageStatusesController < ApplicationController
   end
   
   def change_team
-    if params[:id].nil? || params[:id].blank?
+    if params[:team][:id].nil? || params[:team][:id].blank?
       session[:current_team_id] = Team.find(:first).id
     else
-      session[:current_team_id] = params[:id]
+      session[:current_team_id] = params[:team][:id]
     end
     @team = Team.find(session[:current_team_id])
-    redirect_to :action => :index
+    
+    update_index    
+    render :partial => "status_table"
   end
   
   def refresh
-    redirect_to :action => :index
+    update_index
+    render :partial => "stage_table"
   end
 
   # GET /stage_statuses/1
@@ -130,7 +135,7 @@ class StageStatusesController < ApplicationController
     publish = (params[:post][:publish].to_i == 1)
     blog_client.newPost(blogpost, publish)
     
-    redirect_to :action => :index
+    redirect_to :back
   end
   
   def update_results
@@ -161,7 +166,7 @@ class StageStatusesController < ApplicationController
     
     blog_client.editPost(blog.results_post_number.to_s, results_post, true)
 
-    redirect_to :action => :index
+    redirect_to :back
   end
 
   private

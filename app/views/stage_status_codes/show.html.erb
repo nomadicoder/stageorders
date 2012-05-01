@@ -1,26 +1,28 @@
-<p>
-  <b>Short code:</b>
-  <%=h @stage_status_code.short_code %>
-</p>
+<p id="notice"><%= notice %></p>
 
 <p>
-  <b>Sequence:</b>
-  <%=h @stage_status_code.sequence %>
+  <b>Short code:</b>
+  <%= @stage_status_code.short_code %>
 </p>
 
 <p>
   <b>Description:</b>
-  <%=h @stage_status_code.description %>
+  <%= @stage_status_code.description %>
+</p>
+
+<p>
+  <b>Sequence:</b>
+  <%= @stage_status_code.sequence %>
 </p>
 
 <p>
   <b>Runner status code:</b>
-  <%=h @stage_status_code.runner_status %>
+  <%= @stage_status_code.runner_status_code_id %>
 </p>
 
 <p>
   <b>Support status code:</b>
-  <%=h @stage_status_code.support_status %>
+  <%= @stage_status_code.support_status_code_id %>
 </p>
 
 

@@ -1,6 +1,10 @@
 require 'test_helper'
 
 class TeamsControllerTest < ActionController::TestCase
+  setup do
+    @team = teams(:one)
+  end
+
   test "should get index" do
     get :index
     assert_response :success
@@ -14,30 +18,30 @@ class TeamsControllerTest < ActionController::TestCase
 
   test "should create team" do
     assert_difference('Team.count') do
-      post :create, :team => { }
+      post :create, team: { name: @team.name, number: @team.number, short_name: @team.short_name, start_time: @team.start_time }
     end
 
     assert_redirected_to team_path(assigns(:team))
   end
 
   test "should show team" do
-    get :show, :id => teams(:one).to_param
+    get :show, id: @team
     assert_response :success
   end
 
   test "should get edit" do
-    get :edit, :id => teams(:one).to_param
+    get :edit, id: @team
     assert_response :success
   end
 
   test "should update team" do
-    put :update, :id => teams(:one).to_param, :team => { }
+    put :update, id: @team, team: { name: @team.name, number: @team.number, short_name: @team.short_name, start_time: @team.start_time }
     assert_redirected_to team_path(assigns(:team))
   end
 
   test "should destroy team" do
     assert_difference('Team.count', -1) do
-      delete :destroy, :id => teams(:one).to_param
+      delete :destroy, id: @team
     end
 
     assert_redirected_to teams_path

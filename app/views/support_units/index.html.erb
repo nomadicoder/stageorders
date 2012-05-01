@@ -6,29 +6,32 @@
     <th>Support type</th>
     <th>Tac callsign</th>
     <th>Ham callsign</th>
-    <th>Status code</th>
+    <th>Support status code</th>
     <th>Current stage</th>
     <th>Location lat</th>
     <th>Location lon</th>
+    <th></th>
+    <th></th>
+    <th></th>
   </tr>
 
 <% @support_units.each do |support_unit| %>
   <tr>
-    <td><%=h support_unit.team.short_name %></td>
-    <td><%=h support_unit.short_code %></td>
-    <td><%=h support_unit.tac_callsign %></td>
-    <td><%=h support_unit.ham_callsign %></td>
-    <td><%=h support_unit.support_status %></td>
-    <td><%=h support_unit.current_stage.number %></td>
-    <td><%=h support_unit.location_lat %></td>
-    <td><%=h support_unit.location_lon %></td>
+    <td><%= support_unit.team_id %></td>
+    <td><%= support_unit.support_type_id %></td>
+    <td><%= support_unit.tac_callsign %></td>
+    <td><%= support_unit.ham_callsign %></td>
+    <td><%= support_unit.support_status_code_id %></td>
+    <td><%= support_unit.current_stage_id %></td>
+    <td><%= support_unit.location_lat %></td>
+    <td><%= support_unit.location_lon %></td>
     <td><%= link_to 'Show', support_unit %></td>
     <td><%= link_to 'Edit', edit_support_unit_path(support_unit) %></td>
-    <td><%= link_to 'Destroy', support_unit, :confirm => 'Are you sure?', :method => :delete %></td>
+    <td><%= link_to 'Destroy', support_unit, confirm: 'Are you sure?', method: :delete %></td>
   </tr>
 <% end %>
 </table>
 
 <br />
 
-<%= link_to 'New support_unit', new_support_unit_path %>
+<%= link_to 'New Support unit', new_support_unit_path %>

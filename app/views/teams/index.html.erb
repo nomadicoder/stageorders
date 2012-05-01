@@ -4,21 +4,26 @@
   <tr>
     <th>Number</th>
     <th>Name</th>
+    <th>Short name</th>
+    <th>Start time</th>
+    <th></th>
+    <th></th>
+    <th></th>
   </tr>
 
 <% @teams.each do |team| %>
   <tr>
-    <td><%=h team.number %></td>
-    <td><%=h team.short_name %></td>
-    <td><%=h team.name %></td>
-    <td><%=h team.start_time %></td>
+    <td><%= team.number %></td>
+    <td><%= team.name %></td>
+    <td><%= team.short_name %></td>
+    <td><%= team.start_time %></td>
     <td><%= link_to 'Show', team %></td>
     <td><%= link_to 'Edit', edit_team_path(team) %></td>
-    <td><%= link_to 'Destroy', team, :confirm => 'Are you sure?', :method => :delete %></td>
+    <td><%= link_to 'Destroy', team, confirm: 'Are you sure?', method: :delete %></td>
   </tr>
 <% end %>
 </table>
 
 <br />
 
-<%= link_to 'New team', new_team_path %>
+<%= link_to 'New Team', new_team_path %>
