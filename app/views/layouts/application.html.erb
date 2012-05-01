@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Stageorders</title>
+  <%= stylesheet_link_tag    "application", :media => "all" %>
+  <%= javascript_include_tag "http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js" %>
+  <%= javascript_include_tag "application" %>
+  <%= csrf_meta_tags %>
+</head>
+<body id="stageorders">
+  <div id="header">
+    <img src="/assets/logo.png">
+    <div id="title">
+    <%= @page_title || "Stage Orders" %>
+    </div>
+  </div>
+  <div id="side">
+    <a href="/results">Results</a><br />
+    <a href="/status">Status</a><br />
+    <a href="http://mojaverats.com">Website</a><br />
+  </div>
+
+  <div id="main">
+  <p style="color: green"><%= flash[:notice] %></p>
+
+  <%= yield %>
+  </div>
+
+  <div id="footer">
+    Copyright 2010 MojaveRATS
+  </div>
+</body>
+</html>

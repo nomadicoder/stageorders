@@ -1,0 +1,29 @@
+<%= form_for(@runner_status_code) do |f| %>
+  <% if @runner_status_code.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@runner_status_code.errors.count, "error") %> prohibited this runner_status_code from being saved:</h2>
+
+      <ul>
+      <% @runner_status_code.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :sequence %><br />
+    <%= f.text_field :sequence %>
+  </div>
+  <div class="field">
+    <%= f.label :short_code %><br />
+    <%= f.text_field :short_code %>
+  </div>
+  <div class="field">
+    <%= f.label :description %><br />
+    <%= f.text_area :description %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
