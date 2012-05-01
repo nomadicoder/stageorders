@@ -12,5 +12,6 @@
 //
 //= require jquery
 //= require jquery_ujs
+//= require results_updater
 //= require_tree .
 //
