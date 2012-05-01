@@ -1,0 +1,49 @@
+<%= form_for(@support_unit) do |f| %>
+  <% if @support_unit.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@support_unit.errors.count, "error") %> prohibited this support_unit from being saved:</h2>
+
+      <ul>
+      <% @support_unit.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :team_id %><br />
+    <%= f.number_field :team_id %>
+  </div>
+  <div class="field">
+    <%= f.label :support_type_id %><br />
+    <%= f.number_field :support_type_id %>
+  </div>
+  <div class="field">
+    <%= f.label :tac_callsign %><br />
+    <%= f.text_field :tac_callsign %>
+  </div>
+  <div class="field">
+    <%= f.label :ham_callsign %><br />
+    <%= f.text_field :ham_callsign %>
+  </div>
+  <div class="field">
+    <%= f.label :support_status_code_id %><br />
+    <%= f.number_field :support_status_code_id %>
+  </div>
+  <div class="field">
+    <%= f.label :current_stage_id %><br />
+    <%= f.number_field :current_stage_id %>
+  </div>
+  <div class="field">
+    <%= f.label :location_lat %><br />
+    <%= f.text_field :location_lat %>
+  </div>
+  <div class="field">
+    <%= f.label :location_lon %><br />
+    <%= f.text_field :location_lon %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
