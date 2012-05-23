@@ -66,6 +66,9 @@ class Runner < ActiveRecord::Base
     # Preserve the actual time incase it is invalid
     @estimated_pace_check = estimated_pace
     if !/^\d+:\d+$/.match(estimated_pace).nil?
+      # New Start
+      estimated_pace += " UTC"
+      # New End
       self.estimated_pace = Time.parse("00:"+estimated_pace)
     end
   end
@@ -78,6 +81,9 @@ class Runner < ActiveRecord::Base
     # Preserve the actual time incase it is invalid
     @actual_time_check = actual_time
     if !/^\d+:\d+:\d+$/.match(actual_time).nil?
+      # New Start
+      actual_time += " UTC"
+      # New End
       self.actual_time = Time.parse(actual_time)
     end
   end

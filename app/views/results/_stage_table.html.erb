@@ -12,7 +12,7 @@
       <th>Est Time</th>
       <th width=65>Actual</th>
       <th width=75>Difference</th>
-      <th>Est Start</th>
+      <th>Est Start<br />Updated</th>
     </tr>
 
   <% @runners.each do |runner| %>
@@ -45,7 +45,7 @@
     <td align='right'><%=h minutes_as_short_time @results.total_estimated_minutes %></td>
     <td align='right'><%=h minutes_as_short_time @results.total_minutes %></td>
     <td align='right'><%=h minutes_as_short_time @results.total_off_pace %></td>
-    <td align='right'><%=h show_short_time @results.stage_finish %></td>
+    <td align='right'><%=h show_local_time @results.stage_finish %></td>
     </tr>
   </table>
 </div>
