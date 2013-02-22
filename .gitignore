@@ -16,3 +16,9 @@
 
 # Ignore Mac OS X files
 /.DS_Store
+
+# Ignore Vagrant file
+/Vagrantfile
+
+# Ignore lock files
+/Gemfile.lock
