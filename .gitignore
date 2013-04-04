@@ -19,6 +19,3 @@
 
 # Ignore Vagrant file
 /Vagrantfile
-
-# Ignore lock files
-/Gemfile.lock
