@@ -4,7 +4,9 @@
   <table border=1>
     <tr>
       <th width=50>Stage</th>
-      <th width=120>Runner</th>
+      <% if user_signed_in? %>
+        <th width=120>Runner</th>
+      <% end %>
       <th width=120>Support</th>
       <th width=80>Runner<br/>status</th>
       <th width=80>Support<br/>status</th>
@@ -14,7 +16,9 @@
   <% @stage_statuses.each do |stage_status| %>
     <tr align='center'>
       <td><%=h stage_status.stage_number %></td>
-      <td><%=h stage_status.runner_name %></td>
+      <% if user_signed_in? %>
+        <td><%=h stage_status.runner_name %></td>
+      <% end %>
       <td><%=h stage_status.tac_callsign %></td>
       <td><%=h stage_status.runner_status %></td>
       <td><%=h stage_status.support_status %></td>

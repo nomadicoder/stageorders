@@ -1,4 +1,6 @@
 class BlogsController < ApplicationController
+  before_filter :authenticate_user!
+
   # GET /blogs
   # GET /blogs.json
   def index

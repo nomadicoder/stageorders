@@ -139,3 +139,7 @@ a:hover { color: #fff; background-color:#000; }
   font-weight: bold;
   line-height: 42px;
 }
+
+#userNav {
+	text-align: right;
+}

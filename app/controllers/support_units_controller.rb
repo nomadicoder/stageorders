@@ -1,4 +1,6 @@
 class SupportUnitsController < ApplicationController
+  before_filter :authenticate_user!
+
   # GET /support_units
   # GET /support_units.json
   def index

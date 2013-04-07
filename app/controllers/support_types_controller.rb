@@ -1,4 +1,6 @@
 class SupportTypesController < ApplicationController
+  before_filter :authenticate_user!
+
   # GET /support_types
   # GET /support_types.json
   def index

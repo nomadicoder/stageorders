@@ -1,4 +1,6 @@
 class SupportStatusCodesController < ApplicationController
+  before_filter :authenticate_user!
+
   # GET /support_status_codes
   # GET /support_status_codes.json
   def index

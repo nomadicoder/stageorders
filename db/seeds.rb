@@ -87,20 +87,20 @@ stage_status_codes = StageStatusCode.create ([
     short_code: 'GO',
     sequence: 2.0,
     description: 'Stage is ready',
-    runner_status_code_id: RunnerStatusCode.where("short_code = 'CHK'").first.id,
-    support_status_code_id: SupportStatusCode.where("short_code = 'ONS'").first.id,
+    runner_status_code_id: RunnerStatusCode.where("short_code == 'CHK'").first.id,
+    support_status_code_id: SupportStatusCode.where("short_code == 'ONS'").first.id,
   },
   {
     short_code: 'GO',
     sequence: 2.0,
     description: 'Stage is ready',
-    runner_status_code_id: RunnerStatusCode.where("short_code = 'RUN'").first.id,
+    runner_status_code_id: RunnerStatusCode.where("short_code == 'RUN'").first.id,
   },
   {
     short_code: 'CLR',
     sequence: 9.0,
     description: 'Stage completed/cleared',
-    runner_status_code_id: RunnerStatusCode.where("short_code = 'FIN'").first.id,
+    runner_status_code_id: RunnerStatusCode.where("short_code == 'FIN'").first.id,
   }
 ])
 
@@ -136,12 +136,12 @@ support_Types= SupportType.create ([
   }
 ])
 
-follow = SupportType.where("short_code = 'FOLLOW'").first.id
-shuttle = SupportType.where("short_code = 'SHUTTLE'").first.id
-rover = SupportType.where("short_code = 'ROVER'").first.id
-cp = SupportType.where("short_code = 'CP'").first.id
-mountaintop = SupportType.where("short_code = 'MOUNTAINTOP'").first.id
-res = SupportType.where("short_code = 'RES'").first.id
+follow = SupportType.where("short_code == 'FOLLOW'").first.id
+shuttle = SupportType.where("short_code == 'SHUTTLE'").first.id
+rover = SupportType.where("short_code == 'ROVER'").first.id
+cp = SupportType.where("short_code == 'CP'").first.id
+mountaintop = SupportType.where("short_code == 'MOUNTAINTOP'").first.id
+res = SupportType.where("short_code == 'RES'").first.id
 
 Stage.delete_all
 stages = Stage.create ([
@@ -267,28 +267,28 @@ stages = Stage.create ([
   }
 ])
 
-s1 = Stage.where("number = 1").first.id
-s2 = Stage.where("number = 2").first.id
-s3 = Stage.where("number = 3").first.id
-s4 = Stage.where("number = 4").first.id
-s5 = Stage.where("number = 5").first.id
-s6 = Stage.where("number = 6").first.id
-s7 = Stage.where("number = 7").first.id
-s8 = Stage.where("number = 8").first.id
-s9 = Stage.where("number = 9").first.id
-s10 = Stage.where("number = 10").first.id
-s11 = Stage.where("number = 11").first.id
-s12 = Stage.where("number = 12").first.id
-s13 = Stage.where("number = 13").first.id
-s14 = Stage.where("number = 14").first.id
-s15 = Stage.where("number = 15").first.id
-s16 = Stage.where("number = 16").first.id
-s17 = Stage.where("number = 17").first.id
-s18 = Stage.where("number = 18").first.id
-s19 = Stage.where("number = 19").first.id
-s20 = Stage.where("number = 20").first.id
-initRunnerStatus = RunnerStatusCode.where("short_code = 'UNK'").first.id
-initSupportStatus = SupportStatusCode.where("short_code = 'UNK'").first.id
+s1 = Stage.where("number == 1").first.id
+s2 = Stage.where("number == 2").first.id
+s3 = Stage.where("number == 3").first.id
+s4 = Stage.where("number == 4").first.id
+s5 = Stage.where("number == 5").first.id
+s6 = Stage.where("number == 6").first.id
+s7 = Stage.where("number == 7").first.id
+s8 = Stage.where("number == 8").first.id
+s9 = Stage.where("number == 9").first.id
+s10 = Stage.where("number == 10").first.id
+s11 = Stage.where("number == 11").first.id
+s12 = Stage.where("number == 12").first.id
+s13 = Stage.where("number == 13").first.id
+s14 = Stage.where("number == 14").first.id
+s15 = Stage.where("number == 15").first.id
+s16 = Stage.where("number == 16").first.id
+s17 = Stage.where("number == 17").first.id
+s18 = Stage.where("number == 18").first.id
+s19 = Stage.where("number == 19").first.id
+s20 = Stage.where("number == 20").first.id
+initRunnerStatus = RunnerStatusCode.where("short_code == 'UNK'").first.id
+initSupportStatus = SupportStatusCode.where("short_code == 'UNK'").first.id
 
 Team.delete_all
 Runner.delete_all
@@ -301,7 +301,7 @@ Runner.create([
   { stage_id: s1,  team_id: teamid, name: "One",       estimated_pace: "00:07:24", completed: false, actual_time: "00:00:00", runner_status_code_id: initRunnerStatus},
   { stage_id: s2,  team_id: teamid, name: "Two",       estimated_pace: "00:10:00", completed: false, actual_time: "00:00:00", runner_status_code_id: initRunnerStatus},
   { stage_id: s3,  team_id: teamid, name: "Three",     estimated_pace: "00:08:20", completed: false, actual_time: "00:00:00", runner_status_code_id: initRunnerStatus},
-  { stage_id: s4,  team_id: teamid, name: "Four",      estimated_pace: "1:07:50", completed: false, actual_time: "00:00:00", runner_status_code_id: initRunnerStatus},
+  { stage_id: s4,  team_id: teamid, name: "Four",      estimated_pace: "00:07:50", completed: false, actual_time: "00:00:00", runner_status_code_id: initRunnerStatus},
   { stage_id: s5,  team_id: teamid, name: "Five",      estimated_pace: "00:08:11", completed: false, actual_time: "00:00:00", runner_status_code_id: initRunnerStatus},
   { stage_id: s6,  team_id: teamid, name: "Six",       estimated_pace: "00:09:00", completed: false, actual_time: "00:00:00", runner_status_code_id: initRunnerStatus},
   { stage_id: s7,  team_id: teamid, name: "Seven",     estimated_pace: "00:09:40", completed: false, actual_time: "00:00:00", runner_status_code_id: initRunnerStatus},
@@ -332,7 +332,7 @@ SupportUnit.create([
 ])
 
 stages.each do |s|
-  r = Runner.where("stage_id = #{s.id} AND team_id = #{teamid}").first
+  r = Runner.where("stage_id == #{s.id} AND team_id == #{teamid}").first
   StageStatus.create(team_id: teamid, stage_id: s.id, runner_id: r.id)
 end
 
@@ -380,7 +380,7 @@ SupportUnit.create([
 ])
 
 stages.each do |s|
-  r = Runner.where("stage_id = #{s.id} AND team_id = #{teamid}").first
+  r = Runner.where("stage_id == #{s.id} AND team_id == #{teamid}").first
   StageStatus.create(team_id: teamid, stage_id: s.id, runner_id: r.id)
 end
 
@@ -428,7 +428,7 @@ SupportUnit.create([
 ])
 
 stages.each do |s|
-  r = Runner.where("stage_id = #{s.id} AND team_id = #{teamid}").first
+  r = Runner.where("stage_id == #{s.id} AND team_id == #{teamid}").first
   StageStatus.create(team_id: teamid, stage_id: s.id, runner_id: r.id)
 end
 

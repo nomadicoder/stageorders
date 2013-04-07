@@ -1,4 +1,6 @@
 class RunnerStatusCodesController < ApplicationController
+  before_filter :authenticate_user!
+
   # GET /runner_status_codes
   # GET /runner_status_codes.json
   def index

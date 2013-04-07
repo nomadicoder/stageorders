@@ -1,6 +1,8 @@
 require 'assets/blog_client'
 
 class StageStatusesController < ApplicationController
+  before_filter :authenticate_user!
+
   # GET /stage_statuses
   # GET /stage_statuses.xml
   def index

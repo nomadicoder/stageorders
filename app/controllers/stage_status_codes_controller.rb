@@ -1,4 +1,6 @@
 class StageStatusCodesController < ApplicationController
+  before_filter :authenticate_user!
+
   # GET /stage_status_codes
   # GET /stage_status_codes.json
   def index

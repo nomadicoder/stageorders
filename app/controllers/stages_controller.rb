@@ -1,4 +1,6 @@
 class StagesController < ApplicationController
+  before_filter :authenticate_user!
+
   # GET /stages
   # GET /stages.json
   def index
