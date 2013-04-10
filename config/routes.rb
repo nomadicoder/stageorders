@@ -1,12 +1,6 @@
 Stageorders::Application.routes.draw do
   devise_for :users
 
-  get "admin/login"
-
-  get "admin/logout"
-
-  get "admin/index"
-
   resources :users
 
   resources :blogs
