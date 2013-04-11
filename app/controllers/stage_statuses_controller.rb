@@ -137,6 +137,10 @@ class StageStatusesController < ApplicationController
     publish = (params[:post][:publish].to_i == 1)
     blog_client.newPost(blogpost, publish)
     
+    # Tweet Entry
+    Twitter.update(description) if publish 
+    
+    
     redirect_to :back
   end
   

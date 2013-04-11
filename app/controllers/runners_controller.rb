@@ -70,7 +70,7 @@ class RunnersController < ApplicationController
         @stage_status.update_status
       end
       if @runner.update_attributes(params[:runner])
-        post_stage_result @runner unless !@runner.completed unless already_completed
+        post_stage_result @runner unless (!@runner.completed && already_completed)
         format.html { redirect_to @runner, notice: 'Runner was successfully updated.' }
         format.json { head :no_content }
       else
@@ -127,6 +127,12 @@ class RunnersController < ApplicationController
     }
     
     blog_client.newPost(blogpost, true)
+    
+    # Tweet Entry
+    tweet = description + " #b2v2013"
+    Twitter.update(tweet)
+    
+    logger.info "*********tweeted: " + tweet
     
   end
 end
