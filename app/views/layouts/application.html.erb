@@ -18,6 +18,10 @@
     <a href="/results">Results</a><br />
     <a href="/status">Status</a><br />
     <a href="http://mojaverats.com">Website</a><br />
+    <% if user_signed_in? %>
+      <a href="/runners">Runners</a><br />
+      <a href="/stage_statuses">Stage Status</a><br />
+    <% end %>
   </div>
 
   <div id="main">
