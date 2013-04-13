@@ -138,7 +138,7 @@ class StageStatusesController < ApplicationController
     blog_client.newPost(blogpost, publish)
     
     # Tweet Entry
-    Twitter.update(description) if publish 
+#    Twitter.update(description) if publish 
     
     
     redirect_to :back
