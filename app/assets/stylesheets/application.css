@@ -143,3 +143,7 @@ a:hover { color: #fff; background-color:#000; }
 #userNav {
 	text-align: right;
 }
+
+tr:nth-of-type(even) {
+  background-color:#ccc;
+}
