@@ -45,7 +45,11 @@
     </tr>
   <% end %>
     <tr>
-    <td colspan='6'></td>
+    <% if user_signed_in? %>
+      <td colspan='6'></td>
+    <% else %>
+      <td colspan='5'></td>
+    <% end %>
     <td align='right'><%=h minutes_as_short_time @results.total_estimated_minutes %></td>
     <td align='right'><%=h minutes_as_short_time @results.total_minutes %></td>
     <td align='right'><%=h minutes_as_short_time @results.total_off_pace %></td>
