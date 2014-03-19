@@ -128,11 +128,5 @@ class RunnersController < ApplicationController
     
     blog_client.newPost(blogpost, true)
     
-    # Tweet Entry
-    tweet = description + " #b2v2013"
-    Twitter.update(tweet)
-    
-    logger.info "*********tweeted: " + tweet
-    
   end
 end
