@@ -1,45 +1,44 @@
 <p id="notice"><%= notice %></p>
 
 <p>
-  <b>Team:</b>
+  <strong>Team:</strong>
   <%= @runner.team.short_name %>
 </p>
 
 <p>
-  <b>Stage:</b>
+  <strong>Stage:</strong>
   <%= @runner.stage.number %> (<%= @runner.stage.landmark %>)
 </p>
 
 <p>
-  <b>Name:</b>
+  <strong>Name:</strong>
   <%= @runner.name %>
 </p>
 
 <p>
-  <b>Estimated pace:</b>
+  <strong>Estimated pace:</strong>
   <%= @runner.estimated_pace_formatted %>
 </p>
 
 <p>
-  <b>Completed:</b>
+  <strong>Completed:</strong>
   <%= @runner.completed %>
 </p>
 
 <p>
-  <b>Actual time:</b>
+  <strong>Actual time:</strong>
   <%=h @runner.actual_time_formatted %>
 </p>
 
 <p>
-  <b>Runner status code:</b>
+  <strong>Runner status code:</strong>
   <%= @runner.runner_status_code.description %>
 </p>
 
 <p>
-  <b>Actual time:</b>
+  <strong>Actual time:</strong>
   <%= @runner.actual_time %>
 </p>
-
 
 <%= link_to 'Edit', edit_runner_path(@runner) %> |
 <%= link_to 'Back', runners_path %>

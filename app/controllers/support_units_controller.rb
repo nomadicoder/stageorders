@@ -1,64 +1,34 @@
 class SupportUnitsController < ApplicationController
+  before_action :set_support_unit, only: [:show, :edit, :update, :destroy]
   before_filter :authenticate_user!
 
-  # GET /support_units
-  # GET /support_units.json
+  respond_to :html
+
   def index
-    @support_units = SupportUnit.find(:all, :joins => [:team],  :order => :tac_callsign)
-    
-    respond_to do |format|
-      format.html # index.html.erb
-      format.json { render json: @support_units }
-    end
+    @support_units = SupportUnit.all
+    respond_with(@support_units)
   end
 
-  # GET /support_units/1
-  # GET /support_units/1.json
   def show
-    @support_unit = SupportUnit.find(params[:id])
-
-    respond_to do |format|
-      format.html # show.html.erb
-      format.json { render json: @support_unit }
-    end
+    respond_with(@support_unit)
   end
 
-  # GET /support_units/new
-  # GET /support_units/new.json
   def new
     @support_unit = SupportUnit.new
-
-    respond_to do |format|
-      format.html # new.html.erb
-      format.json { render json: @support_unit }
-    end
+    respond_with(@support_unit)
   end
 
-  # GET /support_units/1/edit
   def edit
-    @support_unit = SupportUnit.find(params[:id])
   end
 
-  # POST /support_units
-  # POST /support_units.json
   def create
-    @support_unit = SupportUnit.new(params[:support_unit])
-
-    respond_to do |format|
-      if @support_unit.save
-        format.html { redirect_to @support_unit, notice: 'Support unit was successfully created.' }
-        format.json { render json: @support_unit, status: :created, location: @support_unit }
-      else
-        format.html { render action: "new" }
-        format.json { render json: @support_unit.errors, status: :unprocessable_entity }
-      end
-    end
+    @support_unit = SupportUnit.new(support_unit_params)
+    @support_unit.save
+    respond_with(@support_unit)
   end
 
-  # PUT /support_units/1
-  # PUT /support_units/1.json
   def update
-    @support_unit = SupportUnit.find(params[:id])
+    @support_unit.update(support_unit_params)
 
     respond_to do |format|
       if @support_unit.update_attributes(params[:support_unit])
@@ -78,15 +48,17 @@ class SupportUnitsController < ApplicationController
     end
   end
 
-  # DELETE /support_units/1
-  # DELETE /support_units/1.json
   def destroy
-    @support_unit = SupportUnit.find(params[:id])
     @support_unit.destroy
-
-    respond_to do |format|
-      format.html { redirect_to support_units_url }
-      format.json { head :no_content }
-    end
+    respond_with(@support_unit)
   end
+
+  private
+    def set_support_unit
+      @support_unit = SupportUnit.find(params[:id])
+    end
+
+    def support_unit_params
+      params.require(:support_unit).permit(:team_id, :support_type_id, :tac_callsign, :ham_callsign, :support_status_code_id, :current_stage_id, :location_lat, :location_lon)
+    end
 end

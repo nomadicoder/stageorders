@@ -1,5 +1,4 @@
 class Stage < ActiveRecord::Base
-  attr_accessible :difficulty, :landmark, :miles, :number
   has_many :runners
   has_one :support_unit
   has_many :stage_status

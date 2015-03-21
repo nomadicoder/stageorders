@@ -4,23 +4,23 @@
       <h2><%= pluralize(@runner_status_code.errors.count, "error") %> prohibited this runner_status_code from being saved:</h2>
 
       <ul>
-      <% @runner_status_code.errors.full_messages.each do |msg| %>
-        <li><%= msg %></li>
+      <% @runner_status_code.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
       <% end %>
       </ul>
     </div>
   <% end %>
 
   <div class="field">
-    <%= f.label :sequence %><br />
+    <%= f.label :sequence %><br>
     <%= f.text_field :sequence %>
   </div>
   <div class="field">
-    <%= f.label :short_code %><br />
+    <%= f.label :short_code %><br>
     <%= f.text_field :short_code %>
   </div>
   <div class="field">
-    <%= f.label :description %><br />
+    <%= f.label :description %><br>
     <%= f.text_area :description %>
   </div>
   <div class="actions">

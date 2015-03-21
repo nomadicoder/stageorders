@@ -1,6 +1,4 @@
 class Runner < ActiveRecord::Base
-  attr_accessible :actual_time, :completed, :estimated_pace, :name, :runner_status_code_id, :stage_id, :team_id
-  attr_accessible :estimated_pace_formatted, :actual_time_formatted
   belongs_to :stage
   belongs_to :team
   belongs_to :runner_status_code

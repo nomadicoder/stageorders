@@ -1,29 +1,31 @@
 <h1>Listing stages</h1>
 
 <table>
-  <tr>
-    <th>Number</th>
-    <th>Landmark</th>
-    <th>Miles</th>
-    <th>Difficulty</th>
-    <th></th>
-    <th></th>
-    <th></th>
-  </tr>
+  <thead>
+    <tr>
+      <th>Number</th>
+      <th>Landmark</th>
+      <th>Miles</th>
+      <th>Difficulty</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
 
-<% @stages.each do |stage| %>
-  <tr>
-    <td><%= stage.number %></td>
-    <td><%= stage.landmark %></td>
-    <td><%= stage.miles %></td>
-    <td><%= stage.difficulty %></td>
-    <td><%= link_to 'Show', stage %></td>
-    <td><%= link_to 'Edit', edit_stage_path(stage) %></td>
-    <td><%= link_to 'Destroy', stage, confirm: 'Are you sure?', method: :delete %></td>
-  </tr>
-<% end %>
+  <tbody>
+    <% @stages.each do |stage| %>
+      <tr>
+        <td><%= stage.number %></td>
+        <td><%= stage.landmark %></td>
+        <td><%= stage.miles %></td>
+        <td><%= stage.difficulty %></td>
+        <td><%= link_to 'Show', stage %></td>
+        <td><%= link_to 'Edit', edit_stage_path(stage) %></td>
+        <td><%= link_to 'Destroy', stage, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
 </table>
 
-<br />
+<br>
 
 <%= link_to 'New Stage', new_stage_path %>

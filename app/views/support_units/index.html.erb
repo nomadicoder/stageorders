@@ -1,37 +1,39 @@
 <h1>Listing support_units</h1>
 
 <table>
-  <tr>
-    <th>Team</th>
-    <th>Support type</th>
-    <th>Tac callsign</th>
-    <th>Ham callsign</th>
-    <th>Support status code</th>
-    <th>Current stage</th>
-    <th>Location lat</th>
-    <th>Location lon</th>
-    <th></th>
-    <th></th>
-    <th></th>
-  </tr>
+  <thead>
+    <tr>
+      <th>Team</th>
+      <th>Support type</th>
+      <th>Tac callsign</th>
+      <th>Ham callsign</th>
+      <th>Support status code</th>
+      <th>Current stage</th>
+      <th>Location lat</th>
+      <th>Location lon</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
 
-<% @support_units.each do |support_unit| %>
-  <tr>
-    <td><%= support_unit.team_id %></td>
-    <td><%= support_unit.support_type_id %></td>
-    <td><%= support_unit.tac_callsign %></td>
-    <td><%= support_unit.ham_callsign %></td>
-    <td><%= support_unit.support_status_code_id %></td>
-    <td><%= support_unit.current_stage_id %></td>
-    <td><%= support_unit.location_lat %></td>
-    <td><%= support_unit.location_lon %></td>
-    <td><%= link_to 'Show', support_unit %></td>
-    <td><%= link_to 'Edit', edit_support_unit_path(support_unit) %></td>
-    <td><%= link_to 'Destroy', support_unit, confirm: 'Are you sure?', method: :delete %></td>
-  </tr>
-<% end %>
+  <tbody>
+    <% @support_units.each do |support_unit| %>
+      <tr>
+        <td><%= support_unit.team_id %></td>
+        <td><%= support_unit.support_type_id %></td>
+        <td><%= support_unit.tac_callsign %></td>
+        <td><%= support_unit.ham_callsign %></td>
+        <td><%= support_unit.support_status_code_id %></td>
+        <td><%= support_unit.current_stage_id %></td>
+        <td><%= support_unit.location_lat %></td>
+        <td><%= support_unit.location_lon %></td>
+        <td><%= link_to 'Show', support_unit %></td>
+        <td><%= link_to 'Edit', edit_support_unit_path(support_unit) %></td>
+        <td><%= link_to 'Destroy', support_unit, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
 </table>
 
-<br />
+<br>
 
 <%= link_to 'New Support unit', new_support_unit_path %>

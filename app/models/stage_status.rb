@@ -1,5 +1,5 @@
 class StageStatus < ActiveRecord::Base
-  attr_accessible :runner_id, :runner_status_code_id, :stage_id, :stage_status_code_id, :support_status_code_id, :support_unit_id, :team_id
+#  attr_accessible :runner_id, :runner_status_code_id, :stage_id, :stage_status_code_id, :support_status_code_id, :support_unit_id, :team_id
   belongs_to :stage
   belongs_to :team
   belongs_to :runner

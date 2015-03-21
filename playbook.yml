@@ -1,0 +1,68 @@
+---
+- hosts: all
+  remote_user: vagrant
+  sudo: yes
+  tasks:
+    - name: ensure update is run
+      apt: update_cache=yes
+    - name: upgrade a server
+      apt: upgrade=full
+    - name: install build-essential
+      apt: name=build-essential state=latest
+    - name: install git-core
+      apt: pkg=git-core state=latest
+    - name: install sqlite3
+      apt: pkg=sqlite3 state=latest
+    - name: install libsqlite3-dev
+      apt: pkg=libsqlite3-dev state=latest
+    - name: install libtool
+      apt: pkg=libtool state=latest
+    - name: install libyaml-dev
+      apt: pkg=libyaml-dev state=latest
+    - name: install python
+      apt: pkg=python state=latest
+    - name: install libssl-dev
+      apt: pkg=libssl-dev state=latest
+    - name: install curl
+      apt: pkg=curl state=latest
+    - name: install zip
+      apt: pkg=zip state=latest
+    - name: install readline
+      apt: pkg=:ibreadline-gplv2-dev state=latest
+    - name: download nodejs
+      get_url: url=http://nodejs.org/dist/v0.10.4/node-v0.10.4.tar.gz dest=/tmp/node-v0.10.4.tar.gz
+    - name: untar nodejs
+      command: tar zxvf /tmp/node-v0.10.4.tar.gz -C /tmp
+    - name: configure nodejs
+      command: ./configure
+      args:
+        chdir: /tmp/node-v0.10.4
+    - name: build nodejs
+      command: make -C /tmp/node-v0.10.4
+    - name: install nodejs
+      command: make -C /tmp/node-v0.10.4 install
+    - name: install rbenv
+      git: repo=https://github.com/sstephenson/rbenv.git dest=/home/vagrant/.rbenv
+      sudo: no
+    - lineinfile: dest=/home/vagrant/.bashrc line='export PATH="$HOME/.rbenv/bin:$PATH"'
+      sudo: no
+    - lineinfile: dest=/home/vagrant/.bashrc line='eval "$(rbenv init -)"'
+      sudo: no
+    - name: install ruby-build
+      git: repo=https://github.com/sstephenson/ruby-build.git dest=/home/vagrant/.rbenv/plugins/ruby-build
+      sudo: no
+    - name: install rbenv-sudo
+      git: repo=https://github.com/dcarley/rbenv-sudo.git dest=/home/vagrant/.rbenv/plugins/rbenv-sudo
+      sudo: no
+    - name: check ruby 2.1.4 installed
+      shell: /home/vagrant/.rbenv/bin/rbenv versions | grep 2.1.4
+      register: ruby_installed
+      ignore_errors: yes
+      sudo: no
+    - name: install ruby 2.1.4
+      command: /home/vagrant/.rbenv/bin/rbenv install 2.1.4
+      when: ruby_installed|failed
+      sudo: no
+    - name: set default ruby
+      command: /home/vagrant/.rbenv/bin/rbenv global 2.1.4
+      sudo: no

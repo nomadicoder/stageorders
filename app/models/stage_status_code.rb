@@ -1,5 +1,5 @@
 class StageStatusCode < ActiveRecord::Base
-  attr_accessible :description, :runner_status_code_id, :sequence, :short_code, :support_status_code_id
+#  attr_accessible :description, :runner_status_code_id, :sequence, :short_code, :support_status_code_id
     has_many :stage_status
     belongs_to :runner_status_code
     belongs_to :support_status_code

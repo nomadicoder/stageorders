@@ -43,7 +43,7 @@ private
     @start_time = team.start_time
     @team_name = team.name
     @team_id = team.id
-    @runners = Runner.find(:all, :joins => [:stage], :conditions => {:team_id => team.id}, :order => "stages.number")
+    @runners = Runner.find_by(:joins => [:stage], :conditions => {:team_id => team.id}, :order => "stages.number")
     puts @team_id
     @results = Results.new (team)
   end
