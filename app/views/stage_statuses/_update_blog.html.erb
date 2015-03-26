@@ -1,7 +1,7 @@
 <%= form_for(:post, :url => { :action => "update_blog" }) do |f| %>
   <p>
     <%= f.label :team_id %> : 
-    <%= f.collection_select( :team_id, Team.find(:all), :id, :short_name, :prompt => "Team", :selected => @team_id) %>
+    <%= f.collection_select(:id, Team.order("number").where("number > 0"), :id, :short_name, :prompt => "Select Team", :selected => @team_id ) %>
   <br />
     <%= f.label :title %> : 
     <%= f.text_field :title, :size => 80 %>

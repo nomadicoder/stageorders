@@ -4,6 +4,6 @@ class Stage < ActiveRecord::Base
   has_many :stage_status
     
   def self.find_all_stages
-    find(:all, :order => "number")
+    Stage.order(:number)
   end
 end

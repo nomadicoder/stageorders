@@ -7,7 +7,9 @@
 
 <p>
   <strong>Stage:</strong>
-  <%= @runner.stage.number %> (<%= @runner.stage.landmark %>)
+  <% unless @runner.stage.nil? %>
+    <%= @runner.stage.number %> (<%= @runner.stage.landmark %>)
+  <% end %>
 </p>
 
 <p>

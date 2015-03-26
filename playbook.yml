@@ -28,7 +28,7 @@
     - name: install zip
       apt: pkg=zip state=latest
     - name: install readline
-      apt: pkg=:ibreadline-gplv2-dev state=latest
+      apt: pkg=lib32readline-gplv2-dev state=latest
     - name: download nodejs
       get_url: url=http://nodejs.org/dist/v0.10.4/node-v0.10.4.tar.gz dest=/tmp/node-v0.10.4.tar.gz
     - name: untar nodejs

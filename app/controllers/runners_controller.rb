@@ -5,7 +5,8 @@ class RunnersController < ApplicationController
   respond_to :html
 
   def index
-    @runners = Runner.all
+    #@runners = Runner.all
+    @runners = Runner.joins(:team).order("teams.number")
     respond_with(@runners)
   end
 

@@ -36,14 +36,14 @@ class ResultsController < ApplicationController
 private
   def update_index
     if session[:current_team_id].nil? || session[:current_team_id].blank?
-      team = Team.find(:first, :conditions => "number > 0", :order => :number)
+      team = Team.where("number > 0").order(:number).first
     else
       team = Team.find(session[:current_team_id])
     end
     @start_time = team.start_time
     @team_name = team.name
     @team_id = team.id
-    @runners = Runner.find_by(:joins => [:stage], :conditions => {:team_id => team.id}, :order => "stages.number")
+    @runners = Runner.where(team_id: @team_id).joins(:stage).order("stages.number")
     puts @team_id
     @results = Results.new (team)
   end

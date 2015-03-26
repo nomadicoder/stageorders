@@ -4,7 +4,7 @@ class StageStatusCodesController < ApplicationController
   # GET /stage_status_codes
   # GET /stage_status_codes.json
   def index
-    @stage_status_codes = StageStatusCode.all(:order => "sequence")
+    @stage_status_codes = StageStatusCode.order(:sequence).all
 
     respond_to do |format|
       format.html # index.html.erb
