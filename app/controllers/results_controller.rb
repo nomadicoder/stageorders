@@ -1,11 +1,10 @@
 class ResultsController < ApplicationController
+  respond_to :html
+
   def index
     update_index
     
-    respond_to do |format|
-      format.html # index.html.erb
-      format.xml  { render :xml => @stage_statuses }
-    end 
+    respond_with(@stage_statuses)
   end
   
   def calculate_stage_results (stage_number)
