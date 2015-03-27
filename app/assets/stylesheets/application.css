@@ -70,6 +70,10 @@ body, p, ol, ul, td {
 	font-size: small;
 }
 
+#side li {
+  list-style-type: none;
+}
+
 #twitter {
 	float:right;
 	padding-top: 0.25em;
