@@ -42,40 +42,6 @@ runner_status_codes = RunnerStatusCode.create ([
   }
 ])
 
-SupportStatusCode.delete_all
-support_status_codes = SupportStatusCode.create ([
-  {
-    sequence: 0.0,
-    short_code: 'UNK',
-    description: 'Support status is unknown'
-  },
-  {
-    sequence: 1.0,
-    short_code: 'ENR',
-    description: 'Shuttle is enroute to assignment'
-  },
-  {
-    sequence: 2.0,
-    short_code: 'ONS',
-    description: 'Unit has arrived at assignment'
-  },
-  {
-    sequence: 0.2,
-    short_code: 'OUT',
-    description: 'Shuttle is out of service (on break, refueling, disabled, etc)'
-  },
-  {
-    sequence: 0.1,
-    short_code: 'HLD',
-    description: 'Unit is held at location (Waiting for next runner, traffic delay, etc)'
-  },
-  {
-    sequence: 9.0,
-    short_code: 'CLR',
-    description: 'Shuttle has cleared stage'
-  }
-])
-
 StageStatusCode.delete_all
 stage_status_codes = StageStatusCode.create ([
   {
@@ -88,7 +54,6 @@ stage_status_codes = StageStatusCode.create ([
     sequence: 2.0,
     description: 'Stage is ready',
     runner_status_code_id: RunnerStatusCode.where("short_code = 'CHK'").first.id,
-    support_status_code_id: SupportStatusCode.where("short_code = 'ONS'").first.id,
   },
   {
     short_code: 'GO',
@@ -103,45 +68,6 @@ stage_status_codes = StageStatusCode.create ([
     runner_status_code_id: RunnerStatusCode.where("short_code = 'FIN'").first.id,
   }
 ])
-
-SupportType.delete_all
-support_Types= SupportType.create ([
-  {
-    short_code: 'NONE',
-    description: 'None'
-  },
-  {
-    short_code: 'FOLLOW',
-    description: 'Follow Van -- Follows runner on course'
-  },
-  {
-    short_code: 'SHUTTLE',
-    description: 'Shuttle Van -- Transports runners and personnel between stages'
-  },
-  {
-    short_code: 'ROVER',
-    description: 'Rover vehicle -- Performs utility functions'
-  },
-  {
-    short_code: 'CP',
-    description: 'Command Post -- Center of support operations'
-  },
-  {
-    short_code: 'MOUNTAINTOP',
-    description: 'Mountain top radio relay'
-  },
-  {
-    short_code: 'RES',
-    description: 'Rotating Crew'
-  }
-])
-
-follow = SupportType.where("short_code = 'FOLLOW'").first.id
-shuttle = SupportType.where("short_code = 'SHUTTLE'").first.id
-rover = SupportType.where("short_code = 'ROVER'").first.id
-cp = SupportType.where("short_code = 'CP'").first.id
-mountaintop = SupportType.where("short_code = 'MOUNTAINTOP'").first.id
-res = SupportType.where("short_code = 'RES'").first.id
 
 Stage.delete_all
 stages = Stage.create ([
@@ -288,11 +214,9 @@ s18 = Stage.where("number = 18").first.id
 s19 = Stage.where("number = 19").first.id
 s20 = Stage.where("number = 20").first.id
 initRunnerStatus = RunnerStatusCode.where("short_code = 'UNK'").first.id
-initSupportStatus = SupportStatusCode.where("short_code = 'UNK'").first.id
 
 Team.delete_all
 Runner.delete_all
-SupportUnit.delete_all
 StageStatus.delete_all
 
 teamid = Team.create(number: 1, short_name: 'ONE', name: "Team One", start_time: '2012-04-21 15:00:00 Pacific Time (US & Canada)').id
@@ -323,12 +247,6 @@ Runner.create([
   { stage_id: nil, team_id: teamid, name: "AltThree",  estimated_pace: "00:08:00", completed: false, actual_time: "00:00:00", runner_status_code_id: initRunnerStatus},
   { stage_id: nil, team_id: teamid, name: "AltFour",   estimated_pace: "00:08:00", completed: false, actual_time: "00:00:00", runner_status_code_id: initRunnerStatus},
   { stage_id: nil, team_id: teamid, name: "AltFive",   estimated_pace: "00:08:00", completed: false, actual_time: "00:00:00", runner_status_code_id: initRunnerStatus},
-])
-
-SupportUnit.create([
-  { team_id: teamid, support_type_id: follow, tac_callsign: "Team One Follow", ham_callsign: "km0rat", support_status_code_id: initSupportStatus, current_stage_id: s1, location_lat: 1.5, location_lon: 1.5},
-  { team_id: teamid, support_type_id: shuttle, tac_callsign: "Team One Shuttle 1", ham_callsign: "km0rat", support_status_code_id: initSupportStatus, current_stage_id: s2, location_lat: 1.5, location_lon: 1.5},
-  { team_id: teamid, support_type_id: shuttle, tac_callsign: "Team Shuttle 2", ham_callsign: "km0rat", support_status_code_id: initSupportStatus, current_stage_id: s3, location_lat: 1.5, location_lon: 1.5},
 ])
 
 stages.each do |s|
@@ -374,11 +292,6 @@ Runner.create([
   { stage_id: s20, team_id: teamid, name: "Twenty",    estimated_pace: "00:08:00", completed: false, actual_time: "00:00:00", runner_status_code_id: initRunnerStatus}
 ])
 
-SupportUnit.create([
-  { team_id: teamid, support_type_id: follow, tac_callsign: "Team Two Follow", ham_callsign: "km0rat", support_status_code_id: initSupportStatus, current_stage_id: s1, location_lat: 1.5, location_lon: 1.5},
-  { team_id: teamid, support_type_id: shuttle, tac_callsign: "Team Two Shuttle", ham_callsign: "km0rat", support_status_code_id: initSupportStatus, current_stage_id: s2, location_lat: 1.5, location_lon: 1.5},
-])
-
 stages.each do |s|
   r = Runner.where("stage_id = #{s.id} AND team_id = #{teamid}").first
   StageStatus.create(team_id: teamid, stage_id: s.id, runner_id: r.id)
@@ -420,11 +333,6 @@ Runner.create([
   { stage_id: s18, team_id: teamid, name: "Eighteen",  estimated_pace: "00:10:00", completed: false, actual_time: "00:00:00", runner_status_code_id: initRunnerStatus},
   { stage_id: s19, team_id: teamid, name: "Nineteen",  estimated_pace: "00:09:00", completed: false, actual_time: "00:00:00", runner_status_code_id: initRunnerStatus},
   { stage_id: s20, team_id: teamid, name: "Twenty",    estimated_pace: "00:08:30", completed: false, actual_time: "00:00:00", runner_status_code_id: initRunnerStatus}
-])
-
-SupportUnit.create([
-  { team_id: teamid, support_type_id: follow, tac_callsign: "Team Three Follow", ham_callsign: "km0rat", support_status_code_id: initSupportStatus, current_stage_id: s1, location_lat: 1.5, location_lon: 1.5},
-  { team_id: teamid, support_type_id: shuttle, tac_callsign: "Team Three Shuttle", ham_callsign: "km0rat", support_status_code_id: initSupportStatus, current_stage_id: s2, location_lat: 1.5, location_lon: 1.5},
 ])
 
 stages.each do |s|
