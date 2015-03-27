@@ -3,16 +3,16 @@
 
   <p>
     <%= f.label :team_id %> : 
-    <%= f.collection_select( :team_id, Team.find(:all), :id, :short_name, :prompt => "Team", :selected => @team_id) %>
+    <%= f.collection_select( :team_id, Team.all, :id, :short_name, :prompt => "Team", :selected => @team_id) %>
   <br />
     <%= f.label :current_stage_id %> : 
-    <%= f.collection_select( :current_stage_id, Stage.find(:all, :order=>:number), :id, :number, :prompt => "Stage") %>
+    <%= f.collection_select( :current_stage_id, Stage.order(:number), :id, :number, :prompt => "Stage") %>
   <br />
     <%= f.label :tac_callsign %> : 
-    <%= f.collection_select( :support_unit_id, SupportUnit.find(:all, :order=>:tac_callsign), :id, :tac_callsign, :prompt => "Tac Callsign") %>
+    <%= f.collection_select( :support_unit_id, SupportUnit.order(:tac_callsign), :id, :tac_callsign, :prompt => "Tac Callsign") %>
   <br />
     <%= f.label :status_code_id %> : 
-    <%= f.collection_select( :support_status_code_id, SupportStatusCode.find(:all, :order=>:sequence), :id, :short_code, :prompt => "Status") %>
+    <%= f.collection_select( :support_status_code_id, SupportStatusCode.order(:sequence), :id, :short_code, :prompt => "Status") %>
   <br />
     <%= f.label :status_note %> : 
     <%= f.text_field :status_note %>

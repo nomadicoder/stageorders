@@ -3,7 +3,7 @@
 
   <p>
     <%= f.label :team_id %> : 
-    <%= f.collection_select( :team_id, Team.find(:all), :id, :short_name, :prompt => "Team", :selected => @team_id) %>
+    <%= f.collection_select( :team_id, Team.all, :id, :short_name, :prompt => "Team", :selected => @team_id) %>
   <br />
     <%= f.label :title %> : 
     <%= f.text_field :title, :size => 80 %>

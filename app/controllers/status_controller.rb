@@ -9,11 +9,11 @@ class StatusController < ApplicationController
   
   def change_team
     if params[:team][:id].nil? || params[:team][:id].blank?
-      session[:current_team_id] = Team.find(:first).id
+      session[:current_team_id] = Team.first.id
     else
       session[:current_team_id] = params[:team][:id]
     end
-    @team = Team.find(session[:current_team_id])
+    @team = Team.where(id: session[:current_team_id])
     #redirect_to :action => :index
     update_index    
     render :partial => "status_table"
@@ -26,8 +26,8 @@ class StatusController < ApplicationController
   end
 
   def set_runner_form_params
-    @teams = Team.find(:all)
-    team = Team.find(session[:current_team_id])
+    @teams = Team.all
+    team = Team.where(id: session[:current_team_id])
     @team_id = team.id
     @stages = Stage.find_all_stages
     stage = Stage.find(session[:current_stage_id])
@@ -86,32 +86,32 @@ class StatusController < ApplicationController
   
   def update
     if session[:current_team_id].nil? || session[:current_team_id].blank?
-      team = Team.find(:first)
+      team = Team.first
     else
-      team = Team.find(session[:current_team_id])
+      team = Team.where(id: session[:current_team_id])
     end
     if session[:current_stage_id].nil? || session[:current_stage_id].blank?
-      stage = Stage.find(:first)
+      stage = Stage.first
     else
-      stage = Stage.find(session[:current_stage_id])
+      stage = Stage.where(id: session[:current_stage_id])
     end
     if session[:current_runner_id].nil? || session[:current_runner_id].blank?
-      runner = Runner.find(:first)
+      runner = Runner.first
     else
-      runner = Runner.find(session[:current_runner_id])
+      runner = Runner.where(id: session[:current_runner_id])
     end
     set_runner_form_params
   end
   
   def update_blog
-    team = Team.find(params[:post][:team_id])
+    team = Team.where(id: params[:post][:team_id])
     title = params[:post][:title]
     description = params[:post][:content]
     @team_name = team.name
     @team_id = team.id
     
     # get selected team
-    blog = Blog.find(:first, :conditions => { :team_id => team.id })    
+    blog = Blog.where(team_id: team.id).first    
     blog_client = BlogClient.new(blog.host_url, blog.access_path, 'blog', blog.username, blog.password)
     
     blog_categories = blog_client.getCategories
@@ -133,16 +133,16 @@ class StatusController < ApplicationController
   end
   
   def update_results
-    team = Team.find(params[:results][:team_id])
+    team = Team.where(id: params[:results][:team_id])
     @team_name = team.name
     @team_id = team.id
     # get selected team
-    blog = Blog.find(:first, :conditions => { :team_id => team.id })
+    blog = Blog.where(team_id: team.id)
     
     blog_client = BlogClient.new(blog.host_url, blog.access_path, 'page', blog.username, blog.password)
     
     # Create runner results tabel for team
-    @runners = Runner.find(:all, :joins => [:stage], :conditions => {:team_id => team.id}, :order => "stages.number")
+    @runners = Runner.where(team_id: @team_id).joins(:stage).order("stages.number")
     
     update_index
     

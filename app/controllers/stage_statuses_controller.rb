@@ -13,7 +13,7 @@ class StageStatusesController < ApplicationController
   
   def change_team
     if params[:team][:id].nil? || params[:team][:id].blank?
-      session[:current_team_id] = Team.find(:first).id
+      session[:current_team_id] = Team.first.id
     else
       session[:current_team_id] = params[:team][:id]
     end
@@ -89,12 +89,13 @@ class StageStatusesController < ApplicationController
     @team_name = team.name
     @team_id = team.id
     # get selected team
-    blog = Blog.find(:first, :conditions => { :team_id => team.id })
+    blog = Blog.where(team_id: team.id).first
     
     blog_client = BlogClient.new(blog.host_url, blog.access_path, 'page', blog.username, blog.password)
     
     # Create runner results tabel for team
-    @runners = Runner.find(:all, :joins => [:stage], :conditions => {:team_id => team.id}, :order => "stages.number")
+    #@runners = Runner.find(:all, :joins => [:stage], :conditions => {:team_id => team.id}, :order => "stages.number")
+    @runners = Runner.where(team_id: team.id).joins(:stage).order("stages.number")
     
     update_index
     
@@ -117,7 +118,7 @@ class StageStatusesController < ApplicationController
 
   private
     def set_stage_status
-      @stage_status = StageStatus.find(params[:id])
+      @stage_status = StageStatus.where(id: params[:id]).first
     end
 
     def stage_status_params

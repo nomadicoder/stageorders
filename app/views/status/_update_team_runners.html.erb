@@ -20,7 +20,7 @@
     <%= f.time_select :actual_time %>
   <br />
     <%= f.label :runner_status_code_id %> : 
-    <%= f.collection_select( :runner_status_code_id, RunnerStatusCode.find(:all, :order => :sequence), :id, :short_code, :prompt => "Status" ) %>
+    <%= f.collection_select( :runner_status_code_id, RunnerStatusCode.order(:sequence), :id, :short_code, :prompt => "Status" ) %>
   <br />
     <%= f.label :runner_note %> : 
     <%= f.text_field :runner_note %>

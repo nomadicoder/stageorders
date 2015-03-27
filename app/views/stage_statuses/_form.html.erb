@@ -13,31 +13,19 @@
 
   <div class="field">
     <%= f.label :team_id %><br />
-    <%= f.collection_select( :team_id, Team.find(:all, :order => :number), :id, :short_name, :prompt => "Team") %>
+    <%= f.collection_select( :team_id, Team.order("number").where("number > 0"), :id, :short_name, :prompt => "Team") %>
   </div>
   <div class="field">
     <%= f.label :stage_id %><br />
-    <%= f.collection_select( :stage_id, Stage.find(:all, :order => :number), :id, :number, :prompt => "Stage") %>
+    <%= f.collection_select( :stage_id, Stage.order("number").where("number > 0"), :id, :number, :prompt => "Stage") %>
   </div>
   <div class="field">
     <%= f.label :runner_id %><br />
-    <%= f.collection_select( :runner_id, Runner.find(:all, :order => :name), :id, :name, :prompt => "Runner") %>
-  </div>
-  <div class="field">
-    <%= f.label :support_unit_id %><br />
-    <%= f.collection_select( :support_unit_id, SupportUnit.find(:all, :order => :tac_callsign), :id, :tac_callsign, :prompt => "Support Unit") %>
-  </div>
-  <div class="field">
-    <%= f.label :runner_status_code_id %><br />
-    <%= f.collection_select( :runner_status_code_id, RunnerStatusCode.find(:all, :order => :sequence), :id, :description, :prompt => "Runner Status") %>
-  </div>
-  <div class="field">
-    <%= f.label :support_status_code_id %><br />
-    <%= f.collection_select( :support_status_code_id, SupportStatusCode.find(:all, :order => :sequence), :id, :description, :prompt => "Support Status") %>
+    <%= f.collection_select( :runner_id, Runner.order("name"), :id, :name, :prompt => "Runner") %>
   </div>
   <div class="field">
     <%= f.label :stage_status_code_id %><br />
-    <%= f.collection_select( :stage_status_code_id, StageStatusCode.find(:all, :order => :sequence), :id, :description, :prompt => "Stage Status") %>
+    <%= f.collection_select( :stage_status_code_id, StageStatusCode.order(:sequence), :id, :description, :prompt => "Stage Status") %>
   </div>
   <div class="actions">
     <%= f.submit %>
