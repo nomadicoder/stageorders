@@ -40,6 +40,11 @@ class Runner < ActiveRecord::Base
     self.team = Team.find_by_name(name) unless name.blank?
   end
   
+  def name_with_team
+    name = self.name
+    name << ' ('+ team.name + ')' if team
+  end
+  
   def self.find_all_runners
     find(:all, :joins => :stage, :order => "stages.number")
   end

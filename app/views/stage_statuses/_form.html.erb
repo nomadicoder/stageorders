@@ -21,7 +21,7 @@
   </div>
   <div class="field">
     <%= f.label :runner_id %><br />
-    <%= f.collection_select( :runner_id, Runner.order("name"), :id, :name, :prompt => "Runner") %>
+    <%= f.collection_select( :runner_id, Runner.order("name"), :id, :name_with_team, :prompt => "Runner") %>
   </div>
   <div class="field">
     <%= f.label :stage_status_code_id %><br />
