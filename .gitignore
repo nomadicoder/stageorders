@@ -22,4 +22,4 @@
 /.vagrant*
 
 # Ignore actual seed data
-seed.db
+/db/seeds.rb
