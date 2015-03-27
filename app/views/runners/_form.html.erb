@@ -25,7 +25,7 @@
   </div>
   <div class="field">
     <%= f.label :estimated_pace %><br>
-    <%= f.text_field :estimated_pace_formatted %>
+    <%= f.time_select :estimated_pace %>
   </div>
   <div class="field">
     <%= f.label :completed %><br>
@@ -33,7 +33,7 @@
   </div>
   <div class="field">
     <%= f.label :actual_time %><br>
-    <%= f.text_field :actual_time_formatted %>
+    <%= f.time_select :actual_time %>
   </div>
   <div class="field">
     <%= f.label :runner_status_code_id %><br />
