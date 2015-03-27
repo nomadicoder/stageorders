@@ -7,9 +7,7 @@
       <% if user_signed_in? %>
         <th width=120>Runner</th>
       <% end %>
-      <th width=120>Support</th>
       <th width=80>Runner<br/>status</th>
-      <th width=80>Support<br/>status</th>
       <th width=50>Ready</th>
     </tr>
 
@@ -19,9 +17,7 @@
       <% if user_signed_in? %>
         <td><%=h stage_status.runner_name %></td>
       <% end %>
-      <td><%=h stage_status.tac_callsign %></td>
       <td><%=h stage_status.runner_status %></td>
-      <td><%=h stage_status.support_status %></td>
       <% if stage_status.stage_status == "GO" || stage_status.stage_status == "CLEAR" %>
         <td BGCOLOR='GREEN'>
       <% else %>
