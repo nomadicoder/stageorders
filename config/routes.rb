@@ -39,14 +39,14 @@ Stageorders::Application.routes.draw do
 
   resources :stages
 
-  get '/results/change_team' => 'results#change_team'
-  get '/results/refresh' => 'results#refresh'
-  get '/status/change_team' => 'status#change_team'
-  get '/status/refresh' => 'status#refresh'
-  get '/stage_statuses/change_team' => 'stage_statuses#change_team'
-  get '/stage_statuses/refresh' => 'stage_statuses#refresh'
-  get '/stage_statuses/update_results' => 'stage_statuses#update_results'
-  get '/stage_statuses/update_blog' => 'stage_statuses#update_blog'
+  post '/results/change_team' => 'results#change_team'
+  post '/results/refresh' => 'results#refresh'
+  post '/status/change_team' => 'status#change_team'
+  post '/status/refresh' => 'status#refresh'
+  post '/stage_statuses/change_team' => 'stage_statuses#change_team'
+  post '/stage_statuses/refresh' => 'stage_statuses#refresh'
+  post '/stage_statuses/update_results' => 'stage_statuses#update_results'
+  post '/stage_statuses/update_blog' => 'stage_statuses#update_blog'
 
   root :to => "home#index"
 
