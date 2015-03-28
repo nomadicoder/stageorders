@@ -15,12 +15,25 @@
     </div>
   </div>
   <div id="side">
-    <a href="/results">Results</a><br />
-    <a href="/status">Status</a><br />
-    <a href="http://mojaverats.com">Website</a><br />
+    <ul>
+      <li><a href="/results">Results</a></li>
+      <li><a href="http://mojaverats.com">Website</a></li>
+    </ul>
     <% if user_signed_in? %>
-      <a href="/runners">Runners</a><br />
-      <a href="/stage_statuses">Stage Status</a><br />
+    <hr>
+    <strong>Admin</strong>
+    <ul>
+      <li><a href="/stage_statuses">CP Dashboard</a></li>
+      <li><a href="/status">Runner Status</a></li>
+    <ul>
+    <hr>
+    </ul>
+      <li><a href="/runners">Runners</a></li>
+      <li><a href="/runner_status_codes">Runner Codes</a></li>
+      <li><a href="/teams">Teams</a></li>
+      <li><a href="/stages">Stages</a></li>
+      <li><a href="/stage_status_codes">Stage Codes</a></li>
+    </ul>
     <% end %>
   </div>
 

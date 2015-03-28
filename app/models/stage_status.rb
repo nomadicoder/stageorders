@@ -49,7 +49,7 @@ class StageStatus < ActiveRecord::Base
   end
   
   def runner_status
-    runner_status_code.short_code if runner_status_code
+    runner.runner_status_code.short_code if runner.runner_status_code
   end
   
   def runner_status=(short_code)

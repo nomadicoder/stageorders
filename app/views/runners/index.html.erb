@@ -22,7 +22,7 @@
         <td><%= runner.runner_status_code.short_code %></td>
         <td><%= runner.name %></td>
         <td><%= runner.estimated_pace.strftime("%M:%S") %></td>
-        <td><%= runner.completed %></td>
+        <td><%= runner.completed ? 'Yes' : 'No' %></td>
         <td>
           <% if runner.actual_time != nil %>
             <%= runner.actual_time.strftime("%H:%M:%S") %>

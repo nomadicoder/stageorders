@@ -1,7 +1,7 @@
 <div id="stage_table">
   <%= Time.now().strftime ("Updated: %m/%d/%Y %H:%M:%S") %>
 
-  <table border=1>
+  <table border=0>
     <tr>
       <th width=50>Stage</th>
       <th>Landmark</th>
@@ -14,7 +14,7 @@
       <th>Est Time</th>
       <th width=65>Actual</th>
       <th width=75>Difference</th>
-      <th>Est Start<br />Updated</th>
+      <th>Est Start<br /><em>Updated</em></th>
     </tr>
 
   <% @runners.each do |runner| %>

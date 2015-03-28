@@ -20,3 +20,6 @@
 # Ignore Vagrant file
 /Vagrantfile
 /.vagrant*
+
+# Ignore actual seed data
+/db/seeds.rb

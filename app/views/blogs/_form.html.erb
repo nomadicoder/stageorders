@@ -13,7 +13,7 @@
 
   <div class="field">
     <%= f.label :team_id %><br>
-    <%= f.collection_select( :team_id, Team.find(:all), :id, :short_name ) %>
+    <%= f.collection_select( :team_id, Team.all, :id, :short_name ) %>
   </div>
   <div class="field">
     <%= f.label :host_url %><br>

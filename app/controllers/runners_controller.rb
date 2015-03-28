@@ -5,7 +5,6 @@ class RunnersController < ApplicationController
   respond_to :html
 
   def index
-    #@runners = Runner.all
     @runners = Runner.joins(:team).order("teams.number")
     respond_with(@runners)
   end
@@ -29,26 +28,9 @@ class RunnersController < ApplicationController
   end
 
   def update
-    @runner = Runner.find(params[:id])
+    @runner.update(runner_params)
     already_completed = @runner.completed
-
-    respond_to do |format|
-      # TODO: Too many queries for stage_status update.  Optimize this
-      @stage_status = StageStatus.find(:first, :readonly => false, :joins => [:stage, :team],
-                                       :conditions => {:stage_id => @runner.stage_id, :team_id => @runner.team_id})
-      if !@stage_status.nil? then
-        @stage_status.update_attributes(:runner_status_code_id => @runner.runner_status_code_id)
-        @stage_status.update_status
-      end
-      if @runner.update_attributes(params[:runner])
-        post_stage_result @runner unless (!@runner.completed && already_completed)
-        format.html { redirect_to @runner, notice: 'Runner was successfully updated.' }
-        format.json { head :no_content }
-      else
-        format.html { render action: "edit" }
-        format.json { render json: @runner.errors, status: :unprocessable_entity }
-      end
-    end
+    respond_with(@runner)
   end
 
   def destroy
