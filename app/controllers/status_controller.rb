@@ -1,11 +1,10 @@
 class StatusController < ApplicationController
+  respond_to :html
+
   def index
     update_index
 
-    respond_to do |format|
-      format.html # index.html.erb
-      format.xml  { render :xml => @stage_statuses }
-    end
+    respond_with(@stage_statuses)
   end
   
   def change_team
@@ -168,13 +167,14 @@ private
   def update_index
     stage_collection = Stage.find_all_stages
     if session[:current_team_id].nil? || session[:current_team_id].blank?
-      team = Team.find(:first, :conditions => "number > 0", :order => :number)
+      team = Team.where("number > 0").order(:number).first
     else
       team = Team.find(session[:current_team_id])
     end
     @team_name = team.name
     @team_id = team.id
-    @stage_statuses = StageStatus.find(:all, :joins => [:stage], :conditions => {:team_id => team.id}, :order => "stages.number")
+    @stage_statuses = StageStatus.where(team_id: @team_id).joins(:stage).order("stages.number")
+
   end
 
 end

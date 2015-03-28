@@ -1,25 +1,24 @@
 <p id="notice"><%= notice %></p>
 
 <p>
-  <b>Number:</b>
+  <strong>Number:</strong>
   <%= @stage.number %>
 </p>
 
 <p>
-  <b>Landmark:</b>
+  <strong>Landmark:</strong>
   <%= @stage.landmark %>
 </p>
 
 <p>
-  <b>Miles:</b>
+  <strong>Miles:</strong>
   <%= @stage.miles %>
 </p>
 
 <p>
-  <b>Difficulty:</b>
+  <strong>Difficulty:</strong>
   <%= @stage.difficulty %>
 </p>
-
 
 <%= link_to 'Edit', edit_stage_path(@stage) %> |
 <%= link_to 'Back', stages_path %>

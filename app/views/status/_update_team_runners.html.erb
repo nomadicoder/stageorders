@@ -17,7 +17,7 @@
     <%= f.check_box :completed %>
   <br />
     <%= f.label :actual_time %> : 
-    <%= f.text_field :actual_time_formatted %>
+    <%= f.time_select :actual_time %>
   <br />
     <%= f.label :runner_status_code_id %> : 
     <%= f.collection_select( :runner_status_code_id, RunnerStatusCode.find(:all, :order => :sequence), :id, :short_code, :prompt => "Status" ) %>

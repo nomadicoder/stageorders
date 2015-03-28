@@ -1,25 +1,24 @@
 <p id="notice"><%= notice %></p>
 
 <p>
-  <b>Number:</b>
+  <strong>Number:</strong>
   <%= @team.number %>
 </p>
 
 <p>
-  <b>Name:</b>
+  <strong>Name:</strong>
   <%= @team.name %>
 </p>
 
 <p>
-  <b>Short name:</b>
+  <strong>Short name:</strong>
   <%= @team.short_name %>
 </p>
 
 <p>
-  <b>Start time:</b>
+  <strong>Start time:</strong>
   <%= @team.start_time %>
 </p>
-
 
 <%= link_to 'Edit', edit_team_path(@team) %> |
 <%= link_to 'Back', teams_path %>

@@ -1,85 +1,47 @@
 class SupportStatusCodesController < ApplicationController
-  before_filter :authenticate_user!
+  before_action :set_support_status_code, only: [:show, :edit, :update, :destroy]
 
-  # GET /support_status_codes
-  # GET /support_status_codes.json
+  respond_to :html
+
   def index
     @support_status_codes = SupportStatusCode.all
-
-    respond_to do |format|
-      format.html # index.html.erb
-      format.json { render json: @support_status_codes }
-    end
+    respond_with(@support_status_codes)
   end
 
-  # GET /support_status_codes/1
-  # GET /support_status_codes/1.json
   def show
-    @support_status_code = SupportStatusCode.find(params[:id])
-
-    respond_to do |format|
-      format.html # show.html.erb
-      format.json { render json: @support_status_code }
-    end
+    respond_with(@support_status_code)
   end
 
-  # GET /support_status_codes/new
-  # GET /support_status_codes/new.json
   def new
     @support_status_code = SupportStatusCode.new
-
-    respond_to do |format|
-      format.html # new.html.erb
-      format.json { render json: @support_status_code }
-    end
+    respond_with(@support_status_code)
   end
 
-  # GET /support_status_codes/1/edit
   def edit
-    @support_status_code = SupportStatusCode.find(params[:id])
   end
 
-  # POST /support_status_codes
-  # POST /support_status_codes.json
   def create
-    @support_status_code = SupportStatusCode.new(params[:support_status_code])
-
-    respond_to do |format|
-      if @support_status_code.save
-        format.html { redirect_to @support_status_code, notice: 'Support status code was successfully created.' }
-        format.json { render json: @support_status_code, status: :created, location: @support_status_code }
-      else
-        format.html { render action: "new" }
-        format.json { render json: @support_status_code.errors, status: :unprocessable_entity }
-      end
-    end
+    @support_status_code = SupportStatusCode.new(support_status_code_params)
+    @support_status_code.save
+    respond_with(@support_status_code)
   end
 
-  # PUT /support_status_codes/1
-  # PUT /support_status_codes/1.json
   def update
-    @support_status_code = SupportStatusCode.find(params[:id])
-
-    respond_to do |format|
-      if @support_status_code.update_attributes(params[:support_status_code])
-        format.html { redirect_to @support_status_code, notice: 'Support status code was successfully updated.' }
-        format.json { head :no_content }
-      else
-        format.html { render action: "edit" }
-        format.json { render json: @support_status_code.errors, status: :unprocessable_entity }
-      end
-    end
+    @support_status_code.update(support_status_code_params)
+    respond_with(@support_status_code)
   end
 
-  # DELETE /support_status_codes/1
-  # DELETE /support_status_codes/1.json
   def destroy
-    @support_status_code = SupportStatusCode.find(params[:id])
     @support_status_code.destroy
-
-    respond_to do |format|
-      format.html { redirect_to support_status_codes_url }
-      format.json { head :no_content }
-    end
+    respond_with(@support_status_code)
   end
+
+  private
+    def set_support_status_code
+      @support_status_code = SupportStatusCode.find(params[:id])
+    end
+
+    def support_status_code_params
+      params.require(:support_status_code).permit(:sequence, :short_code, :description)
+    end
 end

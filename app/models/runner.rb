@@ -1,6 +1,4 @@
 class Runner < ActiveRecord::Base
-  attr_accessible :actual_time, :completed, :estimated_pace, :name, :runner_status_code_id, :stage_id, :team_id
-  attr_accessible :estimated_pace_formatted, :actual_time_formatted
   belongs_to :stage
   belongs_to :team
   belongs_to :runner_status_code
@@ -59,7 +57,7 @@ class Runner < ActiveRecord::Base
   end
   
   def estimated_pace_formatted
-    self.estimated_pace.strftime("%M:%S")
+    self.estimated_pace.strftime("%M:%S") unless self.estimated_pace.nil?
   end
   
   def estimated_pace_formatted=(estimated_pace)
@@ -74,7 +72,8 @@ class Runner < ActiveRecord::Base
   end
 
   def actual_time_formatted
-    self.actual_time.strftime("%H:%M:%S")
+    self.actual_time.strftime("%H:%M:%S") unless self.estimated_pace.nil?
+
   end
   
   def actual_time_formatted=(actual_time)

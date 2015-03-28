@@ -1,62 +1,33 @@
 class RunnersController < ApplicationController
+  before_action :set_runner, only: [:show, :edit, :update, :destroy]
   before_filter :authenticate_user!
 
-  # GET /runners
-  # GET /runners.json
+  respond_to :html
+
   def index
-    @runners = Runner.find(:all, :joins => [:team, :stage], :order => "teams.number, stages.number")
-
-    respond_to do |format|
-      format.html # index.html.erb
-      format.json { render json: @runners }
-    end
+    #@runners = Runner.all
+    @runners = Runner.joins(:team).order("teams.number")
+    respond_with(@runners)
   end
 
-  # GET /runners/1
-  # GET /runners/1.json
   def show
-    @runner = Runner.find(params[:id])
-
-    respond_to do |format|
-      format.html # show.html.erb
-      format.json { render json: @runner }
-    end
+    respond_with(@runner)
   end
 
-  # GET /runners/new
-  # GET /runners/new.json
   def new
     @runner = Runner.new
-
-    respond_to do |format|
-      format.html # new.html.erb
-      format.json { render json: @runner }
-    end
+    respond_with(@runner)
   end
 
-  # GET /runners/1/edit
   def edit
-    @runner = Runner.find(params[:id])
   end
 
-  # POST /runners
-  # POST /runners.json
   def create
-    @runner = Runner.new(params[:runner])
-
-    respond_to do |format|
-      if @runner.save
-        format.html { redirect_to @runner, notice: 'Runner was successfully created.' }
-        format.json { render json: @runner, status: :created, location: @runner }
-      else
-        format.html { render action: "new" }
-        format.json { render json: @runner.errors, status: :unprocessable_entity }
-      end
-    end
+    @runner = Runner.new(runner_params)
+    @runner.save
+    respond_with(@runner)
   end
 
-  # PUT /runners/1
-  # PUT /runners/1.json
   def update
     @runner = Runner.find(params[:id])
     already_completed = @runner.completed
@@ -80,16 +51,9 @@ class RunnersController < ApplicationController
     end
   end
 
-  # DELETE /runners/1
-  # DELETE /runners/1.json
   def destroy
-    @runner = Runner.find(params[:id])
     @runner.destroy
-
-    respond_to do |format|
-      format.html { redirect_to runners_url }
-      format.json { head :no_content }
-    end
+    respond_with(@runner)
   end
 
   def post_stage_result (runner)
@@ -129,4 +93,13 @@ class RunnersController < ApplicationController
     blog_client.newPost(blogpost, true)
     
   end
+
+  private
+    def set_runner
+      @runner = Runner.find(params[:id])
+    end
+
+    def runner_params
+      params.require(:runner).permit(:stage_id, :team_id, :runner_status_code_id, :name, :estimated_pace, :completed, :actual_time)
+    end
 end

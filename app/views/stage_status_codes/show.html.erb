@@ -1,30 +1,29 @@
 <p id="notice"><%= notice %></p>
 
 <p>
-  <b>Short code:</b>
+  <strong>Short code:</strong>
   <%= @stage_status_code.short_code %>
 </p>
 
 <p>
-  <b>Description:</b>
+  <strong>Description:</strong>
   <%= @stage_status_code.description %>
 </p>
 
 <p>
-  <b>Sequence:</b>
+  <strong>Sequence:</strong>
   <%= @stage_status_code.sequence %>
 </p>
 
 <p>
-  <b>Runner status code:</b>
+  <strong>Runner status code:</strong>
   <%= @stage_status_code.runner_status_code_id %>
 </p>
 
 <p>
-  <b>Support status code:</b>
+  <strong>Support status code:</strong>
   <%= @stage_status_code.support_status_code_id %>
 </p>
-
 
 <%= link_to 'Edit', edit_stage_status_code_path(@stage_status_code) %> |
 <%= link_to 'Back', stage_status_codes_path %>

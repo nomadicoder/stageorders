@@ -4,31 +4,31 @@
       <h2><%= pluralize(@stage_status_code.errors.count, "error") %> prohibited this stage_status_code from being saved:</h2>
 
       <ul>
-      <% @stage_status_code.errors.full_messages.each do |msg| %>
-        <li><%= msg %></li>
+      <% @stage_status_code.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
       <% end %>
       </ul>
     </div>
   <% end %>
 
   <div class="field">
-    <%= f.label :short_code %><br />
+    <%= f.label :short_code %><br>
     <%= f.text_field :short_code %>
   </div>
   <div class="field">
-    <%= f.label :description %><br />
+    <%= f.label :description %><br>
     <%= f.text_field :description %>
   </div>
   <div class="field">
-    <%= f.label :sequence %><br />
+    <%= f.label :sequence %><br>
     <%= f.text_field :sequence %>
   </div>
   <div class="field">
-    <%= f.label :runner_status_code_id %><br />
+    <%= f.label :runner_status_code_id %><br>
     <%= f.number_field :runner_status_code_id %>
   </div>
   <div class="field">
-    <%= f.label :support_status_code_id %><br />
+    <%= f.label :support_status_code_id %><br>
     <%= f.number_field :support_status_code_id %>
   </div>
   <div class="actions">

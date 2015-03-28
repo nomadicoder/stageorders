@@ -1,5 +1,4 @@
 class Team < ActiveRecord::Base
-  attr_accessible :name, :number, :short_name, :start_time
   has_many :runners
   has_many :support_units
   has_many :stage_status

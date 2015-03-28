@@ -1,45 +1,44 @@
 <p id="notice"><%= notice %></p>
 
 <p>
-  <b>Team:</b>
+  <strong>Team:</strong>
   <%= @support_unit.team_id %>
 </p>
 
 <p>
-  <b>Support type:</b>
+  <strong>Support type:</strong>
   <%= @support_unit.support_type_id %>
 </p>
 
 <p>
-  <b>Tac callsign:</b>
+  <strong>Tac callsign:</strong>
   <%= @support_unit.tac_callsign %>
 </p>
 
 <p>
-  <b>Ham callsign:</b>
+  <strong>Ham callsign:</strong>
   <%= @support_unit.ham_callsign %>
 </p>
 
 <p>
-  <b>Support status code:</b>
+  <strong>Support status code:</strong>
   <%= @support_unit.support_status_code_id %>
 </p>
 
 <p>
-  <b>Current stage:</b>
+  <strong>Current stage:</strong>
   <%= @support_unit.current_stage_id %>
 </p>
 
 <p>
-  <b>Location lat:</b>
+  <strong>Location lat:</strong>
   <%= @support_unit.location_lat %>
 </p>
 
 <p>
-  <b>Location lon:</b>
+  <strong>Location lon:</strong>
   <%= @support_unit.location_lon %>
 </p>
-
 
 <%= link_to 'Edit', edit_support_unit_path(@support_unit) %> |
 <%= link_to 'Back', support_units_path %>

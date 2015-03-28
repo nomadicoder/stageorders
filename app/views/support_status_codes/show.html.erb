@@ -1,20 +1,19 @@
 <p id="notice"><%= notice %></p>
 
 <p>
-  <b>Sequence:</b>
+  <strong>Sequence:</strong>
   <%= @support_status_code.sequence %>
 </p>
 
 <p>
-  <b>Short code:</b>
+  <strong>Short code:</strong>
   <%= @support_status_code.short_code %>
 </p>
 
 <p>
-  <b>Description:</b>
+  <strong>Description:</strong>
   <%= @support_status_code.description %>
 </p>
-
 
 <%= link_to 'Edit', edit_support_status_code_path(@support_status_code) %> |
 <%= link_to 'Back', support_status_codes_path %>
