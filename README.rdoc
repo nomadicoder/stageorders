@@ -3,7 +3,7 @@
 Stage Orders is a web-application framework that helps stage race
 support captains manage race resources.
 
-
+{<img alt='Stories in Ready' src='https://badge.waffle.io/nomadicoder/stageorders.svg?label=ready&title=Ready' />}[https://waffle.io/nomadicoder/stageorders]
 == Getting Started
 
 1. At the command prompt, clone the Rails app:
