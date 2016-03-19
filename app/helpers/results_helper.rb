@@ -14,6 +14,12 @@ module ResultsHelper
     seconds = '%02d' % (60*(time - time.truncate)).round
     minutes_as_short_time = hours + ':'+ minutes + ':' + seconds
   end
+
+  def minutes_as_color_time(time)
+    time_str = minutes_as_short_time(time)
+    color = (time < 0) ? "green" : "red"
+    content_tag(:b, content_tag(:div, time_str, style: "color: #{color}"))
+  end
   
   def minutes_to_time(minutes)
     decimal_hours = '%d' % (minutes.truncate/60.0).truncate
@@ -26,6 +32,11 @@ module ResultsHelper
   def signed_minutes_to_time(minutes)
     sign = (minutes < 0) ? '-' : ''
     signed_minutes_to_time = sign + minutes_as_short_time(minutes.abs)
+  end
+  
+  def color_minutes_to_time(minutes)
+    color = (minutes < 0) ? 'green' : 'red'
+    content_tag(:b, content_tag(:div, minutes_as_short_time(minutes.abs), style: "color: #{color}"))
   end
   
   def time_to_minutes(time)

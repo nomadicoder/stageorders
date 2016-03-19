@@ -36,7 +36,7 @@
       </td>
       <td align='right'>
           <% if runner.actual_time.to_i != @results.time_zero %>
-              <%=h signed_minutes_to_time @results.off_pace %>
+              <%=h color_minutes_to_time @results.off_pace %>
           <% end %>
       </td>
       <td align='right'>
@@ -52,7 +52,7 @@
     <% end %>
     <td align='right'><%=h minutes_as_short_time @results.total_estimated_minutes %></td>
     <td align='right'><%=h minutes_as_short_time @results.total_minutes %></td>
-    <td align='right'><%=h minutes_as_short_time @results.total_off_pace %></td>
+    <td align='right'><%=h minutes_as_color_time @results.total_off_pace %></td>
     <td align='right'><%=h show_local_time @results.stage_finish %></td>
     </tr>
   </table>
