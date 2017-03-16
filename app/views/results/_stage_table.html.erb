@@ -1,5 +1,5 @@
 <div id="stage_table">
-  <%= Time.now().strftime ("Updated: %m/%d/%Y %H:%M:%S") %>
+  <%= Time.now().strftime ("Time: %m/%d/%Y %H:%M:%S") %>
 
   <table border=0>
     <tr>
@@ -14,7 +14,8 @@
       <th>Est Time</th>
       <th width=65>Actual</th>
       <th width=75>Difference</th>
-      <th>Est Start<br /><em>Updated</em></th>
+      <th>New <em>Est</em><br/>Start</th>
+      <th>Updated<br/>at</th>
     </tr>
 
   <% @runners.each do |runner| %>
@@ -41,6 +42,9 @@
       </td>
       <td align='right'>
       <%= show_local_time @results.stage_start %>
+      </td>
+      <td align='right'>
+        <%=h show_local_time runner.updated_at %>
       </td>
     </tr>
   <% end %>

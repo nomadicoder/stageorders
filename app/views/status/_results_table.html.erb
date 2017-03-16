@@ -10,6 +10,7 @@ Updated: <%= show_short_time Time.now() %>
     <th width=65>Actual</th>
     <th width=75>Difference</th>
     <th>Est Start</th>
+    <th>Updated</th>
   </tr>
 
 <% @runners.each do |runner| %>
@@ -33,6 +34,12 @@ Updated: <%= show_short_time Time.now() %>
     </td>
     <td align='left'>
     <%= show_short_time @results.stage_start %>
+    </td>
+    <td align='left'>
+      <%=h short_short_tie runner.updated_at %>
+    </td>
+    <td align='right'>
+      <%=h show_local_time runner.updated_at %>
     </td>
   </tr>
 <% end %>
