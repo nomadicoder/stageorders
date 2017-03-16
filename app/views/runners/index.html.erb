@@ -36,6 +36,11 @@
   </tbody>
 </table>
 
+<p>
+  Download:
+  <%= link_to "CSV", runners_path(format: "csv") %> |
+  <%= link_to "Excel", runners_path(format: "xls") %>
+</p>
 <br>
 
 <%= link_to 'New Runner', new_runner_path %>

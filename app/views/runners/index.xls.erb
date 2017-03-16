@@ -1,0 +1,31 @@
+<?xml version="1.0"?>
+<Workbook xmlns="urn:schemas-microsoft-com:office:spreadsheet"
+  xmlns:o="urn:schemas-microsoft-com:office:office"
+  xmlns:x="urn:schemas-microsoft-com:office:excel"
+  xmlns:ss="urn:schemas-microsoft-com:office:spreadsheet"
+  xmlns:html="http://www.w3.org/TR/REC-html40">
+  <Worksheet ss:Name="Sheet1">
+    <Table>
+      <Row>
+        <Cell><Data ss:Type="String">ID</Data></Cell>
+        <Cell><Data ss:Type="String">Team ID</Data></Cell>
+        <Cell><Data ss:Type="String">Stage ID</Data></Cell>
+        <Cell><Data ss:Type="String">Name</Data></Cell>
+        <Cell><Data ss:Type="String">Estimated Pace</Data></Cell>
+        <Cell><Data ss:Type="String">Completed</Data></Cell>
+        <Cell><Data ss:Type="String">Actual Time</Data></Cell>
+      </Row>
+      <% @runners.each do |runner| %>
+        <Row>
+          <Cell><Data ss:Type="Number"><%= runner.id %></Data></Cell>
+          <Cell><Data ss:Type="String"><%= runner.team_id %></Data></Cell>
+          <Cell><Data ss:Type="String"><%= runner.stage_id %></Data></Cell>
+          <Cell><Data ss:Type="String"><%= runner.name %></Data></Cell>
+          <Cell><Data ss:Type="String"><%= runner.estimated_pace %></Data></Cell>
+          <Cell><Data ss:Type="String"><%= runner.completed %></Data></Cell>
+          <Cell><Data ss:Type="String"><%= runner.actual_time %></Data></Cell>
+        </Row>
+      <% end %>
+    </Table>
+  </Worksheet>
+</Workbook>

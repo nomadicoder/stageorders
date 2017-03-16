@@ -6,7 +6,12 @@ class RunnersController < ApplicationController
 
   def index
     @runners = Runner.joins(:team).order("teams.number")
-    respond_with(@runners)
+    respond_to do |format|
+      format.html
+      format.csv { send_data @runners.to_csv }
+      format.xls
+    end
+
   end
 
   def show
