@@ -31,11 +31,15 @@ Stageorders::Application.routes.draw do
 
   resources :results
 
-  resources :runners
+  resources :runners do
+    collection { post :import }
+  end
 
   resources :runner_status_codes
 
-  resources :teams
+  resources :teams do
+    collection { post :import }
+  end
 
   resources :stages
 

@@ -29,3 +29,19 @@
 <br>
 
 <%= link_to 'New Team', new_team_path %>
+
+<p>
+  Download:
+  <%= link_to "CSV", teams_path(format: "csv") %> |
+  <%= link_to "Excel", teams_path(format: "xls") %>
+</p>
+<br>
+
+<h2>Import Teams</h2>
+
+<%= form_tag import_teams_path, multipart: true do %>
+  <%= file_field_tag :file %>
+  <%= submit_tag "Import" %>
+<% end %>
+
+<%= link_to 'New Team', new_team_path %>

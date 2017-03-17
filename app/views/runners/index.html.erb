@@ -43,4 +43,10 @@
 </p>
 <br>
 
+<h2>Import Runners</h2>
+
+<%= form_tag import_runners_path, multipart: true do %>
+  <%= file_field_tag :file %>
+  <%= submit_tag "Import" %>
+<% end %>
 <%= link_to 'New Runner', new_runner_path %>

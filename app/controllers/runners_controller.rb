@@ -81,6 +81,11 @@ class RunnersController < ApplicationController
     
   end
 
+  def import
+    Runner.import(params[:file])
+    redirect_to root_url, notice: "Runners imported."
+  end
+
   private
     def set_runner
       @runner = Runner.find(params[:id])
