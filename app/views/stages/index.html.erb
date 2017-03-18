@@ -29,3 +29,17 @@
 <br>
 
 <%= link_to 'New Stage', new_stage_path %>
+
+<p>
+  Download:
+  <%= link_to "CSV", stages_path(format: "csv") %> |
+  <%= link_to "Excel", stages_path(format: "xls") %>
+</p>
+<br>
+
+<h2>Import stages</h2>
+
+<%= form_tag import_stages_path, multipart: true do %>
+  <%= file_field_tag :file %>
+  <%= submit_tag "Import" %>
+<% end %>

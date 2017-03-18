@@ -6,7 +6,11 @@ class StagesController < ApplicationController
 
   def index
     @stages = Stage.all.order(:number)
-    respond_with(@stages)
+    respond_to do |format|
+      format.html
+      format.csv { send_data @stages.to_csv }
+      format.xls
+    end
   end
 
   def show
@@ -36,7 +40,12 @@ class StagesController < ApplicationController
     @stage.destroy
     respond_with(@stage)
   end
-  
+
+  def import
+    Stage.import(params[:file])
+    redirect_to root_url, notice: "Stage imported."
+  end
+
 protected
   def authorize
   end

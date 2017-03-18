@@ -41,7 +41,9 @@ Stageorders::Application.routes.draw do
     collection { post :import }
   end
 
-  resources :stages
+  resources :stages do
+    collection { post :import }
+  end
 
   post '/results/change_team' => 'results#change_team'
   post '/results/refresh' => 'results#refresh'

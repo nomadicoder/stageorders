@@ -51,4 +51,5 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
 gem 'devise'
 #gem 'twitter'
+gem 'xmlrpc'
 gem 'roo'
