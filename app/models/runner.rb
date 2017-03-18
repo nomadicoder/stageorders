@@ -107,10 +107,15 @@ class Runner < ActiveRecord::Base
     (2..spreadsheet.last_row).each do |i|
       row = Hash[[header, spreadsheet.row(i)].transpose]
       runner = find_by_id(row["id"]) || new
-      runner.attributes = row.to_hash.slice(*attributes)
+      runner.attributes = row.to_hash.slice(*attribute_names)
+      runner.name = row.to_hash['Name']
+      runner.stage_id = Stage.find_by(number: row.to_hash['Stage']).id
+      runner.team_id = Team.find_by(number: row.to_hash['Team']).id
+      runner.runner_status_code = row.to_hash['Status']
+      runner.estimated_pace = row.to_hash['Estimated Pace']
       runner.save!
     end
-  end  
+  end
 
   def self.open_spreadsheet(file)
     case File.extname(file.original_filename)
