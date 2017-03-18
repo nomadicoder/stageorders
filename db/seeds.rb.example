@@ -17,26 +17,16 @@ runner_status_codes = RunnerStatusCode.create ([
   },
   {
     sequence: 1.0,
-    short_code: 'ENR',
-    description: 'Runner is enroute to stage'
-  },
-  {
-    sequence: 2.0,
     short_code: 'CHK',
     description: 'Runner has checked in at the stage'
   },
   {
-    sequence: 3.0,
+    sequence: 2.0,
     short_code: 'RUN',
     description: 'Runner is on the course running the stage'
   },
   {
-    sequence: 3.5,
-    short_code: 'ONE',
-    description: 'Runner is one mine out'
-  },
-  {
-    sequence: 4.0,
+    sequence: 3.0,
     short_code: 'FIN',
     description: 'Runner has completed the stage'
   }
