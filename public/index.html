@@ -14,20 +14,20 @@
         font-size: 13px;
         color: #333;
       }
-      
+
       h1 {
         font-size: 28px;
         color: #000;
       }
-      
+
       a  {color: #03c}
       a:hover {
         background-color: #03c;
         color: white;
         text-decoration: none;
       }
-      
-      
+
+
       #page {
         background-color: #f0f0f0;
         width: 750px;
@@ -35,7 +35,7 @@
         margin-left: auto;
         margin-right: auto;
       }
-      
+
       #content {
         float: left;
         background-color: white;
@@ -44,7 +44,7 @@
         padding: 25px;
         width: 500px;
       }
-      
+
       #sidebar {
         float: right;
         width: 175px;
@@ -53,7 +53,7 @@
       #footer {
         clear: both;
       }
-      
+
 
       #header, #about, #getting-started {
         padding-left: 75px;
@@ -73,14 +73,14 @@
         font-weight: normal;
         font-size: 16px;
       }
-      
-      
+
+
       #about h3 {
         margin: 0;
         margin-bottom: 10px;
         font-size: 14px;
       }
-      
+
       #about-content {
         background-color: #ffd;
         border: 1px solid #fc0;
@@ -99,7 +99,7 @@
       }
       #about-content td.name  {color: #555}
       #about-content td.value {color: #000}
-      
+
       #about-content.failure {
         background-color: #fcc;
         border: 1px solid #f00;
@@ -108,8 +108,8 @@
         margin: 0;
         padding: 10px;
       }
-      
-      
+
+
       #getting-started {
         border-top: 1px solid #ccc;
         margin-top: 25px;
@@ -145,8 +145,8 @@
         color: #555;
         font-size: 13px;
       }
-      
-      
+
+
       #search {
         margin: 0;
         padding-top: 10px;
@@ -158,8 +158,8 @@
         margin: 2px;
       }
       #search-text {width: 170px}
-      
-      
+
+
       #sidebar ul {
         margin-left: 0;
         padding-left: 0;
@@ -176,7 +176,7 @@
       #sidebar ul.links li {
         margin-bottom: 5px;
       }
-      
+
     </style>
     <script type="text/javascript" src="javascripts/prototype.js"></script>
     <script type="text/javascript" src="javascripts/effects.js"></script>
@@ -189,11 +189,11 @@
             onComplete: function() {new Effect.BlindDown('about-content', {duration: 0.25})}
           });
         } else {
-          new Effect[Element.visible('about-content') ? 
+          new Effect[Element.visible('about-content') ?
             'BlindUp' : 'BlindDown']('about-content', {duration: 0.25});
         }
       }
-      
+
       window.onload = function() {
         $('search-text').value = '';
         $('search').onsubmit = function() {
@@ -206,7 +206,7 @@
     <div id="page">
       <div id="sidebar">
         <ul id="sidebar-items">
-        
+
           <li>
             <h3>Operations</h3>
             <ul class="links">
@@ -214,7 +214,7 @@
               <!--li><a href="status">Status</a></li-->
             </ul>
           </li>
-          
+
           <!--li>
             <h3>Development</h3>
             <ul class="links">
@@ -235,14 +235,14 @@
 
 	<p>MojaveRATS has provided all-volunteer free radio and technical support for Baker-to-Vegas athletic teams for twenty-eight years.</p>
 
-	<p>In 2016 we are proud to support Los Angeles County Sheriff teams #103 LASD Norwalk and #210 LASD Transportation Services.</p>
+	<p>In 2017 we are proud to support Los Angeles County Sheriff teams #2 LASD County Wide, #124 LASD Norwalk and #160 LASD Transportation Services.</p>
 
 	<p>On Race Day, visit our site for updates. Team Stage Results will provide reports on latest times for each stage</p>
 
 
         </div>
       </div>
-      
+
       <div id="footer">&nbsp;</div>
     </div>
   </body>
