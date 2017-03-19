@@ -1,3 +1,15 @@
 // Place all the styles related to the runner_status_codes controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+.status-UNK {
+  background-color: red;
+}
+.status-CHK {
+  background-color: yellow;
+}
+.status-RUN {
+  background-color: green;
+}
+.status-FIN {
+  background-color: none;
+}
