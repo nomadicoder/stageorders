@@ -26,7 +26,7 @@
       <td align='center'><%=h runner.stage.miles %></td>
       <td align='center'><%=h runner.stage.difficulty %></td>
       <% if user_signed_in? %>
-        <td><%=h runner.name %></td>
+        <td class=status-<%= runner.runner_status %>><%= link_to runner.name, controller: "runners", action: "edit", id: runner %></td>
       <% end %>
       <td align='right'><%= show_short_time runner.estimated_pace %></td>
       <td align='right'><%= minutes_as_short_time @results.estimated_minutes %> </td>

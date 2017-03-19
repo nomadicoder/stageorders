@@ -6,6 +6,8 @@
       <th width=50>Stage</th>
       <th width=120>Runner</th>
       <th width=80>Runner<br/>status</th>
+      <th>Est Pace</th>
+      <th>Stage Time</th>
     </tr>
 
   <% @stage_statuses.each do |stage_status| %>
@@ -13,7 +15,8 @@
       <td><%=h stage_status.stage_number %></td>
       <td><%=h stage_status.runner_name %></td>
       <td class=status-<%= stage_status.runner_status %>><%=h stage_status.runner_status %></td>
-      <%=h stage_status.stage_status %></td>
+      <td><%=h show_short_time stage_status.runner_estimated_pace %></td>
+      <td><%=h show_short_time stage_status.runner_actual_time %></td>
       <td><%= link_to 'Details', stage_status %></td>
       <td><%= link_to 'Update', edit_stage_status_path(stage_status) %></td>
     </tr>

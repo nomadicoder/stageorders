@@ -17,10 +17,9 @@ module ResultsHelper
 
   def minutes_as_color_time(time)
     time_str = minutes_as_short_time(time)
-    color = (time < 0) ? "green" : "red"
-    content_tag(:b, content_tag(:div, time_str, style: "color: #{color}"))
+    content_tag(:b, content_tag(:div, time_str, style: "color: #{time_style(time)}"))
   end
-  
+
   def minutes_to_time(minutes)
     decimal_hours = '%d' % (minutes.truncate/60.0).truncate
     decimal_minutes = '%02d' % (minutes.truncate % 60)
@@ -35,8 +34,17 @@ module ResultsHelper
   end
   
   def color_minutes_to_time(minutes)
-    color = (minutes < 0) ? 'green' : 'red'
-    content_tag(:b, content_tag(:div, minutes_as_short_time(minutes.abs), style: "color: #{color}"))
+    content_tag(:b, content_tag(:div, minutes_as_short_time(minutes.abs), style: "color: #{time_style(minutes)}"))
+  end
+  
+  def time_style(time)
+    if (time.floor < 0)
+      color = "green"
+    elsif (time.floor > 0)
+      color = "red"
+    elsif
+      color = "none"
+    end
   end
   
   def time_to_minutes(time)
