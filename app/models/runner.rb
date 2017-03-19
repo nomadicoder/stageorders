@@ -107,12 +107,7 @@ class Runner < ActiveRecord::Base
     (2..spreadsheet.last_row).each do |i|
       row = Hash[[header, spreadsheet.row(i)].transpose]
       runner = find_by_id(row["id"]) || new
-      runner.attributes = row.to_hash.slice(*attribute_names)
-      runner.name = row.to_hash['Name']
-      runner.stage_id = Stage.find_by(number: row.to_hash['Stage']).id
-      runner.team_id = Team.find_by(number: row.to_hash['Team']).id
-      runner.runner_status_code = row.to_hash['Status']
-      runner.estimated_pace = row.to_hash['Estimated Pace']
+      runner.attributes = row.slice(*attribute_names)
       runner.save!
     end
   end
@@ -124,6 +119,19 @@ class Runner < ActiveRecord::Base
     when ".xlsx" then Roo::Excelx.new(file.path)
     else raise "Unknown file type: #{file.original_filename}"
     end
+  end
+
+  def convert_data(row)
+    stage = Stage.find_by(number: row['Stage'])
+    team = Team.find_by(number: row['Team'])
+    status = RunnerStatusCode.find_by(short_code: row['Status'])
+    runner.name = row['Name']
+    runner.team_id = team.id if team
+    runner.runner_status_code_id = status.id
+    estimated_pace = row['Estimated Pace']
+    expected_start = row['Expected Start Time']
+    runner.estimated_pace = estimated_pace
+    runner.stage_id = stage.id if stage
   end
 
 protected
