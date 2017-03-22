@@ -21,3 +21,5 @@
 
 en:
   hello: "Hello world"
+  gps_note: "Update subject to delay due to intermittent radio coverage."
+  runner_admin_warning: "Are you sure? Admin Runner Page is intended to administer runner profiles and change leg assigments. Click on the runner's name on the 'Results' page to update status and time."

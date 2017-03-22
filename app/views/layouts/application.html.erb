@@ -26,12 +26,12 @@
       <li><a href="http://www.findu.com/cgi-bin/find.cgi?002!LASD_County_Wide">County Wide</a></li>
       <li><a href="http://www.findu.com/cgi-bin/find.cgi?124!LASD_Norwalk_Station">Norwalk</a></li>
       <li><a href="http://www.findu.com/cgi-bin/find.cgi?160!LASD_TST">TST</a></li>
-      <li><small><em>Update subject to delay due to intermittent radio coverage.</em></small></li>
+      <li><small><em><%= t('gps_note') %></em></small></li>
     <% if user_signed_in? %>
     <hr>
     <strong>Admin</strong>
     </ul>
-      <li><a href="/runners">Runners</a></li>
+      <li><a href="/runners", data-confirm="<%= t('runner_admin_warning') %>">Runners</a></li>
       <li><a href="/runner_status_codes">Runner Codes</a></li>
       <li><a href="/teams">Teams</a></li>
       <li><a href="/stages">Stages</a></li>
