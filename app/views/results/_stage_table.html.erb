@@ -17,36 +17,39 @@
       <th>New <em>Est</em><br/>Start</th>
       <th>Updated<br/>at</th>
     </tr>
-
-  <% @runners.each do |runner| %>
-    <% @results.calculate_stage_results (runner) %>
-    <tr>
-      <td align='center'><%=h runner.stage.number %></td>
-      <td><%=h runner.stage.landmark %></td>
-      <td align='center'><%=h runner.stage.miles %></td>
-      <td align='center'><%=h runner.stage.difficulty %></td>
-      <% if user_signed_in? %>
-        <td class=status-<%= runner.runner_status %>><%= link_to runner.name, controller: "runners", action: "edit", id: runner %></td>
-      <% end %>
-      <td align='right'><%= show_short_time runner.estimated_pace %></td>
-      <td align='right'><%= minutes_as_short_time @results.estimated_minutes %> </td>
-      <td align='right'>
-          <% if runner.actual_time.to_i != @results.time_zero %>
+  <% cache @runners do %>
+    <% @runners.each do |runner| %>
+      <% cache runner do %>
+        <% @results.calculate_stage_results (runner) %>
+        <tr>
+          <td align='center'><%=h runner.stage.number %></td>
+          <td><%=h runner.stage.landmark %></td>
+          <td align='center'><%=h runner.stage.miles %></td>
+          <td align='center'><%=h runner.stage.difficulty %></td>
+          <% if user_signed_in? %>
+            <td class=status-<%= runner.runner_status %>><%= link_to runner.name, controller: "runners", action: "edit", id: runner %></td>
+          <% end %>
+          <td align='right'><%= show_short_time runner.estimated_pace %></td>
+          <td align='right'><%= minutes_as_short_time @results.estimated_minutes %> </td>
+          <td align='right'>
+            <% if runner.actual_time.to_i != @results.time_zero %>
               <%=h show_short_time runner.actual_time %>
-          <% end %>
-      </td>
-      <td align='right'>
-          <% if runner.actual_time.to_i != @results.time_zero %>
+            <% end %>
+          </td>
+          <td align='right'>
+            <% if runner.actual_time.to_i != @results.time_zero %>
               <%=h color_minutes_to_time @results.off_pace %>
-          <% end %>
-      </td>
-      <td align='right'>
-      <%= show_local_time @results.stage_start %>
-      </td>
-      <td align='right'>
-        <%=h show_local_time runner.updated_at %>
-      </td>
-    </tr>
+            <% end %>
+          </td>
+          <td align='right'>
+          <%= show_local_time @results.stage_start %>
+          </td>
+          <td align='right'>
+            <%=h show_local_time runner.updated_at %>
+          </td>
+        </tr>
+      <% end %>
+    <% end %>
   <% end %>
     <tr>
     <% if user_signed_in? %>
