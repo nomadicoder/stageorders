@@ -9,10 +9,7 @@ module ResultsHelper
   end
   
   def minutes_as_short_time(time)
-    hours = '%02d' % (time / 60).truncate
-    minutes = '%02d' % (time % 60)
-    seconds = '%02d' % (60*(time - time.truncate)).round
-    minutes_as_short_time = hours + ':'+ minutes + ':' + seconds
+    Time.at(time.abs*60).strftime("%H:%M:%S")
   end
 
   def minutes_as_color_time(time)
