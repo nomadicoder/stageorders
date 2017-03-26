@@ -52,15 +52,12 @@
     <% end %>
   <% end %>
     <tr>
-    <% if user_signed_in? %>
-      <td colspan='6'></td>
-    <% else %>
-      <td colspan='5'></td>
-    <% end %>
+    <td colspan='5'></td>
     <td align='right'><%=h minutes_as_short_time @results.total_estimated_minutes %></td>
     <td align='right'><%=h minutes_as_short_time @results.total_minutes %></td>
     <td align='right'><%=h minutes_as_color_time @results.total_off_pace %></td>
     <td align='right'><%=h show_local_time @results.stage_finish %></td>
+    <td colspan='1'></td>
     </tr>
   </table>
 </div>
