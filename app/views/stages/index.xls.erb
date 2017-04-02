@@ -1,0 +1,27 @@
+<?xml version="1.0"?>
+<Workbook xmlns="urn:schemas-microsoft-com:office:spreadsheet"
+  xmlns:o="urn:schemas-microsoft-com:office:office"
+  xmlns:x="urn:schemas-microsoft-com:office:excel"
+  xmlns:ss="urn:schemas-microsoft-com:office:spreadsheet"
+  xmlns:html="http://www.w3.org/TR/REC-html40">
+  <Worksheet ss:Name="Sheet1">
+    <Table>
+      <Row>
+        <Cell><Data ss:Type="String">ID</Data></Cell>
+        <Cell><Data ss:Type="String">Number</Data></Cell>
+        <Cell><Data ss:Type="String">Landmark</Data></Cell>
+        <Cell><Data ss:Type="String">Miles</Data></Cell>
+        <Cell><Data ss:Type="String">Difficulty</Data></Cell>
+      </Row>
+      <% @stages.each do |stage| %>
+        <Row>
+          <Cell><Data ss:Type="Number"><%= stage.id %></Data></Cell>
+          <Cell><Data ss:Type="Number"><%= stage.number%></Data></Cell>
+          <Cell><Data ss:Type="String"><%= stage.landmark%></Data></Cell>
+          <Cell><Data ss:Type="Number"><%= stage.miles%></Data></Cell>
+          <Cell><Data ss:Type="Number"><%= stage.difficulty%></Data></Cell>
+        </Row>
+      <% end %>
+    </Table>
+  </Worksheet>
+</Workbook>

@@ -36,6 +36,16 @@
   </tbody>
 </table>
 
+<p>
+  Download:
+  <%= link_to "CSV", runners_path(format: "csv") %> |
+  <%= link_to "Excel", runners_path(format: "xls") %>
+</p>
 <br>
 
-<%= link_to 'New Runner', new_runner_path %>
+<h2>Import Runners</h2>
+
+<%= form_tag import_runners_path, multipart: true do %>
+  <%= file_field_tag :file %>
+  <%= submit_tag "Import" %>
+<% end %>

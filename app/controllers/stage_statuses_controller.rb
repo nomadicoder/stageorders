@@ -126,12 +126,12 @@ class StageStatusesController < ApplicationController
     end
 
     def update_index
-      stage_collection = Stage.find_all_stages
       if session[:current_team_id].nil? || session[:current_team_id].blank?
         team = Team.where("number > 0").order(:number).first
       else
         team = Team.find(session[:current_team_id])
       end
+      @results = Results.new(team)
       @team_name = team.name
       @team_id = team.id
       @stage_statuses = StageStatus.where(team_id: @team_id).joins(:stage).order("stages.number")

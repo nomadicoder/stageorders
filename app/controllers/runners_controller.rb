@@ -6,7 +6,12 @@ class RunnersController < ApplicationController
 
   def index
     @runners = Runner.joins(:team).order("teams.number")
-    respond_with(@runners)
+    respond_to do |format|
+      format.html
+      format.csv { send_data @runners.to_csv }
+      format.xls
+    end
+
   end
 
   def show
@@ -74,6 +79,11 @@ class RunnersController < ApplicationController
     
     blog_client.newPost(blogpost, true)
     
+  end
+
+  def import
+    Runner.import(params[:file])
+    redirect_to root_url, notice: "Runners imported."
   end
 
   private

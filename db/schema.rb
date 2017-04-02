@@ -1,4 +1,3 @@
-# encoding: UTF-8
 # This file is auto-generated from the current state of the database. Instead
 # of editing this file, please use the migrations feature of Active Record to
 # incrementally modify your database, and then regenerate this schema definition.
@@ -13,7 +12,7 @@
 
 ActiveRecord::Schema.define(version: 20130410035054) do
 
-  create_table "blogs", force: true do |t|
+  create_table "blogs", force: :cascade do |t|
     t.integer  "team_id"
     t.string   "host_url"
     t.string   "access_path"
@@ -29,7 +28,7 @@ ActiveRecord::Schema.define(version: 20130410035054) do
     t.datetime "updated_at"
   end
 
-  create_table "runner_status_codes", force: true do |t|
+  create_table "runner_status_codes", force: :cascade do |t|
     t.float    "sequence"
     t.string   "short_code"
     t.text     "description"
@@ -37,7 +36,7 @@ ActiveRecord::Schema.define(version: 20130410035054) do
     t.datetime "updated_at"
   end
 
-  create_table "runners", force: true do |t|
+  create_table "runners", force: :cascade do |t|
     t.integer  "stage_id"
     t.integer  "team_id"
     t.integer  "runner_status_code_id"
@@ -49,7 +48,7 @@ ActiveRecord::Schema.define(version: 20130410035054) do
     t.datetime "updated_at"
   end
 
-  create_table "stage_status_codes", force: true do |t|
+  create_table "stage_status_codes", force: :cascade do |t|
     t.string   "short_code"
     t.string   "description"
     t.float    "sequence"
@@ -59,7 +58,7 @@ ActiveRecord::Schema.define(version: 20130410035054) do
     t.datetime "updated_at"
   end
 
-  create_table "stage_statuses", force: true do |t|
+  create_table "stage_statuses", force: :cascade do |t|
     t.integer  "team_id"
     t.integer  "stage_id"
     t.integer  "runner_id"
@@ -71,7 +70,7 @@ ActiveRecord::Schema.define(version: 20130410035054) do
     t.datetime "updated_at"
   end
 
-  create_table "stages", force: true do |t|
+  create_table "stages", force: :cascade do |t|
     t.integer  "number"
     t.string   "landmark"
     t.float    "miles"
@@ -80,7 +79,7 @@ ActiveRecord::Schema.define(version: 20130410035054) do
     t.datetime "updated_at"
   end
 
-  create_table "support_status_codes", force: true do |t|
+  create_table "support_status_codes", force: :cascade do |t|
     t.float    "sequence"
     t.string   "short_code"
     t.text     "description"
@@ -88,14 +87,14 @@ ActiveRecord::Schema.define(version: 20130410035054) do
     t.datetime "updated_at"
   end
 
-  create_table "support_types", force: true do |t|
+  create_table "support_types", force: :cascade do |t|
     t.string   "short_code"
     t.text     "description"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
-  create_table "support_units", force: true do |t|
+  create_table "support_units", force: :cascade do |t|
     t.integer  "team_id"
     t.integer  "support_type_id"
     t.string   "tac_callsign"
@@ -108,16 +107,16 @@ ActiveRecord::Schema.define(version: 20130410035054) do
     t.datetime "updated_at"
   end
 
-  create_table "teams", force: true do |t|
+  create_table "teams", force: :cascade do |t|
     t.integer  "number"
     t.string   "name"
     t.string   "short_name"
-    t.time     "start_time"
+    t.datetime "start_time"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
-  create_table "users", force: true do |t|
+  create_table "users", force: :cascade do |t|
     t.string   "email",                  default: "",    null: false
     t.string   "encrypted_password",     default: "",    null: false
     t.string   "reset_password_token"
@@ -132,9 +131,8 @@ ActiveRecord::Schema.define(version: 20130410035054) do
     t.datetime "updated_at"
     t.boolean  "admin",                  default: false
     t.boolean  "staff",                  default: false
+    t.index ["email"], name: "index_users_on_email", unique: true
+    t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
-
-  add_index "users", ["email"], name: "index_users_on_email", unique: true
-  add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
 
 end

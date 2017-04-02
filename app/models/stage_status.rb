@@ -56,6 +56,14 @@ class StageStatus < ActiveRecord::Base
     self.runner_status_code = RunnerStatusCode.find_by_short_code(short_code) unless short_code.blank?
   end
   
+  def runner_estimated_pace
+    runner.estimated_pace
+  end
+  
+  def runner_actual_time
+    runner.actual_time
+  end
+
   def support_status
     support_status_code.short_code if support_status_code
   end

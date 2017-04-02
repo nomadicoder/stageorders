@@ -6,7 +6,11 @@ class TeamsController < ApplicationController
 
   def index
     @teams = Team.all
-    respond_with(@teams)
+    respond_to do |format|
+      format.html
+      format.csv { send_data @teams.to_csv }
+      format.xls
+    end
   end
 
   def show
@@ -35,6 +39,11 @@ class TeamsController < ApplicationController
   def destroy
     @team.destroy
     respond_with(@team)
+  end
+
+  def import
+    Team.import(params[:file])
+    redirect_to root_url, notice: "Teams imported."
   end
 
   private
